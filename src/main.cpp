@@ -1,9 +1,27 @@
 #include <Arduino.h>
 
+#include "TaskManager.h"
+
+#include "hid_devices/button.h"
+#include "hid_devices/joystick.h"
+
+
+
+
 void setup() {
-  // put your setup code here, to run once:
+    Serial.begin(9600);
+    
 }
 
+void testLoop() {
+
+    joystick.read();
+    
+}
+
+
 void loop() {
-  // put your main code here, to run repeatedly:
+
+    
+
 }
