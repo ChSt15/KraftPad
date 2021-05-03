@@ -1,0 +1,571 @@
+#include <Arduino.h>
+
+#include "TaskManager.h"
+
+#include "ADS1X15.h"
+
+#include "CircularBuffer.h"
+
+#include "hardware_info.h"
+
+#include "Interval-Control-main/src/interval_control.h"
+
+
+
+#include <Adafruit_GFX.h>    // Core graphics library
+#include <Adafruit_ST7735.h> // Hardware-specific library for ST7735
+#include <Adafruit_ST7789.h> // Hardware-specific library for ST7789
+#include <SPI.h>
+#include "SD.h"
+
+#include "AudioFileSourceSD.h"
+#include "AudioFileSourcePROGMEM.h"
+#include "AudioGeneratorRTTTL.h"
+#include "AudioOutputI2S.h"
+#include "AudioGeneratorMP3.h"
+#include "AudioGeneratorFLAC.h"
+
+
+  // For the breakout board, you can use any 2 or 3 pins.
+  // These pins will also work for the 1.8" TFT shield.
+  #define TFT_CS        15
+  #define TFT_RST        2 // Or set to -1 and connect to Arduino RESET pin
+  #define TFT_DC         5
+
+
+
+#define SPI_SPEED SD_SCK_MHZ(100)
+
+
+AudioGeneratorMP3 *mp3;
+AudioFileSourceSD *file;
+AudioOutputI2S *out;
+
+volatile bool spiWAIT = false;
+
+File audio;
+#define LCD_WIDTH 128
+#define LCD_HEIGHT 64
+#define WIDTH_COUNT 9
+#define HEIGHT 56
+#define SIZE 486
+#define top (LCD_HEIGHT - HEIGHT) / 2
+#define left (LCD_WIDTH - WIDTH_COUNT * 8) / 2
+
+#define BINTOPLAY "/video.bin"
+
+void sleepLoop();
+bool sleepWakeupHandler();
+void updateSD();
+
+#define BUF_SIZE 504
+
+
+
+IntervalControl fps = IntervalControl(29.5);
+IntervalControl ReadRate = IntervalControl(1000);
+
+#define VALUEBUFFERSIZE 70000
+
+//uint8_t values[VALUEBUFFERSIZE]; 
+CircularBuffer<uint8_t, VALUEBUFFERSIZE> valuesBuffer;
+
+bool newFrameNeeded = false;
+
+uint8_t newValuesBuufer[512];
+
+
+ADS1115 _adc = ADS1115(0x48);
+
+RTC_DATA_ATTR uint16_t bootcount = 0;
+
+float sleepTimeMinutes = 5;
+
+Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
+
+bool sdCardConnected = false;
+
+uint8_t greyScaleValue = 0;
+uint16_t videoWidth = 0;
+uint16_t videoHeight = 0;
+uint32_t displaySize = 0;
+
+TaskHandle_t Task1;
+
+//char buf[SIZE];
+//char bufLast[SIZE];
+
+uint16_t* displayBuffer;
+
+File myFile;
+
+bool getBitValue(uint8_t* bitmap, uint32_t pos) {
+
+    uint8_t byte = bitmap[pos/8];
+    bool value = bitRead(byte, 7-pos%8);
+    return value;
+
+}
+
+void setBitValue(uint8_t* bitmap, uint32_t pos, bool value) {
+
+    bitWrite(bitmap[pos/8], 7-pos%8, value);
+
+}
+
+uint32_t getColor(const uint8_t &value) {
+
+    return tft.color565(value, value, value);
+
+}
+
+
+bool getInitialInfo() {
+
+    if  (myFile && myFile.available()) {
+
+        valuesBuffer.clear();
+
+        uint8_t videoInfo[3];
+                
+        myFile.read(videoInfo, 3);
+
+        greyScaleValue = videoInfo[0];
+        videoWidth = videoInfo[1];
+        videoHeight = videoInfo[2];
+
+        displaySize = (uint32_t)videoWidth*videoHeight;
+
+        delete[] displayBuffer;
+        displayBuffer = new uint16_t[displaySize];
+
+        Serial.println(String("Greyscale: ") + greyScaleValue + ", height: " + videoHeight + ", width: " + videoWidth);
+
+    } else return false;
+
+    return true;
+
+}
+
+
+void audioThread(void * parameter) {
+
+    //vTaskDelay(500);
+
+    while(1) {
+
+        if (!spiWAIT) {
+
+            spiWAIT = true;
+
+            if (mp3->isRunning()) {
+                if (!mp3->loop()) mp3->stop();
+            }
+
+            spiWAIT = false;
+
+            yield();
+
+        }
+
+    }
+
+
+}
+
+
+bool decodeValues(uint8_t number, uint8_t value) {
+
+    static uint32_t numberPixels = 0;
+
+    value = (uint16_t)value*255/greyScaleValue;
+
+    for (; number > 0; number--){
+
+        displayBuffer[numberPixels] = getColor(value);
+        numberPixels++;
+
+        if (numberPixels >= displaySize) break;
+
+    }
+
+    if (numberPixels >= displaySize) {
+        //Serial.println(String("Size: ") + numberPixels);
+        numberPixels = 0;
+        return true;
+    }
+
+    return false;
+
+}
+
+
+
+void draw() {
+
+
+    tft.startWrite();
+    tft.setAddrWindow(0,0, videoWidth, videoHeight);
+    tft.writePixels(displayBuffer, displaySize);
+    tft.endWrite();
+    
+
+}
+
+
+void setup(void) {
+
+  Serial.begin(115200);
+
+  pinMode(4, OUTPUT);
+  digitalWrite(4, OUTPUT);
+
+  pinMode(VEXT_SWITCH_PIN, OUTPUT);
+  digitalWrite(VEXT_SWITCH_PIN, LOW);
+
+  pinMode(LCD_LED_PIN, OUTPUT);
+  digitalWrite(LCD_LED_PIN, LOW);
+
+    pinMode(JOYSTICK_BUTTON_PIN, INPUT);
+
+    pinMode(LCD_CS_PIN, OUTPUT);
+    digitalWrite(LCD_CS_PIN, HIGH);
+    pinMode(LCD_DC_PIN, OUTPUT);
+    digitalWrite(LCD_DC_PIN, HIGH);
+
+
+
+    fps.setLimit(false);
+
+
+    if (esp_reset_reason() == esp_reset_reason_t::ESP_RST_DEEPSLEEP) {
+        //pinMode(I2C_SCL_PIN, OUTPUT);
+        //pinMode(I2C_SDA_PIN, OUTPUT);
+
+        bootcount++;
+
+        bool turnOn = sleepWakeupHandler();
+
+        if (turnOn) {
+
+            tft.setSPISpeed(50000000);
+            tft.setRotation(3);
+            //tft.enableSleep(true);
+            digitalWrite(LCD_LED_PIN, HIGH);
+
+        } else {
+
+            sdCardConnected = SD.begin(SD_CARD_CS_PIN);
+            
+            sleepLoop();
+
+        }
+        
+    } else {    
+
+        sdCardConnected = SD.begin(SD_CARD_CS_PIN, SPI, 100000000);
+
+        _adc.begin(I2C_SDA_PIN, I2C_SCL_PIN);
+        _adc.setGain(1);
+        _adc.setDataRate(7);
+        _adc.setMode(0);
+        _adc.readADC(0);
+
+        // Use this initializer if using a 1.8" TFT screen:
+        tft.initR(INITR_BLACKTAB);      // Init ST7735S chip, black tab
+        tft.setSPISpeed(50000000);
+        tft.setRotation(3);
+
+        digitalWrite(LCD_LED_PIN, HIGH);
+    }
+
+  
+  tft.fillScreen(ST77XX_BLACK);
+
+  
+
+  
+
+    bool success = false;
+  while(!success) {
+      myFile = SD.open(BINTOPLAY, FILE_READ);
+      success = getInitialInfo();
+      if (videoWidth == 0 || videoHeight == 0 || greyScaleValue == 0) success = false;
+      if (!success) Serial.println("Failed to get info");
+      delay(100);
+  }
+
+  audioLogger = &Serial;
+  file = new AudioFileSourceSD();
+  out = new AudioOutputI2S(0, 1);
+  mp3 = new AudioGeneratorMP3();
+  mp3->begin(file, out);
+
+  audio = SD.open("/audio.mp3"); 
+  out->SetGain(2);
+
+  file->open(audio.name());
+
+  mp3->begin(file, out);
+
+  xTaskCreatePinnedToCore(
+      audioThread, 
+      "Task1", 
+      10000,  
+      NULL, 
+      200,  
+      &Task1,
+      0); 
+    
+    //vTaskDelay(1000);
+}
+
+
+
+void loop() {
+    
+    fps.syncInternal();
+    ReadRate.syncInternal();
+
+    while(1) {
+
+        
+
+        //if (draw()) newDraw = true;
+        while(!digitalRead(JOYSTICK_BUTTON_PIN)) {
+            fps.syncInternal();
+            delay(10);
+        }
+
+        
+        if (valuesBuffer.available() > 512 && ReadRate.isTimeToRun()) {
+
+            if  (myFile && myFile.available()) {
+                
+                myFile.read(newValuesBuufer, 512);
+
+                for (uint16_t i = 0; i < 512; i++) {
+                    valuesBuffer.unshift(newValuesBuufer[i]);
+                }
+
+            } else {
+                myFile.close();
+                myFile = SD.open(BINTOPLAY, FILE_READ);
+                Serial.println("Fucking failed fuck. Replay you little shit!");
+                getInitialInfo();
+                fps.syncInternal();
+            }
+
+        }
+
+        
+        if (newFrameNeeded && VALUEBUFFERSIZE-valuesBuffer.available() >= 2) {
+            uint8_t number = valuesBuffer.pop();
+            uint8_t value = valuesBuffer.pop();
+            //Serial.println(String("Num: ") + number + ", val: " + value);
+            if (decodeValues(number, value)) {
+                newFrameNeeded = false;
+                //getPixelBufferNew();
+            }
+        }
+
+
+        if (!newFrameNeeded && !spiWAIT && fps.isTimeToRun()) {
+            spiWAIT = true;
+            draw();
+            spiWAIT = false;
+            newFrameNeeded = true;
+
+        }
+
+        /*if (audioRate.isTimeToRun()) {
+
+            if (mp3->isRunning()) {
+                if (!mp3->loop()) mp3->stop();
+            } else {
+                Serial.printf("RTTTL done\n");
+                delay(1000);
+            }
+
+        }*/
+
+        
+
+    }
+    
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Write to the SD card (DON'T MODIFY THIS FUNCTION)
+void writeFile(fs::FS &fs, const char * path, const char * message) {
+  //Serial.printf("Writing file: %s\n", path);
+
+  File file = fs.open(path, FILE_WRITE);
+  if(!file) {
+    Serial.println("Failed to open file for writing");
+    return;
+  }
+  if(file.print(message)) {
+    //Serial.println("File written");
+  } else {
+    Serial.println("Write failed");
+  }
+  file.close();
+}
+
+// Append data to the SD card (DON'T MODIFY THIS FUNCTION)
+void appendFile(fs::FS &fs, const char * path, const char * message) {
+  //Serial.printf("Appending to file: %s\n", path);
+
+  File file = fs.open(path, FILE_APPEND);
+  if(!file) {
+    Serial.println("Failed to open file for appending");
+    return;
+  }
+  if(file.println(message)) {
+    //Serial.println("Message appended");
+  } else {
+    Serial.println("Append failed");
+  }
+  file.close();
+}
+
+
+
+void sleepLoop() {
+
+    tft.enableSleep(true);
+
+    pinMode(I2C_SCL_PIN, INPUT);
+    pinMode(I2C_SDA_PIN, INPUT);
+
+    digitalWrite(VEXT_SWITCH_PIN, HIGH);
+    digitalWrite(LCD_LED_PIN, LOW);
+    //esp_sleep_enable_ext0_wakeup(gpio_num_t(GPIO_NUM_0), LOW);
+    esp_sleep_enable_ext0_wakeup(gpio_num_t(JOYSTICK_BUTTON_PIN), LOW);
+    esp_sleep_enable_timer_wakeup(sleepTimeMinutes*60*1000*1000);
+    gpio_hold_en(GPIO_NUM_21);
+    //gpio_deep_sleep_hold_en();
+    //esp_deep_sleep_start();
+    delay(100);
+
+
+    bool leave = false;
+
+    while(!leave) {
+
+        updateSD();
+
+        esp_light_sleep_start();
+
+        leave = sleepWakeupHandler();
+
+    }
+    
+
+    //delay(10);
+    digitalWrite(VEXT_SWITCH_PIN, LOW);
+    //pinMode(I2C_SCL_PIN, OUTPUT);
+    //pinMode(I2C_SDA_PIN, OUTPUT);
+
+    tft.enableSleep(false);
+    tft.fillScreen(ST77XX_BLACK);
+    digitalWrite(LCD_LED_PIN, HIGH);
+
+}
+
+
+void updateSD() {
+
+    uint8_t card = SD.cardType();
+
+    if (sdCardConnected && card != CARD_NONE) {
+
+        uint32_t milliseconds = millis();//(float)bootcount*sleepTimeMinutes*60*1000;
+
+        uint32_t seconds = (milliseconds/1000)%60;
+        uint32_t minutes = (milliseconds/1000-seconds)/60%60;
+        uint32_t hours = (milliseconds/1000-seconds-minutes*60)/3600%24;
+        uint32_t days = (milliseconds/1000-seconds-minutes*60-hours*3600)/3600/24;
+
+        File file = SD.open("/lastmessage.txt");
+
+        if (file) {
+            SD.remove("/lastmessage.txt");
+        }
+
+        file.close();
+
+        String time = String(days) + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds " + bootcount + " boots";
+
+        appendFile(SD, "/lastmessage.txt", time.c_str());
+
+        delay(100);
+
+    }
+
+}
+
+
+bool sleepWakeupHandler() {
+
+    esp_sleep_wakeup_cause_t cause = esp_sleep_get_wakeup_cause();
+
+    if (cause == esp_sleep_wakeup_cause_t::ESP_SLEEP_WAKEUP_TIMER) {
+
+    } else return true;
+
+    return false;
+
+}

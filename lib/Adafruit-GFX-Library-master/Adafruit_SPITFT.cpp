@@ -1588,10 +1588,10 @@ void Adafruit_SPITFT::drawPixel(int16_t x, int16_t y, uint16_t color) {
   // Clip first...
   if ((x >= 0) && (x < _width) && (y >= 0) && (y < _height)) {
     // THEN set up transaction (if needed) and draw...
-    startWrite();
+    
     setAddrWindow(x, y, 1, 1);
     SPI_WRITE16(color);
-    endWrite();
+    
   }
 }
 
