@@ -5,7 +5,7 @@
 
 #include "button.h"
 
-#include "ADS1X15.h"
+#include "lib/ADS1X15-master/ADS1X15.h"
 
 
 enum DIRECTION_STATE {

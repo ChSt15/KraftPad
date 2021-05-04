@@ -302,7 +302,7 @@ void setup(void) {
   mp3->begin(file, out);
 
   audio = SD.open("/audio.mp3"); 
-  out->SetGain(2);
+  out->SetGain(1);
 
   file->open(audio.name());
 

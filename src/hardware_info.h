@@ -10,7 +10,7 @@
 #define LCD_CS_PIN 15
 #define LCD_RST_PIN 2
 #define LCD_DC_PIN 5
-#define LCD_LED_PIN 4
+#define LCD_LED_PIN 17
 
 //SPI Bus is standard pins
 
@@ -19,9 +19,9 @@
 #define I2C_SDA_PIN 26
 
 //LoRa
-#define SX1280_NSS_PIN 14
+#define SX1280_NSS_PIN 4
 #define SX1280_NRESET_PIN 16
-#define SX1280_TXEN_PIN 17
+#define SX1280_TXEN_PIN 14
 #define SX1280_RXEN_PIN 12
 #define SX1280_RFBUSY_PIN 34
 #define SX1280_DIO1_PIN 35
@@ -44,7 +44,7 @@
 
 //Analog stick
 #define JOYSTICK_Y_ADC_PIN 0
-#define JOYSTICK_X_ADC_PIN 2
+#define JOYSTICK_X_ADC_PIN 1
 #define JOYSTICK_BUTTON_PIN 36
 
 //Prog/Kill button
