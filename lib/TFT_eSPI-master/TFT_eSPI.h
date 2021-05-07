@@ -27,16 +27,16 @@
 ***************************************************************************************/
 
 //Standard support
-#include <Arduino.h>
-#include <Print.h>
-#include <SPI.h>
+#include "Arduino.h"
+#include "Print.h"
+#include "SPI.h"
 
 /***************************************************************************************
 **                         Section 2: Load library and processor specific header files
 ***************************************************************************************/
 // Include header file that defines the fonts loaded, the TFT drivers
 // available and the pins to be used, etc, etc
-#include <User_Setup_Select.h>
+#include "User_Setup_Select.h"
 
 // Handle FLASH based storage e.g. PROGMEM
 #if defined(ARDUINO_ARCH_RP2040)
@@ -53,9 +53,9 @@
     *(const unsigned long *)(_addr); \
   })
 #elif defined(__AVR__)
-  #include <avr/pgmspace.h>
+  #include "avr/pgmspace.h"
 #elif defined(ESP8266) || defined(ESP32)
-  #include <pgmspace.h>
+  #include "pgmspace.h"
 #else
   #define PROGMEM
 #endif
@@ -120,40 +120,40 @@
 // Only load the fonts defined in User_Setup.h (to save space)
 // Set flag so RLE rendering code is optionally compiled
 #ifdef LOAD_GLCD
-  #include <Fonts/glcdfont.c>
+  #include "Fonts/glcdfont.c"
 #endif
 
 #ifdef LOAD_FONT2
-  #include <Fonts/Font16.h>
+  #include "Fonts/Font16.h"
 #endif
 
 #ifdef LOAD_FONT4
-  #include <Fonts/Font32rle.h>
+  #include "Fonts/Font32rle.h"
   #define LOAD_RLE
 #endif
 
 #ifdef LOAD_FONT6
-  #include <Fonts/Font64rle.h>
+  #include "Fonts/Font64rle.h"
   #ifndef LOAD_RLE
     #define LOAD_RLE
   #endif
 #endif
 
 #ifdef LOAD_FONT7
-  #include <Fonts/Font7srle.h>
+  #include "Fonts/Font7srle.h"
   #ifndef LOAD_RLE
     #define LOAD_RLE
   #endif
 #endif
 
 #ifdef LOAD_FONT8
-  #include <Fonts/Font72rle.h>
+  #include "Fonts/Font72rle.h"
   #ifndef LOAD_RLE
     #define LOAD_RLE
   #endif
 #elif defined LOAD_FONT8N // Optional narrower version
   #define LOAD_FONT8
-  #include <Fonts/Font72x53rle.h>
+  #include "Fonts/Font72x53rle.h"
   #ifndef LOAD_RLE
     #define LOAD_RLE
   #endif
@@ -162,9 +162,9 @@
 #ifdef LOAD_GFXFF
   // We can include all the free fonts and they will only be built into
   // the sketch if they are used
-  #include <Fonts/GFXFF/gfxfont.h>
+  #include "Fonts/GFXFF/gfxfont.h"
   // Call up any user custom fonts
-  #include <User_Setups/User_Custom_Fonts.h>
+  #include "User_Setups/User_Custom_Fonts.h"
 #endif // #ifdef LOAD_GFXFF
 
 // Create a null default font in case some fonts not used (to prevent crash)

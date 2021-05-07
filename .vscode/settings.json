@@ -9,6 +9,11 @@
         "type_traits": "cpp",
         "utility": "cpp",
         "*.tpp": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "font16.c": "cpp",
+        "font32rle.c": "cpp",
+        "font7srle.c": "cpp",
+        "font72rle.c": "cpp",
+        "glcdfont.c": "cpp"
     }
 }
