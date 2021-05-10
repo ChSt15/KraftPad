@@ -23,7 +23,7 @@
 #define SX1280_NRESET_PIN 16
 #define SX1280_TXEN_PIN 14
 #define SX1280_RXEN_PIN 12
-#define SX1280_RFBUSY_PIN 34
+#define SX1280_RFBUSY_PIN 32
 #define SX1280_DIO1_PIN 35
 #define SX1280_SPIBUS SPI
 
@@ -58,6 +58,10 @@
 
 //Buzzer pin on DAC
 #define BUZZER_PIN 25
+
+//Ublox M8N GPS
+#define M8N_RX_PIN 34
+#define M8N_TX_PIN 21
 
 
 
