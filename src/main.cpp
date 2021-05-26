@@ -6,16 +6,25 @@
 
 
 SX1280Driver radio = SX1280Driver(SX1280_RFBUSY_PIN, SX1280_TXEN_PIN, SX1280_RXEN_PIN, SX1280_DIO1_PIN, SX1280_NRESET_PIN, SX1280_NSS_PIN);
-KraftKommunication commsPort(&radio, eKraftPacketNodeID_t::eKraftPacketNodeID_basestation);
+//KraftKommunication commsPort(&radio, eKraftPacketNodeID_t::eKraftPacketNodeID_basestation);
+BME280Driver baro(&Wire, 0x76);
 
 ST7735Driver display(LCD_LED_PIN);
 
 ADS1115Driver adc = ADS1115Driver(&Wire);
 
+float joystickValue[2];
+
 
 KinematicData kinematics;
 
 String commsMessage;
+
+eVehicleMode_t vehicleModeSet = eVehicleMode_t::eVehicleMode_Disarm;
+eVehicleMode_t vehicleModeIs = eVehicleMode_t::eVehicleMode_Disarm;
+
+WorldPosition vehicleWorldPosition;
+uint8_t vehicleNumSats = 0;
 
 
 uint32_t packetsCounter = 0;
@@ -52,66 +61,7 @@ public:
 PacketsPerSecond packetRateCalc;
 
 
-class Observer: public Task_Abstract {
-public:
 
-    Observer() : Task_Abstract(10, eTaskPriority_t::eTaskPriority_Middle, true) {}
-
-    void thread() {
-
-        //NavigationData navData = navigationmodule.getNavigationData();
-
-        //Quaternion att = navData.attitude;
-        //Vector vec = navData.attitude.copy().conjugate().rotateVector(navData.angularAcceleration);
-        //float altitude = navData.position.z;
-
-        //Serial.println(String("Attitude: w: ") + att.w + ", x: " + att.x + ", y: " + att.y + ", z: " + att.z + ". Altitude: " + altitude);
-        //Serial.println(String("Vec: x: ") + vec.x + ", y: " + vec.y + ", z: " + vec.z);
-
-        //Serial.println(String("Hello World! Speed: ") + F_CPU_ACTUAL + ", Rate: " + getSchedulerTickRate());
-
-        //digitalWrite(BUZZER_PIN, !digitalRead(BUZZER_PIN));
-
-
-        /*float voltage;
-        uint32_t timestamp;
-
-        for (int i = 0; i < 4; i++) {
-            if (adc.voltageAvailable(i)) {
-                adc.getVoltage(&voltage, &timestamp, i);
-                Serial.println(String("Channel: ") + i + String(", Voltage: ") + voltage + ", at time: " + timestamp + ", Rate: " + adc.measurementRate());
-                adc.flushVoltage(i);
-            }
-        }*/
-
-        display.clearDisplay();
-        display.drawString(String("Attitude w: ") + kinematics.attitude.w, 0, 0);
-        display.drawString(String("         x: ") + kinematics.attitude.x);
-        display.drawString(String("         y: ") + kinematics.attitude.y);
-        display.drawString(String("         z: ") + kinematics.attitude.z);
-        display.drawString(String("Altitude:   ") + kinematics.position.z);
-        display.drawString(String("Vertical Rate:") + kinematics.velocity.z);
-        display.drawString(commsMessage);
-        display.drawString(String("Packets per sec: ") + packetRateCalc.packetRate);
-
-        float voltage;
-        uint32_t timestamp;
-        adc.getVoltage(&voltage, &timestamp, JOYSTICK_X_ADC_PIN);
-        display.drawString(String("Joystick X: ") + voltage);
-        adc.getVoltage(&voltage, &timestamp, JOYSTICK_Y_ADC_PIN);
-        display.drawString(String("Joystick Y: ") + voltage);
-        adc.getVoltage(&voltage, &timestamp, VBAT_DIV_ADC_PIN);
-        display.drawString(String("VBat Y: ") + voltage/VBAT_DIV_FACTOR);
-
-        adc.flushVoltage(0);
-        adc.flushVoltage(1);
-        adc.flushVoltage(2);
-        adc.flushVoltage(3);
-
-    }
-
-
-};
 
 
 
@@ -122,9 +72,34 @@ public:
 
     NetworkingReceiver() : Task_Abstract(1000, eTaskPriority_t::eTaskPriority_Middle, true) {}
 
+    uint32_t countStart = 0;
+    uint32_t count = 0;
+    uint32_t rate = 0;
+
     void thread() {
 
-        commsPort.loop();
+        if (radio.available()) {
+
+            uint32_t time;
+
+            radio.receiveBuffer((uint8_t*)&time, sizeof(uint32_t));
+
+            count++;
+
+            Serial.println(String("Time receive: ") + time + " milliseconds. Rate: " + rate);
+
+        }
+
+        if (micros() - countStart >= 1000000) {
+            float dTime = float(micros() - countStart)/1000000;
+            countStart = micros();
+
+            rate = count/dTime;
+            count = 0;
+
+        } 
+
+        /*commsPort.loop();
 
         if (commsPort.messageAvailable()) {
 
@@ -177,9 +152,31 @@ public:
 
                 //Serial.println(String("position: ") + position.x + ", " + position.y + ", " + position.z);
 
+            } else if (messageInfo.payloadID == eKraftMessageType_KraftKontrol_t::eKraftMessageType_KraftKontrol_VehicleModeIs) {
+
+                KraftMessageVehicleModeIs vehicleModeIsMessage;
+
+                commsPort.getMessage(&vehicleModeIsMessage);
+
+                vehicleModeIs = vehicleModeIsMessage.getVehicleMode();
+
+                //Serial.println(String("position: ") + position.x + ", " + position.y + ", " + position.z);
+
+            } else if (messageInfo.payloadID == eKraftMessageType_KraftKontrol_t::eKraftMessageType_KraftKontrol_GNSSData) {
+
+                KraftMessageGNSSData message;
+
+                commsPort.getMessage(&message);
+
+                vehicleWorldPosition = message.getPosition();
+                vehicleNumSats = message.getNumSats();
+
+
+                //Serial.println(String("position: ") + position.x + ", " + position.y + ", " + position.z);
+
             }
 
-        }
+        }*/
 
     }
 
@@ -189,20 +186,30 @@ public:
 class NetworkingTransmitter: public Task_Abstract {
 public:
 
-    NetworkingTransmitter() : Task_Abstract(1, eTaskPriority_t::eTaskPriority_Middle, true) {}
+    NetworkingTransmitter() : Task_Abstract(20, eTaskPriority_t::eTaskPriority_Middle, true) {}
 
     void thread() {
 
-        if (!enableSending) return;
-        if (commsPort.networkBusy() || commsPort.networkAckBusy()) return;
+        //if (commsPort.networkBusy() || commsPort.networkAckBusy()) return;
 
-        packetsSent++;
+        /*packetsSent++;
 
         KraftMessageStringPacket stringPacket(String(String("Hello im ") + commsPort.getSelfID() + "! Time is: " + millis() + String("Im sending ") + packetRateCalc.sendRate + " packets per second").c_str());
 
         commsPort.sendMessage(&stringPacket, eKraftPacketNodeID_t::eKraftPacketNodeID_broadcast);
 
-        Serial.println("Sending: " + String("Hello im ") + commsPort.getSelfID() + "! Time is: " + millis());
+        Serial.println("Sending: " + String("Hello im ") + commsPort.getSelfID() + "! Time is: " + millis());*/
+
+        KraftMessageRCChannels message;
+
+        message.setChannel(int16_t((joystickValue[0])*500+1500), 0);
+        message.setChannel(int16_t((joystickValue[1])*500+1500), 0);
+
+        //commsPort.sendMessage(&message, eKraftPacketNodeID_t::eKraftPacketNodeID_broadcast);
+
+        KraftMessageVehicleModeSet vehicleModeSetMessage(vehicleModeSet);
+
+        //commsPort.sendMessage(&vehicleModeSetMessage, eKraftPacketNodeID_t::eKraftPacketNodeID_broadcast);
 
         //stopTaskThreading();
 
@@ -216,6 +223,83 @@ public:
 
 NetworkingTransmitter transmitter;
 NetworkingReceiver receiver;
+
+
+class Observer: public Task_Abstract {
+public:
+
+    Observer() : Task_Abstract(10, eTaskPriority_t::eTaskPriority_Middle, true) {}
+
+    void thread() {
+
+        //NavigationData navData = navigationmodule.getNavigationData();
+
+        //Quaternion att = navData.attitude;
+        //Vector vec = navData.attitude.copy().conjugate().rotateVector(navData.angularAcceleration);
+        //float altitude = navData.position.z;
+
+        //Serial.println(String("Attitude: w: ") + att.w + ", x: " + att.x + ", y: " + att.y + ", z: " + att.z + ". Altitude: " + altitude);
+        //Serial.println(String("Vec: x: ") + vec.x + ", y: " + vec.y + ", z: " + vec.z);
+
+        //Serial.println(String("Hello World! Speed: ") + F_CPU_ACTUAL + ", Rate: " + getSchedulerTickRate());
+
+        //digitalWrite(BUZZER_PIN, !digitalRead(BUZZER_PIN));
+
+
+        /*float voltage;
+        uint32_t timestamp;
+
+        for (int i = 0; i < 4; i++) {
+            if (adc.voltageAvailable(i)) {
+                adc.getVoltage(&voltage, &timestamp, i);
+                Serial.println(String("Channel: ") + i + String(", Voltage: ") + voltage + ", at time: " + timestamp + ", Rate: " + adc.measurementRate());
+                adc.flushVoltage(i);
+            }
+        }*/
+
+        if (!digitalRead(PROG_KILL_BUTTON_PIN) && !buttonLock) {
+            buttonLock = true;
+            if (vehicleModeSet == eVehicleMode_t::eVehicleMode_Disarm) vehicleModeSet = eVehicleMode_t::eVehicleMode_Arm;
+            else vehicleModeSet = eVehicleMode_t::eVehicleMode_Disarm;
+        } else if (digitalRead(PROG_KILL_BUTTON_PIN) && buttonLock) {
+            buttonLock = false;
+        }
+
+        display.clearDisplay();
+        display.drawString(String("Attitude w: ") + kinematics.attitude.w, 0, 0);
+        display.drawString(String("         x: ") + kinematics.attitude.x);
+        display.drawString(String("         y: ") + kinematics.attitude.y);
+        display.drawString(String("         z: ") + kinematics.attitude.z);
+        display.drawString(String("Position:x  ") + kinematics.position.x);
+        display.drawString(String("         y: ") + kinematics.position.y);
+        display.drawString(String("         z: ") + kinematics.position.z);
+        display.drawString(String("Vehicle mode set: ") + (vehicleModeSet == eVehicleMode_Arm ? "Armed." : "Disarmed."));
+        display.drawString(String("Vehicle mode is: ") + (vehicleModeIs == eVehicleMode_Arm ? "Armed." : "Disarmed."));
+        //display.drawString(commsMessage);
+        display.drawString(String("Packets per sec: ") + receiver.rate);
+
+        display.drawString(String("Vehicle lat: ") + String(vehicleWorldPosition.latitude,10));
+        display.drawString(String("Vehicle lon: ") + String(vehicleWorldPosition.longitude,10));
+        display.drawString(String("Vehicle num sats: ") + vehicleNumSats);
+
+        display.updateDisplay();
+
+        adc.flushVoltage(0);
+        adc.flushVoltage(1);
+        adc.flushVoltage(2);
+        adc.flushVoltage(3);
+
+    }
+
+
+private:
+
+    bool buttonLock = false;
+
+};
+
+
+
 
 Observer observer;
 
