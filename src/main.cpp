@@ -13,19 +13,19 @@
 
 BME280Driver baro(&Wire, 0x76);
 
-ST7735Driver display(LCD_LED_PIN);
+ST7735Driver display(SPI, LCD_LED_PIN, LCD_CS_PIN, LCD_DC_PIN, LCD_RST_PIN);
 
-ADS1115Driver adc = ADS1115Driver(&Wire);
+ADS1115Driver adc(Wire, 50);
 
 
-KinematicData kinematics;
+//KinematicData kinematics;
 
-Vector<> vehiclePosSet = Vector<>(0,0,2);
+//Vector<> vehiclePosSet = Vector<>(0,0,2);
 
-String commsMessage;
+//String commsMessage;
 
-WorldPosition vehicleWorldPosition;
-uint8_t vehicleNumSats = 0;
+//WorldPosition vehicleWorldPosition;
+//uint8_t vehicleNumSats = 0;
 
 
 
@@ -33,7 +33,7 @@ uint8_t vehicleNumSats = 0;
 class Observer: public Task_Abstract {
 public:
 
-    Observer() : Task_Abstract(10, eTaskPriority_t::eTaskPriority_Middle, true) {}
+    Observer() : Task_Abstract(20, eTaskPriority_t::eTaskPriority_Middle) {}
 
     void thread() {
 
@@ -73,7 +73,7 @@ public:
             buttonModeLock = false;
         }*/
 
-        if (digitalRead(JOYSTICK_BUTTON_PIN) && !joystickButtonLock) {
+        /*if (digitalRead(JOYSTICK_BUTTON_PIN) && !joystickButtonLock) {
             joystickButtonLock = true;
             controlPos = !controlPos;
         } else if (!digitalRead(JOYSTICK_BUTTON_PIN) && joystickButtonLock) joystickButtonLock = false;
@@ -135,9 +135,9 @@ public:
             vBat *= VBAT_DIV_FACTOR;
             vBat *= VBAT_CORRECTION_SCALER;
             vBat += VBAT_CORRECTION_OFFSET;
-        }
+        }*/
 
-        display.clearDisplay();
+        /*display.clearDisplay();
         display.drawString(String("Att w: ") + kinematics.attitude.w, 0, 0);
         display.drawString(String("    x: ") + kinematics.attitude.x);
         display.drawString(String("    y: ") + kinematics.attitude.y);
@@ -162,7 +162,8 @@ public:
         adc.flushVoltage(0);
         adc.flushVoltage(1);
         adc.flushVoltage(2);
-        adc.flushVoltage(3);
+        adc.flushVoltage(3);*/
+
 
     }
 
@@ -181,7 +182,40 @@ private:
 
 
 
+class ImAlive: public Task_Abstract {
+public:
 
+    ImAlive() : Task_Abstract(1, eTaskPriority_t::eTaskPriority_Realtime) {}
+
+    void thread() {
+
+        Serial.println(String("Num tasks: ") + Task_Abstract::getTaskList().getNumItems());
+        Serial.println("Task usages: ");
+        Serial.println(String("Scheduler: ") + String(Task_Abstract::getSchedulerSystemUsage()*100, 2));
+        for (uint32_t i = 0; i < Task_Abstract::getTaskList().getNumItems(); i++) {
+            Serial.println(String("- Task ") + (i+1) + ": Usage: " + String(Task_Abstract::getTaskList()[i]->getTaskSystemUsage()*100, 2) + ", rate: " + Task_Abstract::getTaskList()[i]->getLoopRate());
+        }
+
+    }
+
+    void init() {
+
+        Serial.println("IM ALIVE. IVE BEEN INITIALISED!");
+
+    }
+
+    void removal() {
+
+        Serial.println("WHY HAVE YOU FORSAKEN MEEEE!");
+
+    }
+
+
+};
+
+
+
+ImAlive imAlive;
 Observer observer;
 
 
