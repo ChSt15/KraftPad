@@ -2,227 +2,32 @@
 
 #include "KraftKontrol.h"
 
+#include "KraftKontrol/modules/hid_modules/display_modules/st7735_driver.h"
+
 #include "hardware_info.h"
 
 
-SX1280Driver radio = SX1280Driver(SX1280_RFBUSY_PIN, SX1280_TXEN_PIN, SX1280_RXEN_PIN, SX1280_DIO1_PIN, SX1280_NRESET_PIN, SX1280_NSS_PIN);
-//KraftKommunication commsPort(&radio, eKraftPacketNodeID_t::eKraftPacketNodeID_basestation);
+//SX1280Driver radio = SX1280Driver(SX1280_RFBUSY_PIN, SX1280_TXEN_PIN, SX1280_RXEN_PIN, SX1280_DIO1_PIN, SX1280_NRESET_PIN, SX1280_NSS_PIN);
+//KraftKommunication commsPort(&radio, eKraftPacketNodeID_t::eKraftPacketNodeID_controller);
+//KraftKonnectNetwork network(&commsPort);
+
 BME280Driver baro(&Wire, 0x76);
 
 ST7735Driver display(LCD_LED_PIN);
 
 ADS1115Driver adc = ADS1115Driver(&Wire);
 
-float joystickValue[2];
-
 
 KinematicData kinematics;
 
-String commsMessage;
+Vector<> vehiclePosSet = Vector<>(0,0,2);
 
-eVehicleMode_t vehicleModeSet = eVehicleMode_t::eVehicleMode_Disarm;
-eVehicleMode_t vehicleModeIs = eVehicleMode_t::eVehicleMode_Disarm;
+String commsMessage;
 
 WorldPosition vehicleWorldPosition;
 uint8_t vehicleNumSats = 0;
 
 
-uint32_t packetsCounter = 0;
-uint32_t packetsSent = 0;
-
-
-
-class PacketsPerSecond: public Task_Abstract {
-public:
-
-    PacketsPerSecond() : Task_Abstract(1, eTaskPriority_t::eTaskPriority_Middle, true) {}
-
-    void thread() {
-
-        float dTime = float(micros() - lastRun)/1000000;
-        lastRun = micros();
-
-        packetRate = packetsCounter/dTime;
-        packetsCounter = 0;
-
-        sendRate = packetsSent/dTime;
-        packetsSent = 0;
-
-    }
-
-    uint32_t packetRate = 0;
-    uint32_t sendRate = 0;
-
-    uint32_t lastRun = 0;
-
-};
-
-
-PacketsPerSecond packetRateCalc;
-
-
-
-
-
-
-
-
-class NetworkingReceiver: public Task_Abstract {
-public:
-
-    NetworkingReceiver() : Task_Abstract(1000, eTaskPriority_t::eTaskPriority_Middle, true) {}
-
-    uint32_t countStart = 0;
-    uint32_t count = 0;
-    uint32_t rate = 0;
-
-    void thread() {
-
-        if (radio.available()) {
-
-            uint32_t time;
-
-            radio.receiveBuffer((uint8_t*)&time, sizeof(uint32_t));
-
-            count++;
-
-            Serial.println(String("Time receive: ") + time + " milliseconds. Rate: " + rate);
-
-        }
-
-        if (micros() - countStart >= 1000000) {
-            float dTime = float(micros() - countStart)/1000000;
-            countStart = micros();
-
-            rate = count/dTime;
-            count = 0;
-
-        } 
-
-        /*commsPort.loop();
-
-        if (commsPort.messageAvailable()) {
-
-            packetsCounter++;
-
-            MessageData messageInfo = commsPort.getMessageInformation();
-
-            if (messageInfo.payloadID == eKraftMessageType_t::eKraftMessageType_String_ID) {
-
-                KraftMessageStringPacket stringPacket;
-
-                commsPort.getMessage(&stringPacket);
-
-                char string[stringPacket.getStringLength()];
-
-                stringPacket.getString(string, sizeof(string));
-
-                commsMessage = string;
-
-                //Serial.println(string + String(", Rate: ") + packetRateCalc.packetRate);
-
-            } else if (messageInfo.payloadID == eKraftMessageType_KraftKontrol_t::eKraftMessageType_KraftKontrol_Attitude) {
-
-                KraftMessageAttitude attitudeMessage;
-
-                commsPort.getMessage(&attitudeMessage);
-
-                kinematics.attitude = attitudeMessage.getAttitude();
-
-            } else if (messageInfo.payloadID == eKraftMessageType_KraftKontrol_t::eKraftMessageType_KraftKontrol_Position) {
-
-                
-
-                KraftMessagePosition positionMessage;
-
-                commsPort.getMessage(&positionMessage);
-
-                kinematics.position = positionMessage.getPosition();
-                //positionTimestamp = positionMessage.getTimestamp();
-
-                //Serial.println(String("position: ") + position.x + ", " + position.y + ", " + position.z);
-
-            } else if (messageInfo.payloadID == eKraftMessageType_KraftKontrol_t::eKraftMessageType_KraftKontrol_FullKinematics) {
-
-                KraftMessageFullKinematics kinematicsMessage;
-
-                commsPort.getMessage(&kinematicsMessage);
-
-                kinematics = kinematicsMessage.getKinematics();
-
-                //Serial.println(String("position: ") + position.x + ", " + position.y + ", " + position.z);
-
-            } else if (messageInfo.payloadID == eKraftMessageType_KraftKontrol_t::eKraftMessageType_KraftKontrol_VehicleModeIs) {
-
-                KraftMessageVehicleModeIs vehicleModeIsMessage;
-
-                commsPort.getMessage(&vehicleModeIsMessage);
-
-                vehicleModeIs = vehicleModeIsMessage.getVehicleMode();
-
-                //Serial.println(String("position: ") + position.x + ", " + position.y + ", " + position.z);
-
-            } else if (messageInfo.payloadID == eKraftMessageType_KraftKontrol_t::eKraftMessageType_KraftKontrol_GNSSData) {
-
-                KraftMessageGNSSData message;
-
-                commsPort.getMessage(&message);
-
-                vehicleWorldPosition = message.getPosition();
-                vehicleNumSats = message.getNumSats();
-
-
-                //Serial.println(String("position: ") + position.x + ", " + position.y + ", " + position.z);
-
-            }
-
-        }*/
-
-    }
-
-};
-
-
-class NetworkingTransmitter: public Task_Abstract {
-public:
-
-    NetworkingTransmitter() : Task_Abstract(20, eTaskPriority_t::eTaskPriority_Middle, true) {}
-
-    void thread() {
-
-        //if (commsPort.networkBusy() || commsPort.networkAckBusy()) return;
-
-        /*packetsSent++;
-
-        KraftMessageStringPacket stringPacket(String(String("Hello im ") + commsPort.getSelfID() + "! Time is: " + millis() + String("Im sending ") + packetRateCalc.sendRate + " packets per second").c_str());
-
-        commsPort.sendMessage(&stringPacket, eKraftPacketNodeID_t::eKraftPacketNodeID_broadcast);
-
-        Serial.println("Sending: " + String("Hello im ") + commsPort.getSelfID() + "! Time is: " + millis());*/
-
-        KraftMessageRCChannels message;
-
-        message.setChannel(int16_t((joystickValue[0])*500+1500), 0);
-        message.setChannel(int16_t((joystickValue[1])*500+1500), 0);
-
-        //commsPort.sendMessage(&message, eKraftPacketNodeID_t::eKraftPacketNodeID_broadcast);
-
-        KraftMessageVehicleModeSet vehicleModeSetMessage(vehicleModeSet);
-
-        //commsPort.sendMessage(&vehicleModeSetMessage, eKraftPacketNodeID_t::eKraftPacketNodeID_broadcast);
-
-        //stopTaskThreading();
-
-    }
-
-    bool enableSending = false;
-
-
-};
-
-
-NetworkingTransmitter transmitter;
-NetworkingReceiver receiver;
 
 
 class Observer: public Task_Abstract {
@@ -257,6 +62,56 @@ public:
             }
         }*/
 
+        /*if (!digitalRead(JOYSTICK_BUTTON_PIN) && !buttonModeLock) {
+            buttonModeLock = true;
+
+            currentPos++;
+            if (currentPos >= sizeof(posSetpoints)/sizeof(posSetpoints[0])) currentPos = 0;
+            vehiclePosSet = posSetpoints[currentPos];
+
+        } else if (digitalRead(JOYSTICK_BUTTON_PIN) && buttonModeLock) {
+            buttonModeLock = false;
+        }*/
+
+        if (digitalRead(JOYSTICK_BUTTON_PIN) && !joystickButtonLock) {
+            joystickButtonLock = true;
+            controlPos = !controlPos;
+        } else if (!digitalRead(JOYSTICK_BUTTON_PIN) && joystickButtonLock) joystickButtonLock = false;
+
+        const float thres = 0.3;
+
+        if ((abs(joystickValue[0]) > thres || abs(joystickValue[1]) > thres) && !posChangeLock) {
+
+            posChangeLock = true;
+
+            float angle = atan2(joystickValue[1], joystickValue[0])/DEGREES;
+
+            if (controlPos) {
+                if (abs(angle) < 22.5) vehiclePosSet += Vector<>(0,-1,0); 
+                else if (angle > 22.5 && angle < 67.5) vehiclePosSet += Vector<>(1,-1,0); 
+                else if (angle > 67.5 && angle < 112.5) vehiclePosSet += Vector<>(1,0,0); 
+                else if (angle > 112.5 && angle < 157.5) vehiclePosSet += Vector<>(1,1,0); 
+                else if (angle < -22.5 && angle > -67.5) vehiclePosSet += Vector<>(-1,-1,0); 
+                else if (angle < -67.5 && angle > -112.5) vehiclePosSet += Vector<>(-1,0,0); 
+                else if (angle < -112.5 && angle > -157.5) vehiclePosSet += Vector<>(-1,1,0); 
+                else vehiclePosSet += Vector<>(0,1,0); 
+            } else {
+                if (abs(angle) < 22.5) ;//vehiclePosSet += Vector<>(0,-1,0); 
+                else if (angle > 22.5 && angle < 67.5) vehiclePosSet += Vector<>(0,0,1); 
+                else if (angle > 67.5 && angle < 112.5) vehiclePosSet += Vector<>(0,0,1); 
+                else if (angle > 112.5 && angle < 157.5) vehiclePosSet += Vector<>(0,0,1); 
+                else if (angle < -22.5 && angle > -67.5) vehiclePosSet += Vector<>(0,0,-1); 
+                else if (angle < -67.5 && angle > -112.5) vehiclePosSet += Vector<>(0,0,-1); 
+                else if (angle < -112.5 && angle > -157.5) vehiclePosSet += Vector<>(0,0,-1); 
+                //else vehiclePosSet += Vector<>(0,1,0);
+            }
+
+        } else if ((abs(joystickValue[0]) < thres && abs(joystickValue[1]) < thres) && posChangeLock) {
+
+            posChangeLock = false;
+
+        }
+
         if (!digitalRead(PROG_KILL_BUTTON_PIN) && !buttonLock) {
             buttonLock = true;
             if (vehicleModeSet == eVehicleMode_t::eVehicleMode_Disarm) vehicleModeSet = eVehicleMode_t::eVehicleMode_Arm;
@@ -265,22 +120,42 @@ public:
             buttonLock = false;
         }
 
+        if (adc.voltageAvailable() > 0) {
+            uint32_t timestamp;
+            adc.getVoltage(&joystickValue[0], &timestamp, JOYSTICK_X_ADC_PIN);
+            adc.getVoltage(&joystickValue[1], &timestamp, JOYSTICK_Y_ADC_PIN);
+
+            joystickValue[0] -= 3.3/2;
+            joystickValue[0] /= -3.3/2;
+            joystickValue[1] -= 3.3/2;
+            joystickValue[1] /= -3.3/2;
+
+            adc.getVoltage(&vBat, &timestamp, VBAT_DIV_ADC_PIN);
+
+            vBat *= VBAT_DIV_FACTOR;
+            vBat *= VBAT_CORRECTION_SCALER;
+            vBat += VBAT_CORRECTION_OFFSET;
+        }
+
         display.clearDisplay();
-        display.drawString(String("Attitude w: ") + kinematics.attitude.w, 0, 0);
-        display.drawString(String("         x: ") + kinematics.attitude.x);
-        display.drawString(String("         y: ") + kinematics.attitude.y);
-        display.drawString(String("         z: ") + kinematics.attitude.z);
-        display.drawString(String("Position:x  ") + kinematics.position.x);
-        display.drawString(String("         y: ") + kinematics.position.y);
-        display.drawString(String("         z: ") + kinematics.position.z);
+        display.drawString(String("Att w: ") + kinematics.attitude.w, 0, 0);
+        display.drawString(String("    x: ") + kinematics.attitude.x);
+        display.drawString(String("    y: ") + kinematics.attitude.y);
+        display.drawString(String("    z: ") + kinematics.attitude.z);
+        display.drawString(String("Pos x: ") + vehiclePosSet.x + " is x: " + kinematics.position.x);
+        display.drawString(String("    y: ") + vehiclePosSet.y + "    y: " + kinematics.position.y);
+        display.drawString(String("    z: ") + vehiclePosSet.z + "    z: " + kinematics.position.z);
+        display.drawString(String("Control mode: ") + (controlPos ? "position":"height"));
+        display.drawString(commsMessage);
+
         display.drawString(String("Vehicle mode set: ") + (vehicleModeSet == eVehicleMode_Arm ? "Armed." : "Disarmed."));
         display.drawString(String("Vehicle mode is: ") + (vehicleModeIs == eVehicleMode_Arm ? "Armed." : "Disarmed."));
-        //display.drawString(commsMessage);
-        display.drawString(String("Packets per sec: ") + receiver.rate);
+        display.drawString(String("Packets per sec: ") + packetRateCalc.packetRate);
 
-        display.drawString(String("Vehicle lat: ") + String(vehicleWorldPosition.latitude,10));
-        display.drawString(String("Vehicle lon: ") + String(vehicleWorldPosition.longitude,10));
+        display.drawString(String("Vehicle lat: ") + String(vehicleWorldPosition.latitude/DEGREES,10));
+        display.drawString(String("Vehicle lon: ") + String(vehicleWorldPosition.longitude/DEGREES,10));
         display.drawString(String("Vehicle num sats: ") + vehicleNumSats);
+        display.drawString(String("VBat transmitter: ") + vBat);
 
         display.updateDisplay();
 
@@ -295,6 +170,12 @@ public:
 private:
 
     bool buttonLock = false;
+
+    bool posChangeLock = false;
+
+    bool joystickButtonLock = false;
+
+    bool controlPos = true;
 
 };
 
@@ -312,23 +193,13 @@ void setup() {
     pinMode(VEXT_SWITCH_PIN, OUTPUT);
     digitalWrite(VEXT_SWITCH_PIN, LOW);
 
-    pinMode(LCD_LED_PIN, OUTPUT);
-    digitalWrite(LCD_LED_PIN, LOW);
-
-    pinMode(JOYSTICK_BUTTON_PIN, INPUT);
-
-    pinMode(LCD_CS_PIN, OUTPUT);
-    digitalWrite(LCD_CS_PIN, HIGH);
-    pinMode(LCD_DC_PIN, OUTPUT);
-    digitalWrite(LCD_DC_PIN, HIGH);
-
-    pinMode(BUZZER_PIN, OUTPUT);
-
     Wire.begin(26, 27, 400000);
 
     //while(millis() < 10000) 
 
     //digitalWrite(LCD_LED_PIN, LOW);
+
+    Task_Abstract::schedulerInitTasks();
 
 }
 
@@ -336,15 +207,5 @@ void setup() {
 void loop() {
 
     Task_Abstract::schedulerTick();
-
-    if (digitalRead(JOYSTICK_BUTTON_PIN) == LOW) {
-
-        transmitter.enableSending = true;
-
-    } else {
-        transmitter.enableSending = false;
-    }
-
-    
     
 }
