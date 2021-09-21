@@ -7,8 +7,12 @@
 #include "KraftKontrol/modules/hid_modules/display_modules/st7735_driver.h"
 #include "KraftKontrol/modules/sensor_modules/imu_modules/bno080_driver.h"
 
+#include "KraftKontrol/KraftPacket_KontrolPackets/kraftkontrol_telemetry_messages.h"
+#include "KraftKontrol/modules/communication_modules/kraft_message_subscriber.h"
+
 #include "KraftKontrol/gui/menus/menu_list.h"
 #include "KraftKontrol/gui/menus/menu_test.h"
+#include "KraftKontrol/gui/menus/menu_vector.h"
 
 #include "kraftpad_specifics/menu_navigation_data.h"
 
@@ -34,7 +38,34 @@ Joystick joystick = Joystick(adc[JOYSTICK_X_ADC_PIN], adc[JOYSTICK_Y_ADC_PIN], J
 //Menu_List mainMenu("Main Menu", joystick);
 //Menu_NavigationData navMenu("NavigationData", imu.getNavigationDataTopic(), joystick);
 
-Gui gui = Gui(display, mainMenu);
+
+
+class TestVectorClass: public Topic<Vector<>>, public Task_Abstract {
+public:
+
+    TestVectorClass(): Task_Abstract("TestVectorClass", 100, eTaskPriority_t::eTaskPriority_Realtime) {}
+
+    TelemetryMessageAngularVelocity vector_;
+
+    KraftMessage_Subscriber subr_ = KraftMessage_Subscriber(vector_);
+
+    void init() {
+        subr_.subscribe(commsPort.getReceivedMessageTopic());
+    }
+
+    void thread() {
+
+        publish(vector_.getVector());
+
+    }
+
+} vectorTest;
+
+
+
+Menu_Vector menuVectorTest(vectorTest, "TestVector", joystick);
+
+Gui gui = Gui(display, menuVectorTest);
 
 
 
