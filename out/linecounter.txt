@@ -1,0 +1,1478 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2021-09-20 09:43:05
+count workspace : c:\Users\Chris\Documents\FlightSystems\KraftPad
+total files : 1436
+total code lines : 600079
+total comment lines : 95112
+total blank lines : 45344
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |             .h|         189606|          41624|          13296|     32|
+   |               |           2173|            127|            625|   0.36|
+   |           .ini|             13|             20|              3| 0.0022|
+   |           .cpp|          31214|          10338|           8016|    5.2|
+   |            .md|           1791|            147|           1043|   0.30|
+   |           .txt|           2555|             85|            623|   0.43|
+   |      .checksum|              1|              0|              0|0.00017|
+   |          .json|             44|              0|              1| 0.0073|
+   |    .properties|            104|             12|              0|  0.017|
+   |           .ino|          38153|          14293|          10692|    6.4|
+   |           .hpp|            177|             17|             66|  0.029|
+   |           .pdf|          33739|           8590|           2868|    5.6|
+   |           .yml|            175|              1|             30|  0.029|
+   |            .pc|             39|              1|              6| 0.0065|
+   |             .c|          53206|          19832|           7862|    8.9|
+   |       .ESP8266|             59|              4|             12| 0.0098|
+   |           .sed|             33|              0|              1| 0.0055|
+   |            .lo|            207|              0|             69|  0.034|
+   |          .Xiph|             24|              0|              5| 0.0040|
+   |          .LGPL|            249|              0|             49|  0.041|
+   |           .GPL|            130|              0|             26|  0.022|
+   |           .FDL|            109|              0|             23|  0.018|
+   |            .sh|            186|             21|             25|  0.031|
+   |          .skip|              0|              0|              0|    0.0|
+   |          .only|              0|              0|              0|    0.0|
+   |         .gcode|         246092|              0|              3|     41|
+   -------------------------------------------------------------------------
+.gitignore, code is 6, comment is 0, blank is 0.
+.gitmodules, code is 3, comment is 1, blank is 0.
+.pio\build\heltec_wifi_kit_32_v2\.sconsign39.dblite, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\idedata.json, code is 1, comment is 0, blank is 0.
+.pio\build\heltec_wifi_kit_32_v2\lib3c1\Adafruit-GFX-Library-master\Adafruit_GFX.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib3c1\Adafruit-GFX-Library-master\Adafruit_SPITFT.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib3c1\Adafruit-GFX-Library-master\glcdfont.c.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib3c1\libAdafruit-GFX-Library-master.a, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\gui\gui.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\gui\menu_abstract.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\gui\menus\menu_list.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\gui\menus\menu_test.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\lib\ADS1X15-master\ADS1X15.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\lib\Math-Helper\src\objects\quaternion_math.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\lib\Math-Helper\src\objects\vector_math.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\lib\MPU9250_Lib\src\MPU9250.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\lib\SparkFun_BME280\examples\More_Advanced\LCD_DeltaAltitude\CircularBuffer.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\lib\SparkFun_BME280\src\SparkFunBME280.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\lib\SparkFun_BNO080\src\SparkFun_BNO080_Arduino_Library.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\lib\SparkFun_u-blox_GNSS\src\SparkFun_u-blox_GNSS_Arduino_Library.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\lib\SX12XX-LoRa-master\src\SX128XLT.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\actuator_modules\actuator_abstract.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\data_manager_modules\data_storage_manager.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\datalink_modules\sx1280_lora_driver.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\eeprom_hal_modules_DEPRECATED\eeprom_hal_interface.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\eeprom_hal_modules_DEPRECATED\eeprom_hal_teensy.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\guidance_modules\guidance_flybywire.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\guidance_modules\guidance_path.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\hid_modules\display_modules\display_abstract.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\hid_modules\display_modules\st7735_driver.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\hid_modules\input_modules\analog_button.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\hid_modules\input_modules\button_abstract.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\hid_modules\input_modules\gpio_button.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\hid_modules\joystick_modules\joystick.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\module_abstract.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\navigation_modules\navigation_complementary.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\sensor_modules\adc_modules\adc_abstract.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\sensor_modules\adc_modules\ads1115_driver.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\sensor_modules\barometer_modules\bme280_driver.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\sensor_modules\gnss_modules\ublox_serial_gnss.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\sensor_modules\imu_modules\bno080_driver.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\sensor_modules\imu_modules\mpu9250_driver.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\modules\sensor_modules\magnetometer_modules\hmc5883_driver.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\outputs\rgb_led.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib5f6\KraftKontrol\outputs\servo_ppm.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib9b6\libSPI.a, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\lib9b6\SPI\SPI.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\libe06\libWire.a, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\libe06\Wire\Wire.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\libf99\Adafruit-ST7735-Library-master\Adafruit_ST7735.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\libf99\Adafruit-ST7735-Library-master\Adafruit_ST7789.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\libf99\Adafruit-ST7735-Library-master\Adafruit_ST77xx.cpp.o, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\libf99\libAdafruit-ST7735-Library-master.a, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\partitions.bin, it is a binary file.
+.pio\build\heltec_wifi_kit_32_v2\src\kraftpad_specifics\menu_navigation_data.cpp.o, it is a binary file.
+.pio\build\project.checksum, code is 1, comment is 0, blank is 0.
+case\gcode\CE3PRO_Ender3Pro_PLA_BLTouch_Controller.gcode, code is 246092, comment is 0, blank is 3.
+case\STL Files\Bottom.stl, it is a binary file.
+case\STL Files\Top.stl, it is a binary file.
+include\README, code is 13, comment is 1, blank is 5.
+lib\Adafruit-GFX-Library-master\.github\ISSUE_TEMPLATE.md, code is 21, comment is 2, blank is 7.
+lib\Adafruit-GFX-Library-master\.github\PULL_REQUEST_TEMPLATE.md, code is 10, comment is 0, blank is 3.
+lib\Adafruit-GFX-Library-master\.github\workflows\githubci.yml, code is 28, comment is 1, blank is 8.
+lib\Adafruit-GFX-Library-master\.gitignore, code is 6, comment is 0, blank is 0.
+lib\Adafruit-GFX-Library-master\Adafruit_GFX.cpp, code is 1461, comment is 1099, blank is 201.
+lib\Adafruit-GFX-Library-master\Adafruit_GFX.h, code is 218, comment is 153, blank is 39.
+lib\Adafruit-GFX-Library-master\Adafruit_SPITFT.cpp, code is 1672, comment is 1057, blank is 130.
+lib\Adafruit-GFX-Library-master\Adafruit_SPITFT.h, code is 308, comment is 338, blank is 43.
+lib\Adafruit-GFX-Library-master\Adafruit_SPITFT_Macros.h, code is 0, comment is 5, blank is 1.
+lib\Adafruit-GFX-Library-master\examples\GFXcanvas\GFXcanvas.ino, code is 68, comment is 28, blank is 18.
+lib\Adafruit-GFX-Library-master\examples\GFXcanvas\GFXcanvasSerialDemo.cpp, code is 80, comment is 0, blank is 12.
+lib\Adafruit-GFX-Library-master\examples\GFXcanvas\GFXcanvasSerialDemo.h, code is 19, comment is 40, blank is 7.
+lib\Adafruit-GFX-Library-master\examples\mock_ili9341\mock_ili9341.ino, code is 281, comment is 26, blank is 62.
+lib\Adafruit-GFX-Library-master\fontconvert\fontconvert.c, code is 157, comment is 123, blank is 33.
+lib\Adafruit-GFX-Library-master\fontconvert\fontconvert_win.md, code is 35, comment is 4, blank is 7.
+lib\Adafruit-GFX-Library-master\fontconvert\Makefile, code is 9, comment is 0, blank is 3.
+lib\Adafruit-GFX-Library-master\fontconvert\makefonts.sh, code is 22, comment is 12, blank is 4.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMono12pt7b.h, code is 222, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMono18pt7b.h, code is 358, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMono24pt7b.h, code is 572, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMono9pt7b.h, code is 171, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMonoBold12pt7b.h, code is 245, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMonoBold18pt7b.h, code is 418, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMonoBold24pt7b.h, code is 667, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMonoBold9pt7b.h, code is 184, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMonoBoldOblique12pt7b.h, code is 264, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMonoBoldOblique18pt7b.h, code is 455, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMonoBoldOblique24pt7b.h, code is 737, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMonoBoldOblique9pt7b.h, code is 198, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMonoOblique12pt7b.h, code is 243, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMonoOblique18pt7b.h, code is 393, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMonoOblique24pt7b.h, code is 638, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeMonoOblique9pt7b.h, code is 182, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSans12pt7b.h, code is 265, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSans18pt7b.h, code is 447, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSans24pt7b.h, code is 722, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSans9pt7b.h, code is 196, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSansBold12pt7b.h, code is 283, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSansBold18pt7b.h, code is 476, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSansBold24pt7b.h, code is 779, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSansBold9pt7b.h, code is 203, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSansBoldOblique12pt7b.h, code is 312, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSansBoldOblique18pt7b.h, code is 540, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSansBoldOblique24pt7b.h, code is 888, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSansBoldOblique9pt7b.h, code is 222, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSansOblique12pt7b.h, code is 297, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSansOblique18pt7b.h, code is 513, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSansOblique24pt7b.h, code is 835, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSansOblique9pt7b.h, code is 215, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerif12pt7b.h, code is 254, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerif18pt7b.h, code is 424, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerif24pt7b.h, code is 685, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerif9pt7b.h, code is 190, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerifBold12pt7b.h, code is 266, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerifBold18pt7b.h, code is 457, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerifBold24pt7b.h, code is 754, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerifBold9pt7b.h, code is 197, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerifBoldItalic12pt7b.h, code is 287, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerifBoldItalic18pt7b.h, code is 495, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerifBoldItalic24pt7b.h, code is 788, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerifBoldItalic9pt7b.h, code is 210, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerifItalic12pt7b.h, code is 266, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerifItalic18pt7b.h, code is 445, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerifItalic24pt7b.h, code is 732, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\FreeSerifItalic9pt7b.h, code is 197, comment is 96, blank is 3.
+lib\Adafruit-GFX-Library-master\Fonts\Org_01.h, code is 121, comment is 98, blank is 4.
+lib\Adafruit-GFX-Library-master\Fonts\Picopixel.h, code is 113, comment is 98, blank is 4.
+lib\Adafruit-GFX-Library-master\Fonts\Tiny3x3a2pt7b.h, code is 112, comment is 109, blank is 4.
+lib\Adafruit-GFX-Library-master\Fonts\TomThumb.h, code is 419, comment is 48, blank is 4.
+lib\Adafruit-GFX-Library-master\gfxfont.h, code is 18, comment is 19, blank is 4.
+lib\Adafruit-GFX-Library-master\glcdfont.c, code is 131, comment is 16, blank is 6.
+lib\Adafruit-GFX-Library-master\library.properties, code is 10, comment is 1, blank is 0.
+lib\Adafruit-GFX-Library-master\license.txt, code is 20, comment is 0, blank is 4.
+lib\Adafruit-GFX-Library-master\README.md, code is 11, comment is 2, blank is 8.
+lib\Adafruit-ST7735-Library-master\.github\ISSUE_TEMPLATE.md, code is 21, comment is 2, blank is 7.
+lib\Adafruit-ST7735-Library-master\.github\PULL_REQUEST_TEMPLATE.md, code is 10, comment is 0, blank is 3.
+lib\Adafruit-ST7735-Library-master\.github\workflows\githubci.yml, code is 29, comment is 0, blank is 7.
+lib\Adafruit-ST7735-Library-master\.gitignore, code is 8, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\Adafruit_ST7735.cpp, code is 280, comment is 186, blank is 28.
+lib\Adafruit-ST7735-Library-master\Adafruit_ST7735.h, code is 51, comment is 10, blank is 13.
+lib\Adafruit-ST7735-Library-master\Adafruit_ST7789.cpp, code is 96, comment is 83, blank is 18.
+lib\Adafruit-ST7735-Library-master\Adafruit_ST7789.h, code is 21, comment is 5, blank is 6.
+lib\Adafruit-ST7735-Library-master\Adafruit_ST77xx.cpp, code is 106, comment is 240, blank is 27.
+lib\Adafruit-ST7735-Library-master\Adafruit_ST77xx.h, code is 76, comment is 35, blank is 16.
+lib\Adafruit-ST7735-Library-master\examples\displayOnOffTest\displayOnOffTest.ino, code is 104, comment is 90, blank is 64.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest\.cpb.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest\graphicstest.ino, code is 233, comment is 82, blank is 52.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_hallowing_m0\.hallowing_m0.test.only, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_hallowing_m0\graphicstest_hallowing_m0.ino, code is 225, comment is 41, blank is 37.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_hallowing_m4\.hallowing_m4.test.only, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_hallowing_m4\graphicstest_hallowing_m4.ino, code is 225, comment is 41, blank is 38.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_pybadge_pygamer\.pybadge.test.only, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_pybadge_pygamer\.pygamer.test.only, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_pybadge_pygamer\graphicstest_pybadge_pygamer.ino, code is 226, comment is 44, blank is 37.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_tft_gizmo\.cplayClassic.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_tft_gizmo\.due.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_tft_gizmo\.esp32.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_tft_gizmo\.esp8266.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_tft_gizmo\.leonardo.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_tft_gizmo\.mega2560.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_tft_gizmo\.uno.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\graphicstest_tft_gizmo\graphicstest_tft_gizmo.ino, code is 231, comment is 44, blank is 38.
+lib\Adafruit-ST7735-Library-master\examples\miniTFTWing\basic\.cpb.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\miniTFTWing\basic\.mega2560.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\miniTFTWing\basic\basic.ino, code is 99, comment is 10, blank is 21.
+lib\Adafruit-ST7735-Library-master\examples\miniTFTWing\graphicstest\.cpb.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\miniTFTWing\graphicstest\.mega2560.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\miniTFTWing\graphicstest\graphicstest.ino, code is 241, comment is 28, blank is 43.
+lib\Adafruit-ST7735-Library-master\examples\rotationtest\rotationtest.ino, code is 231, comment is 99, blank is 70.
+lib\Adafruit-ST7735-Library-master\examples\seesaw_shield18_test\.leonardo.test.skip, code is 0, comment is 0, blank is 0.
+lib\Adafruit-ST7735-Library-master\examples\seesaw_shield18_test\seesaw_shield18_test.ino, code is 236, comment is 94, blank is 43.
+lib\Adafruit-ST7735-Library-master\examples\shieldtest\shieldtest.ino, code is 179, comment is 81, blank is 35.
+lib\Adafruit-ST7735-Library-master\library.properties, code is 10, comment is 1, blank is 0.
+lib\Adafruit-ST7735-Library-master\README.txt, code is 15, comment is 2, blank is 6.
+lib\ESP8266Audio-master\.github\workflows\pr-or-master-push.yml, code is 86, comment is 0, blank is 9.
+lib\ESP8266Audio-master\examples\MixerSample\MixerSample.ino, code is 55, comment is 2, blank is 11.
+lib\ESP8266Audio-master\examples\MixerSample\viola.h, code is 49898, comment is 0, blank is 0.
+lib\ESP8266Audio-master\examples\PlayAACFromPROGMEM\homer.aac, it is a binary file.
+lib\ESP8266Audio-master\examples\PlayAACFromPROGMEM\PlayAACFromPROGMEM.ino, code is 26, comment is 0, blank is 7.
+lib\ESP8266Audio-master\examples\PlayAACFromPROGMEM\sampleaac.h, code is 2811, comment is 0, blank is 1.
+lib\ESP8266Audio-master\examples\PlayFLAC-SD-SPDIF\PlayFLAC-SD-SPDIF.ino, code is 46, comment is 14, blank is 8.
+lib\ESP8266Audio-master\examples\PlayFLACFromPROGMEMToDAC\PlayFLACFromPROGMEMToDAC.ino, code is 27, comment is 0, blank is 6.
+lib\ESP8266Audio-master\examples\PlayFLACFromPROGMEMToDAC\sample.h, code is 5707, comment is 0, blank is 0.
+lib\ESP8266Audio-master\examples\PlayMIDIFromLittleFS\data\1mgm.sf2, it is a binary file.
+lib\ESP8266Audio-master\examples\PlayMIDIFromLittleFS\data\furelise.mid, it is a binary file.
+lib\ESP8266Audio-master\examples\PlayMIDIFromLittleFS\PlayMIDIFromLittleFS.ino, code is 46, comment is 0, blank is 8.
+lib\ESP8266Audio-master\examples\PlayMIDIFromSPIFFS\data\1mgm.sf2, it is a binary file.
+lib\ESP8266Audio-master\examples\PlayMIDIFromSPIFFS\data\furelise.mid, it is a binary file.
+lib\ESP8266Audio-master\examples\PlayMIDIFromSPIFFS\PlayMIDIFromSPIFFS.ino, code is 44, comment is 0, blank is 11.
+lib\ESP8266Audio-master\examples\PlayMODFromPROGMEMToDAC\enigma.h, code is 15587, comment is 0, blank is 0.
+lib\ESP8266Audio-master\examples\PlayMODFromPROGMEMToDAC\PlayMODFromPROGMEMToDAC.ino, code is 36, comment is 3, blank is 6.
+lib\ESP8266Audio-master\examples\PlayMP3FromSPIFFS\data\pno-cs.mp3, it is a binary file.
+lib\ESP8266Audio-master\examples\PlayMP3FromSPIFFS\PlayMP3FromSPIFFS.ino, code is 56, comment is 5, blank is 11.
+lib\ESP8266Audio-master\examples\PlayMP3ToSPDIF\PlayMP3ToSPDIF.ino, code is 81, comment is 7, blank is 11.
+lib\ESP8266Audio-master\examples\PlayOpusFromSPIFFS\data\gs-16b-2c-44100hz.opus, it is a binary file.
+lib\ESP8266Audio-master\examples\PlayOpusFromSPIFFS\PlayOpusFromSPIFFS.ino, code is 35, comment is 1, blank is 5.
+lib\ESP8266Audio-master\examples\PlayRTTTLToI2SDAC\PlayRTTTLToI2SDAC.ino, code is 28, comment is 1, blank is 7.
+lib\ESP8266Audio-master\examples\PlayWAVFromFunction\PlayWAVFromFunction.ino, code is 36, comment is 40, blank is 8.
+lib\ESP8266Audio-master\examples\PlayWAVFromPROGMEM\PlayWAVFromPROGMEM.ino, code is 28, comment is 1, blank is 7.
+lib\ESP8266Audio-master\examples\PlayWAVFromPROGMEM\viola.h, code is 49898, comment is 0, blank is 0.
+lib\ESP8266Audio-master\examples\StreamMP3FromHTTP\StreamMP3FromHTTP.ino, code is 81, comment is 9, blank is 18.
+lib\ESP8266Audio-master\examples\StreamMP3FromHTTP_SPIRAM\Schema_Spiram.png, it is a binary file.
+lib\ESP8266Audio-master\examples\StreamMP3FromHTTP_SPIRAM\StreamMP3FromHTTP_SPIRAM.ino, code is 80, comment is 9, blank is 16.
+lib\ESP8266Audio-master\examples\StreamOnHost\AudioOutputLinuxDSP.h, code is 83, comment is 20, blank is 15.
+lib\ESP8266Audio-master\examples\StreamOnHost\AudioOutputNullSlow.h, code is 29, comment is 22, blank is 6.
+lib\ESP8266Audio-master\examples\StreamOnHost\onHost, code is 8, comment is 56, blank is 3.
+lib\ESP8266Audio-master\examples\StreamOnHost\StreamOnHost.ino, code is 89, comment is 12, blank is 18.
+lib\ESP8266Audio-master\examples\TalkingClockI2S\TalkingClockI2S.ino, code is 160, comment is 4, blank is 21.
+lib\ESP8266Audio-master\examples\WebRadio\web.cpp, code is 236, comment is 41, blank is 48.
+lib\ESP8266Audio-master\examples\WebRadio\web.h, code is 25, comment is 34, blank is 12.
+lib\ESP8266Audio-master\examples\WebRadio\WebRadio.ino, code is 322, comment is 35, blank is 48.
+lib\ESP8266Audio-master\keywords.txt, code is 32, comment is 0, blank is 0.
+lib\ESP8266Audio-master\library.json, code is 22, comment is 0, blank is 1.
+lib\ESP8266Audio-master\library.properties, code is 9, comment is 1, blank is 0.
+lib\ESP8266Audio-master\LICENSE, code is 219, comment is 3, blank is 47.
+lib\ESP8266Audio-master\README.md, code is 39, comment is 10, blank is 28.
+lib\ESP8266Audio-master\src\AudioFileSource.h, code is 25, comment is 19, blank is 7.
+lib\ESP8266Audio-master\src\AudioFileSourceBuffer.cpp, code is 140, comment is 26, blank is 25.
+lib\ESP8266Audio-master\src\AudioFileSourceBuffer.h, code is 31, comment is 20, blank is 12.
+lib\ESP8266Audio-master\src\AudioFileSourceFATFS.h, code is 26, comment is 27, blank is 11.
+lib\ESP8266Audio-master\src\AudioFileSourceFunction.cpp, code is 108, comment is 29, blank is 15.
+lib\ESP8266Audio-master\src\AudioFileSourceFunction.h, code is 82, comment is 37, blank is 14.
+lib\ESP8266Audio-master\src\AudioFileSourceID3.cpp, code is 214, comment is 34, blank is 35.
+lib\ESP8266Audio-master\src\AudioFileSourceID3.h, code is 20, comment is 19, blank is 9.
+lib\ESP8266Audio-master\src\AudioFileSourceLittleFS.h, code is 15, comment is 21, blank is 8.
+lib\ESP8266Audio-master\src\AudioFileSourcePROGMEM.cpp, code is 65, comment is 19, blank is 15.
+lib\ESP8266Audio-master\src\AudioFileSourcePROGMEM.h, code is 23, comment is 19, blank is 7.
+lib\ESP8266Audio-master\src\AudioFileSourceSD.cpp, code is 48, comment is 19, blank is 11.
+lib\ESP8266Audio-master\src\AudioFileSourceSD.h, code is 21, comment is 19, blank is 9.
+lib\ESP8266Audio-master\src\AudioFileSourceSPIFFS.h, code is 13, comment is 20, blank is 7.
+lib\ESP8266Audio-master\src\AudioFileSourceSPIRAMBuffer.cpp, code is 120, comment is 32, blank is 19.
+lib\ESP8266Audio-master\src\AudioFileSourceSPIRAMBuffer.h, code is 35, comment is 22, blank is 8.
+lib\ESP8266Audio-master\src\AudioFileSourceSTDIO.cpp, code is 52, comment is 33, blank is 13.
+lib\ESP8266Audio-master\src\AudioFileSourceSTDIO.h, code is 23, comment is 21, blank is 10.
+lib\ESP8266Audio-master\src\AudioFileStream.cpp, code is 51, comment is 2, blank is 8.
+lib\ESP8266Audio-master\src\AudioFileStream.h, code is 22, comment is 20, blank is 6.
+lib\ESP8266Audio-master\src\AudioGenerator.h, code is 28, comment is 19, blank is 7.
+lib\ESP8266Audio-master\src\AudioGeneratorAAC.cpp, code is 158, comment is 36, blank is 35.
+lib\ESP8266Audio-master\src\AudioGeneratorAAC.h, code is 30, comment is 26, blank is 11.
+lib\ESP8266Audio-master\src\AudioGeneratorFLAC.cpp, code is 154, comment is 26, blank is 22.
+lib\ESP8266Audio-master\src\AudioGeneratorFLAC.h, code is 58, comment is 23, blank is 8.
+lib\ESP8266Audio-master\src\AudioGeneratorMIDI.cpp, code is 445, comment is 111, blank is 92.
+lib\ESP8266Audio-master\src\AudioGeneratorMIDI.h, code is 130, comment is 24, blank is 27.
+lib\ESP8266Audio-master\src\AudioGeneratorMOD.cpp, code is 678, comment is 92, blank is 150.
+lib\ESP8266Audio-master\src\AudioGeneratorMOD.h, code is 116, comment is 29, blank is 27.
+lib\ESP8266Audio-master\src\AudioGeneratorMP3.cpp, code is 327, comment is 45, blank is 49.
+lib\ESP8266Audio-master\src\AudioGeneratorMP3.h, code is 52, comment is 22, blank is 11.
+lib\ESP8266Audio-master\src\AudioGeneratorMP3a.cpp, code is 113, comment is 37, blank is 22.
+lib\ESP8266Audio-master\src\AudioGeneratorMP3a.h, code is 26, comment is 26, blank is 8.
+lib\ESP8266Audio-master\src\AudioGeneratorOpus.cpp, code is 95, comment is 24, blank is 25.
+lib\ESP8266Audio-master\src\AudioGeneratorOpus.h, code is 39, comment is 23, blank is 9.
+lib\ESP8266Audio-master\src\AudioGeneratorRTTTL.cpp, code is 229, comment is 31, blank is 35.
+lib\ESP8266Audio-master\src\AudioGeneratorRTTTL.h, code is 31, comment is 25, blank is 10.
+lib\ESP8266Audio-master\src\AudioGeneratorTalkie.cpp, code is 218, comment is 53, blank is 39.
+lib\ESP8266Audio-master\src\AudioGeneratorTalkie.h, code is 29, comment is 28, blank is 11.
+lib\ESP8266Audio-master\src\AudioGeneratorWAV.cpp, code is 239, comment is 53, blank is 36.
+lib\ESP8266Audio-master\src\AudioGeneratorWAV.h, code is 30, comment is 21, blank is 10.
+lib\ESP8266Audio-master\src\AudioLogger.cpp, code is 3, comment is 0, blank is 2.
+lib\ESP8266Audio-master\src\AudioLogger.h, code is 11, comment is 2, blank is 6.
+lib\ESP8266Audio-master\src\AudioOutput.h, code is 54, comment is 22, blank is 10.
+lib\ESP8266Audio-master\src\AudioOutputBuffer.cpp, code is 56, comment is 22, blank is 12.
+lib\ESP8266Audio-master\src\AudioOutputBuffer.h, code is 24, comment is 19, blank is 6.
+lib\ESP8266Audio-master\src\AudioOutputFilterBiquad.cpp, code is 190, comment is 26, blank is 35.
+lib\ESP8266Audio-master\src\AudioOutputFilterBiquad.h, code is 51, comment is 20, blank is 9.
+lib\ESP8266Audio-master\src\AudioOutputFilterDecimate.cpp, code is 73, comment is 27, blank is 13.
+lib\ESP8266Audio-master\src\AudioOutputFilterDecimate.h, code is 26, comment is 19, blank is 6.
+lib\ESP8266Audio-master\src\AudioOutputI2S.cpp, code is 264, comment is 31, blank is 24.
+lib\ESP8266Audio-master\src\AudioOutputI2S.h, code is 38, comment is 21, blank is 6.
+lib\ESP8266Audio-master\src\AudioOutputI2SNoDAC.cpp, code is 74, comment is 33, blank is 14.
+lib\ESP8266Audio-master\src\AudioOutputI2SNoDAC.h, code is 19, comment is 21, blank is 5.
+lib\ESP8266Audio-master\src\AudioOutputMixer.cpp, code is 182, comment is 31, blank is 35.
+lib\ESP8266Audio-master\src\AudioOutputMixer.h, code is 54, comment is 25, blank is 12.
+lib\ESP8266Audio-master\src\AudioOutputNull.h, code is 20, comment is 19, blank is 6.
+lib\ESP8266Audio-master\src\AudioOutputSerialWAV.cpp, code is 52, comment is 20, blank is 7.
+lib\ESP8266Audio-master\src\AudioOutputSerialWAV.h, code is 15, comment is 19, blank is 5.
+lib\ESP8266Audio-master\src\AudioOutputSPDIF.cpp, code is 207, comment is 76, blank is 18.
+lib\ESP8266Audio-master\src\AudioOutputSPDIF.h, code is 37, comment is 36, blank is 8.
+lib\ESP8266Audio-master\src\AudioOutputSTDIO.cpp, code is 74, comment is 24, blank is 19.
+lib\ESP8266Audio-master\src\AudioOutputSTDIO.h, code is 20, comment is 20, blank is 7.
+lib\ESP8266Audio-master\src\AudioOutputULP.cpp, code is 174, comment is 91, blank is 31.
+lib\ESP8266Audio-master\src\AudioOutputULP.h, code is 31, comment is 31, blank is 10.
+lib\ESP8266Audio-master\src\AudioStatus.h, code is 23, comment is 22, blank is 12.
+lib\ESP8266Audio-master\src\driver\SinglePinI2SDriver.cpp, code is 195, comment is 65, blank is 28.
+lib\ESP8266Audio-master\src\driver\SinglePinI2SDriver.h, code is 53, comment is 24, blank is 10.
+lib\ESP8266Audio-master\src\ESP8266Audio.h, code is 39, comment is 7, blank is 4.
+lib\ESP8266Audio-master\src\libflac\AUTHORS, code is 26, comment is 19, blank is 14.
+lib\ESP8266Audio-master\src\libflac\bitmath.c, code is 12, comment is 57, blank is 6.
+lib\ESP8266Audio-master\src\libflac\bitreader.c, code is 795, comment is 183, blank is 122.
+lib\ESP8266Audio-master\src\libflac\config.h, code is 81, comment is 93, blank is 74.
+lib\ESP8266Audio-master\src\libflac\COPYING.FDL, code is 109, comment is 0, blank is 23.
+lib\ESP8266Audio-master\src\libflac\COPYING.GPL, code is 130, comment is 0, blank is 26.
+lib\ESP8266Audio-master\src\libflac\COPYING.LGPL, code is 249, comment is 0, blank is 49.
+lib\ESP8266Audio-master\src\libflac\COPYING.Xiph, code is 24, comment is 0, blank is 5.
+lib\ESP8266Audio-master\src\libflac\cpu.c, code is 228, comment is 43, blank is 28.
+lib\ESP8266Audio-master\src\libflac\crc.c, code is 100, comment is 35, blank is 15.
+lib\ESP8266Audio-master\src\libflac\fixed.c, code is 258, comment is 97, blank is 42.
+lib\ESP8266Audio-master\src\libflac\FLAC\assert.h, code is 11, comment is 32, blank is 3.
+lib\ESP8266Audio-master\src\libflac\FLAC\callback.h, code is 26, comment is 143, blank is 16.
+lib\ESP8266Audio-master\src\libflac\FLAC\export.h, code is 26, comment is 57, blank is 14.
+lib\ESP8266Audio-master\src\libflac\FLAC\format.h, code is 326, comment is 507, blank is 192.
+lib\ESP8266Audio-master\src\libflac\FLAC\metadata.h, code is 145, comment is 1884, blank is 153.
+lib\ESP8266Audio-master\src\libflac\FLAC\ordinals.h, code is 35, comment is 35, blank is 15.
+lib\ESP8266Audio-master\src\libflac\FLAC\stream_decoder.h, code is 176, comment is 1275, blank is 122.
+lib\ESP8266Audio-master\src\libflac\float.c, code is 226, comment is 225, blank is 13.
+lib\ESP8266Audio-master\src\libflac\format.c, code is 407, comment is 108, blank is 79.
+lib\ESP8266Audio-master\src\libflac\lpc.c, code is 1193, comment is 96, blank is 70.
+lib\ESP8266Audio-master\src\libflac\md5.c, code is 387, comment is 68, blank is 63.
+lib\ESP8266Audio-master\src\libflac\memory.c, code is 156, comment is 34, blank is 30.
+lib\ESP8266Audio-master\src\libflac\private\bitmath.h, code is 130, comment is 65, blank is 17.
+lib\ESP8266Audio-master\src\libflac\private\bitreader.h, code is 34, comment is 48, blank is 9.
+lib\ESP8266Audio-master\src\libflac\private\cpu.h, code is 138, comment is 34, blank is 23.
+lib\ESP8266Audio-master\src\libflac\private\crc.h, code is 17, comment is 40, blank is 9.
+lib\ESP8266Audio-master\src\libflac\private\fixed.h, code is 31, comment is 69, blank is 7.
+lib\ESP8266Audio-master\src\libflac\private\float.h, code is 19, comment is 66, blank is 10.
+lib\ESP8266Audio-master\src\libflac\private\format.h, code is 10, comment is 31, blank is 4.
+lib\ESP8266Audio-master\src\libflac\private\lpc.h, code is 99, comment is 148, blank is 16.
+lib\ESP8266Audio-master\src\libflac\private\macros.h, code is 32, comment is 32, blank is 10.
+lib\ESP8266Audio-master\src\libflac\private\md5.h, code is 19, comment is 24, blank is 7.
+lib\ESP8266Audio-master\src\libflac\private\memory.h, code is 16, comment is 36, blank is 6.
+lib\ESP8266Audio-master\src\libflac\private\metadata.h, code is 6, comment is 35, blank is 5.
+lib\ESP8266Audio-master\src\libflac\private\window.h, code is 25, comment is 42, blank is 7.
+lib\ESP8266Audio-master\src\libflac\protected\all.h, code is 5, comment is 31, blank is 3.
+lib\ESP8266Audio-master\src\libflac\protected\stream_decoder.h, code is 21, comment is 34, blank is 5.
+lib\ESP8266Audio-master\src\libflac\protected\stream_encoder.h, code is 77, comment is 32, blank is 10.
+lib\ESP8266Audio-master\src\libflac\README, code is 62, comment is 19, blank is 22.
+lib\ESP8266Audio-master\src\libflac\README.ESP8266, code is 2, comment is 0, blank is 0.
+lib\ESP8266Audio-master\src\libflac\share\alloc.h, code is 152, comment is 46, blank is 21.
+lib\ESP8266Audio-master\src\libflac\share\compat.h, code is 142, comment is 46, blank is 25.
+lib\ESP8266Audio-master\src\libflac\share\endswap.h, code is 32, comment is 33, blank is 19.
+lib\ESP8266Audio-master\src\libflac\share\getopt.h, code is 42, comment is 123, blank is 24.
+lib\ESP8266Audio-master\src\libflac\share\macros.h, code is 5, comment is 37, blank is 3.
+lib\ESP8266Audio-master\src\libflac\share\private.h, code is 8, comment is 34, blank is 3.
+lib\ESP8266Audio-master\src\libflac\share\safe_str.h, code is 23, comment is 37, blank is 11.
+lib\ESP8266Audio-master\src\libflac\share\utf8.h, code is 5, comment is 17, blank is 3.
+lib\ESP8266Audio-master\src\libflac\stream_decoder.c, code is 2614, comment is 435, blank is 371.
+lib\ESP8266Audio-master\src\libflac\window.c, code is 205, comment is 36, blank is 43.
+lib\ESP8266Audio-master\src\libhelix-aac\aaccommon.h, code is 120, comment is 55, blank is 32.
+lib\ESP8266Audio-master\src\libhelix-aac\aacdec.c, code is 236, comment is 174, blank is 66.
+lib\ESP8266Audio-master\src\libhelix-aac\aacdec.h, code is 102, comment is 52, blank is 20.
+lib\ESP8266Audio-master\src\libhelix-aac\aactabs.c, code is 64, comment is 64, blank is 29.
+lib\ESP8266Audio-master\src\libhelix-aac\assembly.h, code is 362, comment is 158, blank is 120.
+lib\ESP8266Audio-master\src\libhelix-aac\bitstream.c, code is 93, comment is 148, blank is 20.
+lib\ESP8266Audio-master\src\libhelix-aac\bitstream.h, code is 22, comment is 45, blank is 7.
+lib\ESP8266Audio-master\src\libhelix-aac\buffers.c, code is 56, comment is 93, blank is 16.
+lib\ESP8266Audio-master\src\libhelix-aac\coder.h, code is 233, comment is 84, blank is 56.
+lib\ESP8266Audio-master\src\libhelix-aac\dct4.c, code is 155, comment is 152, blank is 32.
+lib\ESP8266Audio-master\src\libhelix-aac\decelmnt.c, code is 201, comment is 172, blank is 52.
+lib\ESP8266Audio-master\src\libhelix-aac\dequant.c, code is 197, comment is 141, blank is 35.
+lib\ESP8266Audio-master\src\libhelix-aac\fft.c, code is 196, comment is 156, blank is 45.
+lib\ESP8266Audio-master\src\libhelix-aac\filefmt.c, code is 224, comment is 208, blank is 64.
+lib\ESP8266Audio-master\src\libhelix-aac\huffman.c, code is 206, comment is 176, blank is 39.
+lib\ESP8266Audio-master\src\libhelix-aac\hufftabs.c, code is 113, comment is 57, blank is 7.
+lib\ESP8266Audio-master\src\libhelix-aac\imdct.c, code is 316, comment is 196, blank is 81.
+lib\ESP8266Audio-master\src\libhelix-aac\noiseless.c, code is 241, comment is 204, blank is 43.
+lib\ESP8266Audio-master\src\libhelix-aac\pns.c, code is 153, comment is 167, blank is 37.
+lib\ESP8266Audio-master\src\libhelix-aac\readme.txt, code is 70, comment is 27, blank is 15.
+lib\ESP8266Audio-master\src\libhelix-aac\sbr.c, code is 212, comment is 161, blank is 58.
+lib\ESP8266Audio-master\src\libhelix-aac\sbr.h, code is 250, comment is 71, blank is 62.
+lib\ESP8266Audio-master\src\libhelix-aac\sbrfft.c, code is 207, comment is 117, blank is 44.
+lib\ESP8266Audio-master\src\libhelix-aac\sbrfreq.c, code is 310, comment is 251, blank is 80.
+lib\ESP8266Audio-master\src\libhelix-aac\sbrhfadj.c, code is 497, comment is 281, blank is 75.
+lib\ESP8266Audio-master\src\libhelix-aac\sbrhfgen.c, code is 359, comment is 195, blank is 62.
+lib\ESP8266Audio-master\src\libhelix-aac\sbrhuff.c, code is 223, comment is 211, blank is 42.
+lib\ESP8266Audio-master\src\libhelix-aac\sbrimdct.c, code is 242, comment is 136, blank is 69.
+lib\ESP8266Audio-master\src\libhelix-aac\sbrmath.c, code is 65, comment is 107, blank is 23.
+lib\ESP8266Audio-master\src\libhelix-aac\sbrqmf.c, code is 266, comment is 212, blank is 49.
+lib\ESP8266Audio-master\src\libhelix-aac\sbrside.c, code is 306, comment is 180, blank is 89.
+lib\ESP8266Audio-master\src\libhelix-aac\sbrtabs.c, code is 308, comment is 81, blank is 11.
+lib\ESP8266Audio-master\src\libhelix-aac\statname.h, code is 49, comment is 54, blank is 12.
+lib\ESP8266Audio-master\src\libhelix-aac\stproc.c, code is 126, comment is 95, blank is 25.
+lib\ESP8266Audio-master\src\libhelix-aac\tns.c, code is 134, comment is 136, blank is 30.
+lib\ESP8266Audio-master\src\libhelix-aac\trigtabs.c, code is 720, comment is 258, blank is 26.
+lib\ESP8266Audio-master\src\libhelix-mp3\assembly.h, code is 225, comment is 87, blank is 63.
+lib\ESP8266Audio-master\src\libhelix-mp3\bitstream.c, code is 179, comment is 170, blank is 40.
+lib\ESP8266Audio-master\src\libhelix-mp3\buffers.c, code is 59, comment is 106, blank is 13.
+lib\ESP8266Audio-master\src\libhelix-mp3\coder.h, code is 207, comment is 63, blank is 40.
+lib\ESP8266Audio-master\src\libhelix-mp3\dct32.c, code is 161, comment is 88, blank is 33.
+lib\ESP8266Audio-master\src\libhelix-mp3\dequant.c, code is 65, comment is 81, blank is 12.
+lib\ESP8266Audio-master\src\libhelix-mp3\dqchan.c, code is 194, comment is 124, blank is 61.
+lib\ESP8266Audio-master\src\libhelix-mp3\huffman.c, code is 271, comment is 143, blank is 51.
+lib\ESP8266Audio-master\src\libhelix-mp3\hufftabs.c, code is 640, comment is 93, blank is 23.
+lib\ESP8266Audio-master\src\libhelix-mp3\imdct.c, code is 440, comment is 271, blank is 83.
+lib\ESP8266Audio-master\src\libhelix-mp3\LICENSE.txt, code is 25, comment is 1, blank is 5.
+lib\ESP8266Audio-master\src\libhelix-mp3\mp3common.h, code is 54, comment is 53, blank is 17.
+lib\ESP8266Audio-master\src\libhelix-mp3\mp3dec.c, code is 241, comment is 195, blank is 48.
+lib\ESP8266Audio-master\src\libhelix-mp3\mp3dec.h, code is 71, comment is 48, blank is 17.
+lib\ESP8266Audio-master\src\libhelix-mp3\mp3tabs.c, code is 96, comment is 73, blank is 13.
+lib\ESP8266Audio-master\src\libhelix-mp3\mpadecobjfixpt.h, code is 35, comment is 63, blank is 13.
+lib\ESP8266Audio-master\src\libhelix-mp3\player.h, code is 7, comment is 4, blank is 4.
+lib\ESP8266Audio-master\src\libhelix-mp3\polyphase.c, code is 159, comment is 99, blank is 37.
+lib\ESP8266Audio-master\src\libhelix-mp3\RCSL.txt, code is 304, comment is 4, blank is 71.
+lib\ESP8266Audio-master\src\libhelix-mp3\RPSL.txt, code is 170, comment is 1, blank is 33.
+lib\ESP8266Audio-master\src\libhelix-mp3\scalfact.c, code is 213, comment is 153, blank is 27.
+lib\ESP8266Audio-master\src\libhelix-mp3\statname.h, code is 28, comment is 51, blank is 10.
+lib\ESP8266Audio-master\src\libhelix-mp3\stproc.c, code is 152, comment is 122, blank is 25.
+lib\ESP8266Audio-master\src\libhelix-mp3\subband.c, code is 29, comment is 60, blank is 8.
+lib\ESP8266Audio-master\src\libhelix-mp3\trigtabs.c, code is 117, comment is 188, blank is 14.
+lib\ESP8266Audio-master\src\libmad\bit.c, code is 143, comment is 61, blank is 42.
+lib\ESP8266Audio-master\src\libmad\bit.h, code is 18, comment is 20, blank is 9.
+lib\ESP8266Audio-master\src\libmad\CHANGES, code is 137, comment is 0, blank is 93.
+lib\ESP8266Audio-master\src\libmad\config.h, code is 46, comment is 58, blank is 46.
+lib\ESP8266Audio-master\src\libmad\COPYING, code is 133, comment is 0, blank is 23.
+lib\ESP8266Audio-master\src\libmad\COPYRIGHT, code is 15, comment is 0, blank is 6.
+lib\ESP8266Audio-master\src\libmad\CREDITS, code is 63, comment is 0, blank is 17.
+lib\ESP8266Audio-master\src\libmad\D.dat.h, code is 544, comment is 28, blank is 35.
+lib\ESP8266Audio-master\src\libmad\decoder.c, code is 428, comment is 43, blank is 115.
+lib\ESP8266Audio-master\src\libmad\decoder.h, code is 57, comment is 20, blank is 14.
+lib\ESP8266Audio-master\src\libmad\fixed.c, code is 36, comment is 30, blank is 15.
+lib\ESP8266Audio-master\src\libmad\fixed.h, code is 322, comment is 109, blank is 68.
+lib\ESP8266Audio-master\src\libmad\frame.c, code is 299, comment is 92, blank is 113.
+lib\ESP8266Audio-master\src\libmad\frame.h, code is 74, comment is 20, blank is 27.
+lib\ESP8266Audio-master\src\libmad\global.h, code is 27, comment is 22, blank is 10.
+lib\ESP8266Audio-master\src\libmad\huffman.c, code is 2379, comment is 2646, blank is 366.
+lib\ESP8266Audio-master\src\libmad\huffman.h, code is 40, comment is 22, blank is 7.
+lib\ESP8266Audio-master\src\libmad\imdct_s.dat.h, code is 36, comment is 26, blank is 6.
+lib\ESP8266Audio-master\src\libmad\layer3.c, code is 1967, comment is 320, blank is 508.
+lib\ESP8266Audio-master\src\libmad\layer3.h, code is 6, comment is 20, blank is 4.
+lib\ESP8266Audio-master\src\libmad\LICENSE, code is 219, comment is 3, blank is 47.
+lib\ESP8266Audio-master\src\libmad\mad.h, code is 639, comment is 129, blank is 201.
+lib\ESP8266Audio-master\src\libmad\mad.h.sed, code is 33, comment is 0, blank is 1.
+lib\ESP8266Audio-master\src\libmad\qc_table.dat.h, code is 51, comment is 24, blank is 2.
+lib\ESP8266Audio-master\src\libmad\README, code is 76, comment is 1, blank is 38.
+lib\ESP8266Audio-master\src\libmad\README.ESP8266, code is 31, comment is 2, blank is 6.
+lib\ESP8266Audio-master\src\libmad\rq_table.dat.h, code is 8207, comment is 8233, blank is 514.
+lib\ESP8266Audio-master\src\libmad\sf_table.dat.h, code is 64, comment is 33, blank is 9.
+lib\ESP8266Audio-master\src\libmad\stream.c, code is 90, comment is 44, blank is 30.
+lib\ESP8266Audio-master\src\libmad\stream.h, code is 65, comment is 21, blank is 22.
+lib\ESP8266Audio-master\src\libmad\synth.c, code is 645, comment is 127, blank is 195.
+lib\ESP8266Audio-master\src\libmad\synth.h, code is 33, comment is 25, blank is 14.
+lib\ESP8266Audio-master\src\libmad\timer.c, code is 323, comment is 77, blank is 85.
+lib\ESP8266Audio-master\src\libmad\timer.h, code is 51, comment is 25, blank is 24.
+lib\ESP8266Audio-master\src\libmad\TODO, code is 59, comment is 0, blank is 10.
+lib\ESP8266Audio-master\src\libmad\VERSION, code is 6, comment is 0, blank is 1.
+lib\ESP8266Audio-master\src\libmad\version.c, code is 39, comment is 20, blank is 32.
+lib\ESP8266Audio-master\src\libmad\version.h, code is 20, comment is 20, blank is 7.
+lib\ESP8266Audio-master\src\libogg\AUTHORS, code is 6, comment is 0, blank is 1.
+lib\ESP8266Audio-master\src\libogg\bitwise.c, code is 874, comment is 57, blank is 156.
+lib\ESP8266Audio-master\src\libogg\CHANGES, code is 76, comment is 1, blank is 28.
+lib\ESP8266Audio-master\src\libogg\config.h, code is 32, comment is 38, blank is 34.
+lib\ESP8266Audio-master\src\libogg\COPYING, code is 23, comment is 0, blank is 5.
+lib\ESP8266Audio-master\src\libogg\crctable.h, code is 259, comment is 11, blank is 9.
+lib\ESP8266Audio-master\src\libogg\framing.c, code is 1521, comment is 257, blank is 333.
+lib\ESP8266Audio-master\src\libogg\ogg.pc, code is 12, comment is 0, blank is 2.
+lib\ESP8266Audio-master\src\libogg\ogg\config_types.h, code is 21, comment is 1, blank is 4.
+lib\ESP8266Audio-master\src\libogg\ogg\ogg.h, code is 137, comment is 36, blank is 36.
+lib\ESP8266Audio-master\src\libogg\ogg\os_types.h, code is 109, comment is 25, blank is 24.
+lib\ESP8266Audio-master\src\libogg\README.esp8266.md, code is 2, comment is 0, blank is 1.
+lib\ESP8266Audio-master\src\libogg\README.md, code is 37, comment is 6, blank is 21.
+lib\ESP8266Audio-master\src\libopus\analysis.h, code is 52, comment is 39, blank is 12.
+lib\ESP8266Audio-master\src\libopus\AUTHORS, code is 6, comment is 0, blank is 0.
+lib\ESP8266Audio-master\src\libopus\celt\_kiss_fft_guts.h, code is 114, comment is 39, blank is 29.
+lib\ESP8266Audio-master\src\libopus\celt\arch.h, code is 195, comment is 40, blank is 53.
+lib\ESP8266Audio-master\src\libopus\celt\bands.c, code is 1389, comment is 171, blank is 112.
+lib\ESP8266Audio-master\src\libopus\celt\bands.h, code is 39, comment is 68, blank is 16.
+lib\ESP8266Audio-master\src\libopus\celt\celt.c, code is 247, comment is 46, blank is 23.
+lib\ESP8266Audio-master\src\libopus\celt\celt.h, code is 148, comment is 44, blank is 59.
+lib\ESP8266Audio-master\src\libopus\celt\celt_decoder.c, code is 1126, comment is 131, blank is 117.
+lib\ESP8266Audio-master\src\libopus\celt\celt_encoder.c, code is 2136, comment is 279, blank is 192.
+lib\ESP8266Audio-master\src\libopus\celt\celt_lpc.c, code is 249, comment is 33, blank is 14.
+lib\ESP8266Audio-master\src\libopus\celt\celt_lpc.h, code is 30, comment is 26, blank is 10.
+lib\ESP8266Audio-master\src\libopus\celt\cpu_support.h, code is 23, comment is 39, blank is 8.
+lib\ESP8266Audio-master\src\libopus\celt\cwrs.c, code is 453, comment is 238, blank is 25.
+lib\ESP8266Audio-master\src\libopus\celt\cwrs.h, code is 13, comment is 28, blank is 7.
+lib\ESP8266Audio-master\src\libopus\celt\ecintrin.h, code is 37, comment is 44, blank is 6.
+lib\ESP8266Audio-master\src\libopus\celt\entcode.c, code is 96, comment is 52, blank is 5.
+lib\ESP8266Audio-master\src\libopus\celt\entcode.h, code is 72, comment is 63, blank is 17.
+lib\ESP8266Audio-master\src\libopus\celt\entdec.c, code is 138, comment is 93, blank is 14.
+lib\ESP8266Audio-master\src\libopus\celt\entdec.h, code is 13, comment is 77, blank is 10.
+lib\ESP8266Audio-master\src\libopus\celt\entenc.c, code is 197, comment is 81, blank is 16.
+lib\ESP8266Audio-master\src\libopus\celt\entenc.h, code is 15, comment is 84, blank is 11.
+lib\ESP8266Audio-master\src\libopus\celt\fixed_debug.h, code is 712, comment is 36, blank is 43.
+lib\ESP8266Audio-master\src\libopus\celt\fixed_generic.h, code is 78, comment is 71, blank is 29.
+lib\ESP8266Audio-master\src\libopus\celt\float_cast.h, code is 55, comment is 63, blank is 28.
+lib\ESP8266Audio-master\src\libopus\celt\kiss_fft.c, code is 477, comment is 62, blank is 66.
+lib\ESP8266Audio-master\src\libopus\celt\kiss_fft.h, code is 97, comment is 66, blank is 37.
+lib\ESP8266Audio-master\src\libopus\celt\laplace.c, code is 91, comment is 37, blank is 6.
+lib\ESP8266Audio-master\src\libopus\celt\laplace.h, code is 4, comment is 41, blank is 3.
+lib\ESP8266Audio-master\src\libopus\celt\mathops.c, code is 125, comment is 70, blank is 14.
+lib\ESP8266Audio-master\src\libopus\celt\mathops.h, code is 197, comment is 56, blank is 37.
+lib\ESP8266Audio-master\src\libopus\celt\mdct.c, code is 251, comment is 69, blank is 23.
+lib\ESP8266Audio-master\src\libopus\celt\mdct.h, code is 50, comment is 43, blank is 19.
+lib\ESP8266Audio-master\src\libopus\celt\mfrngcod.h, code is 11, comment is 34, blank is 3.
+lib\ESP8266Audio-master\src\libopus\celt\modes.c, code is 326, comment is 67, blank is 49.
+lib\ESP8266Audio-master\src\libopus\celt\modes.h, code is 33, comment is 31, blank is 11.
+lib\ESP8266Audio-master\src\libopus\celt\os_support.h, code is 38, comment is 41, blank is 13.
+lib\ESP8266Audio-master\src\libopus\celt\pitch.c, code is 450, comment is 54, blank is 33.
+lib\ESP8266Audio-master\src\libopus\celt\pitch.h, code is 135, comment is 35, blank is 22.
+lib\ESP8266Audio-master\src\libopus\celt\quant_bands.c, code is 456, comment is 69, blank is 38.
+lib\ESP8266Audio-master\src\libopus\celt\quant_bands.h, code is 27, comment is 27, blank is 12.
+lib\ESP8266Audio-master\src\libopus\celt\rate.c, code is 488, comment is 116, blank is 40.
+lib\ESP8266Audio-master\src\libopus\celt\rate.h, code is 49, comment is 37, blank is 15.
+lib\ESP8266Audio-master\src\libopus\celt\stack_alloc.h, code is 87, comment is 64, blank is 33.
+lib\ESP8266Audio-master\src\libopus\celt\static_modes_fixed.h, code is 872, comment is 4, blank is 16.
+lib\ESP8266Audio-master\src\libopus\celt\static_modes_float.h, code is 868, comment is 4, blank is 16.
+lib\ESP8266Audio-master\src\libopus\celt\vq.c, code is 320, comment is 79, blank is 43.
+lib\ESP8266Audio-master\src\libopus\celt\vq.h, code is 21, comment is 47, blank is 11.
+lib\ESP8266Audio-master\src\libopus\ChangeLog, code is 0, comment is 0, blank is 0.
+lib\ESP8266Audio-master\src\libopus\config.h, code is 33, comment is 112, blank is 65.
+lib\ESP8266Audio-master\src\libopus\COPYING, code is 35, comment is 3, blank is 9.
+lib\ESP8266Audio-master\src\libopus\INSTALL, code is 189, comment is 0, blank is 58.
+lib\ESP8266Audio-master\src\libopus\mapping_matrix.c, code is 308, comment is 37, blank is 33.
+lib\ESP8266Audio-master\src\libopus\mapping_matrix.h, code is 77, comment is 36, blank is 20.
+lib\ESP8266Audio-master\src\libopus\mlp.h, code is 25, comment is 25, blank is 10.
+lib\ESP8266Audio-master\src\libopus\NEWS, code is 0, comment is 0, blank is 0.
+lib\ESP8266Audio-master\src\libopus\opus.c, code is 273, comment is 60, blank is 23.
+lib\ESP8266Audio-master\src\libopus\opus.h, code is 99, comment is 830, blank is 52.
+lib\ESP8266Audio-master\src\libopus\opus.pc, code is 14, comment is 1, blank is 2.
+lib\ESP8266Audio-master\src\libopus\opus_custom.h, code is 92, comment is 214, blank is 36.
+lib\ESP8266Audio-master\src\libopus\opus_decoder.c, code is 864, comment is 77, blank is 92.
+lib\ESP8266Audio-master\src\libopus\opus_defines.h, code is 181, comment is 562, blank is 56.
+lib\ESP8266Audio-master\src\libopus\opus_encoder.c, code is 2348, comment is 218, blank is 218.
+lib\ESP8266Audio-master\src\libopus\opus_multistream.c, code is 54, comment is 28, blank is 10.
+lib\ESP8266Audio-master\src\libopus\opus_multistream.h, code is 118, comment is 502, blank is 40.
+lib\ESP8266Audio-master\src\libopus\opus_multistream_decoder.c, code is 476, comment is 36, blank is 37.
+lib\ESP8266Audio-master\src\libopus\opus_multistream_encoder.c, code is 1185, comment is 65, blank is 78.
+lib\ESP8266Audio-master\src\libopus\opus_private.h, code is 123, comment is 46, blank is 32.
+lib\ESP8266Audio-master\src\libopus\opus_projection.h, code is 97, comment is 416, blank is 55.
+lib\ESP8266Audio-master\src\libopus\opus_projection_decoder.c, code is 191, comment is 37, blank is 30.
+lib\ESP8266Audio-master\src\libopus\opus_projection_encoder.c, code is 380, comment is 44, blank is 44.
+lib\ESP8266Audio-master\src\libopus\opus_types.h, code is 100, comment is 39, blank is 27.
+lib\ESP8266Audio-master\src\libopus\README, code is 112, comment is 8, blank is 46.
+lib\ESP8266Audio-master\src\libopus\repacketizer.c, code is 300, comment is 46, blank is 28.
+lib\ESP8266Audio-master\src\libopus\silk\A2NLSF.c, code is 172, comment is 67, blank is 28.
+lib\ESP8266Audio-master\src\libopus\silk\ana_filt_bank_1.c, code is 29, comment is 36, blank is 9.
+lib\ESP8266Audio-master\src\libopus\silk\API.h, code is 63, comment is 56, blank is 16.
+lib\ESP8266Audio-master\src\libopus\silk\biquad_alt.c, code is 63, comment is 43, blank is 15.
+lib\ESP8266Audio-master\src\libopus\silk\bwexpander.c, code is 16, comment is 31, blank is 4.
+lib\ESP8266Audio-master\src\libopus\silk\bwexpander_32.c, code is 16, comment is 29, blank is 5.
+lib\ESP8266Audio-master\src\libopus\silk\check_control_input.c, code is 72, comment is 29, blank is 5.
+lib\ESP8266Audio-master\src\libopus\silk\CNG.c, code is 121, comment is 43, blank is 20.
+lib\ESP8266Audio-master\src\libopus\silk\code_signs.c, code is 72, comment is 36, blank is 7.
+lib\ESP8266Audio-master\src\libopus\silk\control.h, code is 49, comment is 64, blank is 37.
+lib\ESP8266Audio-master\src\libopus\silk\control_audio_bandwidth.c, code is 72, comment is 50, blank is 10.
+lib\ESP8266Audio-master\src\libopus\silk\control_codec.c, code is 315, comment is 64, blank is 44.
+lib\ESP8266Audio-master\src\libopus\silk\control_SNR.c, code is 72, comment is 34, blank is 7.
+lib\ESP8266Audio-master\src\libopus\silk\debug.c, code is 125, comment is 34, blank is 11.
+lib\ESP8266Audio-master\src\libopus\silk\debug.h, code is 183, comment is 55, blank is 28.
+lib\ESP8266Audio-master\src\libopus\silk\dec_API.c, code is 307, comment is 71, blank is 41.
+lib\ESP8266Audio-master\src\libopus\silk\decode_core.c, code is 148, comment is 57, blank is 32.
+lib\ESP8266Audio-master\src\libopus\silk\decode_frame.c, code is 52, comment is 60, blank is 18.
+lib\ESP8266Audio-master\src\libopus\silk\decode_indices.c, code is 77, comment is 60, blank is 14.
+lib\ESP8266Audio-master\src\libopus\silk\decode_parameters.c, code is 50, comment is 49, blank is 16.
+lib\ESP8266Audio-master\src\libopus\silk\decode_pitch.c, code is 40, comment is 31, blank is 6.
+lib\ESP8266Audio-master\src\libopus\silk\decode_pulses.c, code is 55, comment is 50, blank is 10.
+lib\ESP8266Audio-master\src\libopus\silk\decoder_set_fs.c, code is 62, comment is 34, blank is 12.
+lib\ESP8266Audio-master\src\libopus\silk\define.h, code is 112, comment is 71, blank is 51.
+lib\ESP8266Audio-master\src\libopus\silk\enc_API.c, code is 428, comment is 91, blank is 57.
+lib\ESP8266Audio-master\src\libopus\silk\encode_indices.c, code is 104, comment is 61, blank is 16.
+lib\ESP8266Audio-master\src\libopus\silk\encode_pulses.c, code is 128, comment is 60, blank is 18.
+lib\ESP8266Audio-master\src\libopus\silk\errors.h, code is 26, comment is 50, blank is 22.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\apply_sine_window_FIX.c, code is 42, comment is 47, blank is 12.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\apply_sine_window_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\apply_sine_window_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\autocorr_FIX.c, code is 16, comment is 29, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\autocorr_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\autocorr_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\burg_modified_FIX.c, code is 216, comment is 51, blank is 19.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\burg_modified_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\burg_modified_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\corrMatrix_FIX.c, code is 93, comment is 46, blank is 11.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\corrMatrix_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\corrMatrix_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\encode_frame_FIX.c, code is 284, comment is 112, blank is 52.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\encode_frame_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\encode_frame_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\find_LPC_FIX.c, code is 85, comment is 45, blank is 21.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\find_LPC_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\find_LPC_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\find_LTP_FIX.c, code is 62, comment is 31, blank is 6.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\find_LTP_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\find_LTP_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\find_pitch_lags_FIX.c, code is 68, comment is 54, blank is 21.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\find_pitch_lags_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\find_pitch_lags_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\find_pred_coefs_FIX.c, code is 74, comment is 50, blank is 21.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\find_pred_coefs_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\find_pred_coefs_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\k2a_FIX.c, code is 21, comment is 29, blank is 4.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\k2a_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\k2a_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\k2a_Q16_FIX.c, code is 21, comment is 29, blank is 4.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\k2a_Q16_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\k2a_Q16_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\LTP_analysis_filter_FIX.c, code is 43, comment is 33, blank is 14.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\LTP_analysis_filter_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\LTP_analysis_filter_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\LTP_scale_ctrl_FIX.c, code is 18, comment is 31, blank is 4.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\LTP_scale_ctrl_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\LTP_scale_ctrl_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\main_FIX.h, code is 161, comment is 56, blank is 27.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\noise_shape_analysis_FIX.c, code is 262, comment is 101, blank is 44.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\noise_shape_analysis_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\noise_shape_analysis_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\pitch_analysis_core_FIX.c, code is 532, comment is 112, blank is 77.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\pitch_analysis_core_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\pitch_analysis_core_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\process_gains_FIX.c, code is 67, comment is 39, blank is 11.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\process_gains_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\process_gains_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\regularize_correlations_FIX.c, code is 15, comment is 29, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\regularize_correlations_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\regularize_correlations_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\residual_energy16_FIX.c, code is 59, comment is 33, blank is 11.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\residual_energy16_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\residual_energy16_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\residual_energy_FIX.c, code is 45, comment is 41, blank is 12.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\residual_energy_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\residual_energy_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\schur64_FIX.c, code is 44, comment is 36, blank is 13.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\schur64_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\schur64_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\schur_FIX.c, code is 53, comment is 41, blank is 13.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\schur_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\schur_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\structs_FIX.h, code is 58, comment is 44, blank is 14.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\vector_ops_FIX.c, code is 59, comment is 35, blank is 8.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\vector_ops_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\vector_ops_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\warped_autocorrelation_FIX.c, code is 52, comment is 34, blank is 8.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\warped_autocorrelation_FIX.lo, code is 9, comment is 0, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\fixed\warped_autocorrelation_FIX.o, it is a binary file.
+lib\ESP8266Audio-master\src\libopus\silk\gain_quant.c, code is 79, comment is 44, blank is 19.
+lib\ESP8266Audio-master\src\libopus\silk\HP_variable_cutoff.c, code is 32, comment is 37, blank is 8.
+lib\ESP8266Audio-master\src\libopus\silk\init_decoder.c, code is 14, comment is 35, blank is 8.
+lib\ESP8266Audio-master\src\libopus\silk\init_encoder.c, code is 22, comment is 34, blank is 8.
+lib\ESP8266Audio-master\src\libopus\silk\Inlines.h, code is 101, comment is 55, blank is 32.
+lib\ESP8266Audio-master\src\libopus\silk\inner_prod_aligned.c, code is 16, comment is 28, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\interpolate.c, code is 17, comment is 29, blank is 5.
+lib\ESP8266Audio-master\src\libopus\silk\lin2log.c, code is 10, comment is 31, blank is 5.
+lib\ESP8266Audio-master\src\libopus\silk\log2lin.c, code is 21, comment is 32, blank is 5.
+lib\ESP8266Audio-master\src\libopus\silk\LP_variable_cutoff.c, code is 78, comment is 45, blank is 12.
+lib\ESP8266Audio-master\src\libopus\silk\LPC_analysis_filter.c, code is 54, comment is 45, blank is 12.
+lib\ESP8266Audio-master\src\libopus\silk\LPC_fit.c, code is 42, comment is 33, blank is 6.
+lib\ESP8266Audio-master\src\libopus\silk\LPC_inv_pred_gain.c, code is 78, comment is 45, blank is 18.
+lib\ESP8266Audio-master\src\libopus\silk\MacroCount.h, code is 597, comment is 35, blank is 78.
+lib\ESP8266Audio-master\src\libopus\silk\MacroDebug.h, code is 812, comment is 63, blank is 76.
+lib\ESP8266Audio-master\src\libopus\silk\macros.h, code is 81, comment is 43, blank is 27.
+lib\ESP8266Audio-master\src\libopus\silk\main.h, code is 331, comment is 90, blank is 55.
+lib\ESP8266Audio-master\src\libopus\silk\NLSF2A.c, code is 77, comment is 48, blank is 21.
+lib\ESP8266Audio-master\src\libopus\silk\NLSF_decode.c, code is 47, comment is 36, blank is 10.
+lib\ESP8266Audio-master\src\libopus\silk\NLSF_del_dec_quant.c, code is 164, comment is 39, blank is 12.
+lib\ESP8266Audio-master\src\libopus\silk\NLSF_encode.c, code is 66, comment is 41, blank is 17.
+lib\ESP8266Audio-master\src\libopus\silk\NLSF_stabilize.c, code is 63, comment is 61, blank is 18.
+lib\ESP8266Audio-master\src\libopus\silk\NLSF_unpack.c, code is 21, comment is 29, blank is 5.
+lib\ESP8266Audio-master\src\libopus\silk\NLSF_VQ.c, code is 37, comment is 32, blank is 7.
+lib\ESP8266Audio-master\src\libopus\silk\NLSF_VQ_weights_laroia.c, code is 34, comment is 37, blank is 9.
+lib\ESP8266Audio-master\src\libopus\silk\NSQ.c, code is 314, comment is 65, blank is 58.
+lib\ESP8266Audio-master\src\libopus\silk\NSQ.h, code is 59, comment is 29, blank is 13.
+lib\ESP8266Audio-master\src\libopus\silk\NSQ_del_dec.c, code is 557, comment is 97, blank is 79.
+lib\ESP8266Audio-master\src\libopus\silk\pitch_est_defines.h, code is 38, comment is 31, blank is 19.
+lib\ESP8266Audio-master\src\libopus\silk\pitch_est_tables.c, code is 59, comment is 31, blank is 9.
+lib\ESP8266Audio-master\src\libopus\silk\PLC.c, code is 303, comment is 86, blank is 59.
+lib\ESP8266Audio-master\src\libopus\silk\PLC.h, code is 28, comment is 26, blank is 8.
+lib\ESP8266Audio-master\src\libopus\silk\process_NLSFs.c, code is 49, comment is 43, blank is 15.
+lib\ESP8266Audio-master\src\libopus\silk\quant_LTP_gains.c, code is 84, comment is 35, blank is 13.
+lib\ESP8266Audio-master\src\libopus\silk\resampler.c, code is 125, comment is 76, blank is 22.
+lib\ESP8266Audio-master\src\libopus\silk\resampler_down2.c, code is 29, comment is 35, blank is 10.
+lib\ESP8266Audio-master\src\libopus\silk\resampler_down2_3.c, code is 50, comment is 39, blank is 16.
+lib\ESP8266Audio-master\src\libopus\silk\resampler_private.h, code is 46, comment is 32, blank is 10.
+lib\ESP8266Audio-master\src\libopus\silk\resampler_private_AR2.c, code is 21, comment is 29, blank is 5.
+lib\ESP8266Audio-master\src\libopus\silk\resampler_private_down_FIR.c, code is 127, comment is 45, blank is 22.
+lib\ESP8266Audio-master\src\libopus\silk\resampler_private_IIR_FIR.c, code is 60, comment is 35, blank is 12.
+lib\ESP8266Audio-master\src\libopus\silk\resampler_private_up2_HQ.c, code is 58, comment is 41, blank is 14.
+lib\ESP8266Audio-master\src\libopus\silk\resampler_rom.c, code is 48, comment is 36, blank is 12.
+lib\ESP8266Audio-master\src\libopus\silk\resampler_rom.h, code is 28, comment is 30, blank is 10.
+lib\ESP8266Audio-master\src\libopus\silk\resampler_structs.h, code is 28, comment is 26, blank is 6.
+lib\ESP8266Audio-master\src\libopus\silk\shell_coder.c, code is 91, comment is 34, blank is 26.
+lib\ESP8266Audio-master\src\libopus\silk\sigm_Q15.c, code is 34, comment is 36, blank is 7.
+lib\ESP8266Audio-master\src\libopus\silk\SigProc_FIX.h, code is 408, comment is 131, blank is 103.
+lib\ESP8266Audio-master\src\libopus\silk\sort.c, code is 92, comment is 46, blank is 16.
+lib\ESP8266Audio-master\src\libopus\silk\stereo_decode_pred.c, code is 32, comment is 34, blank is 7.
+lib\ESP8266Audio-master\src\libopus\silk\stereo_encode_pred.c, code is 25, comment is 32, blank is 5.
+lib\ESP8266Audio-master\src\libopus\silk\stereo_find_predictor.c, code is 37, comment is 34, blank is 8.
+lib\ESP8266Audio-master\src\libopus\silk\stereo_LR_to_MS.c, code is 160, comment is 53, blank is 16.
+lib\ESP8266Audio-master\src\libopus\silk\stereo_MS_to_LR.c, code is 47, comment is 32, blank is 6.
+lib\ESP8266Audio-master\src\libopus\silk\stereo_quant_pred.c, code is 35, comment is 33, blank is 5.
+lib\ESP8266Audio-master\src\libopus\silk\structs.h, code is 233, comment is 57, blank is 39.
+lib\ESP8266Audio-master\src\libopus\silk\sum_sqr_shift.c, code is 39, comment is 37, blank is 7.
+lib\ESP8266Audio-master\src\libopus\silk\table_LSF_cos.c, code is 37, comment is 30, blank is 3.
+lib\ESP8266Audio-master\src\libopus\silk\tables.h, code is 59, comment is 30, blank is 25.
+lib\ESP8266Audio-master\src\libopus\silk\tables_gain.c, code is 29, comment is 28, blank is 6.
+lib\ESP8266Audio-master\src\libopus\silk\tables_LTP.c, code is 244, comment is 30, blank is 20.
+lib\ESP8266Audio-master\src\libopus\silk\tables_NLSF_CB_NB_MB.c, code is 156, comment is 28, blank is 11.
+lib\ESP8266Audio-master\src\libopus\silk\tables_NLSF_CB_WB.c, code is 194, comment is 28, blank is 12.
+lib\ESP8266Audio-master\src\libopus\silk\tables_other.c, code is 64, comment is 42, blank is 18.
+lib\ESP8266Audio-master\src\libopus\silk\tables_pitch_lag.c, code is 31, comment is 28, blank is 10.
+lib\ESP8266Audio-master\src\libopus\silk\tables_pulses_per_block.c, code is 223, comment is 28, blank is 13.
+lib\ESP8266Audio-master\src\libopus\silk\tuning_parameters.h, code is 47, comment is 70, blank is 38.
+lib\ESP8266Audio-master\src\libopus\silk\typedef.h, code is 44, comment is 27, blank is 7.
+lib\ESP8266Audio-master\src\libopus\silk\VAD.c, code is 190, comment is 119, blank is 52.
+lib\ESP8266Audio-master\src\libopus\silk\VQ_WMat_EC.c, code is 74, comment is 44, blank is 13.
+lib\ESP8266Audio-master\src\libopus\tansig_table.h, code is 43, comment is 1, blank is 1.
+lib\ESP8266Audio-master\src\libtinysoundfont\LICENSE, code is 17, comment is 1, blank is 3.
+lib\ESP8266Audio-master\src\libtinysoundfont\README.ESP8266, code is 26, comment is 2, blank is 6.
+lib\ESP8266Audio-master\src\libtinysoundfont\README.md, code is 23, comment is 7, blank is 14.
+lib\ESP8266Audio-master\src\libtinysoundfont\tsf.h, code is 1687, comment is 305, blank is 243.
+lib\ESP8266Audio-master\src\opusfile\AUTHORS, code is 5, comment is 0, blank is 0.
+lib\ESP8266Audio-master\src\opusfile\config.h, code is 40, comment is 53, blank is 35.
+lib\ESP8266Audio-master\src\opusfile\COPYING, code is 23, comment is 0, blank is 5.
+lib\ESP8266Audio-master\src\opusfile\info.c, code is 663, comment is 77, blank is 35.
+lib\ESP8266Audio-master\src\opusfile\internal.c, code is 24, comment is 15, blank is 3.
+lib\ESP8266Audio-master\src\opusfile\internal.h, code is 133, comment is 102, blank is 24.
+lib\ESP8266Audio-master\src\opusfile\opusfile.c, code is 2270, comment is 973, blank is 118.
+lib\ESP8266Audio-master\src\opusfile\opusfile.h, code is 246, comment is 1794, blank is 124.
+lib\ESP8266Audio-master\src\opusfile\opusfile.pc, code is 13, comment is 0, blank is 2.
+lib\ESP8266Audio-master\src\opusfile\README.esp8266.md, code is 2, comment is 0, blank is 1.
+lib\ESP8266Audio-master\src\opusfile\README.md, code is 10, comment is 3, blank is 4.
+lib\ESP8266Audio-master\src\opusfile\stream.c, code is 283, comment is 109, blank is 23.
+lib\ESP8266Audio-master\src\spiram-fast.h, code is 286, comment is 53, blank is 40.
+lib\ESP8266Audio-master\tests\common.sh, code is 164, comment is 9, blank is 21.
+lib\ESP8266Audio-master\tests\host\aac.cpp, code is 22, comment is 0, blank is 5.
+lib\ESP8266Audio-master\tests\host\Arduino.h, code is 73, comment is 0, blank is 14.
+lib\ESP8266Audio-master\tests\host\flac.cpp, code is 20, comment is 0, blank is 4.
+lib\ESP8266Audio-master\tests\host\gs-16b-2c-44100hz.flac, it is a binary file.
+lib\ESP8266Audio-master\tests\host\Makefile, code is 111, comment is 0, blank is 22.
+lib\ESP8266Audio-master\tests\host\midi.cpp, code is 25, comment is 0, blank is 6.
+lib\ESP8266Audio-master\tests\host\mp3.cpp, code is 62, comment is 3, blank is 10.
+lib\ESP8266Audio-master\tests\host\opus.cpp, code is 20, comment is 0, blank is 5.
+lib\ESP8266Audio-master\tests\host\pgmspace.h, code is 0, comment is 0, blank is 0.
+lib\ESP8266Audio-master\tests\host\Serial.cpp, code is 2, comment is 0, blank is 2.
+lib\ESP8266Audio-master\tests\host\test_8u_16.wav, it is a binary file.
+lib\ESP8266Audio-master\tests\host\wav.cpp, code is 19, comment is 0, blank is 4.
+lib\KraftKontrol\.gitignore, code is 5, comment is 0, blank is 0.
+lib\KraftKontrol\docs\BoardVers_1_0\BoardInfo.txt, code is 18, comment is 0, blank is 9.
+lib\KraftKontrol\docs\BoardVers_1_0\DataSheets\Devices\1811041130_Worldsemi-WS2812B-Mini_C114583.pdf, it is a binary file.
+lib\KraftKontrol\docs\BoardVers_1_0\DataSheets\Devices\1811071024_TDK-InvenSense-MPU6500_C50278.pdf, code is 1058, comment is 95, blank is 36.
+lib\KraftKontrol\docs\BoardVers_1_0\DataSheets\Devices\1811081618_QST-QMC5883L-TR_C192585.pdf, code is 1694, comment is 347, blank is 26.
+lib\KraftKontrol\docs\BoardVers_1_0\DataSheets\Devices\1811141121_Bosch-Sensortec-BME280_C92489.pdf, code is 588, comment is 1, blank is 5.
+lib\KraftKontrol\docs\BoardVers_1_0\DataSheets\Devices\1912111437_Chengdu-Ebyte-Elec-Tech-E28-2G4M20S_C411311.pdf, code is 2322, comment is 30, blank is 39.
+lib\KraftKontrol\docs\BoardVers_1_0\DataSheets\Devices\2007101835_QST-QMC6310U_C669299.pdf, code is 8701, comment is 835, blank is 2461.
+lib\KraftKontrol\docs\BoardVers_1_0\DataSheets\Devices\MPU-9250-Register-Map.pdf, code is 650, comment is 423, blank is 25.
+lib\KraftKontrol\docs\BoardVers_1_0\DataSheets\Devices\PS-MPU-9250A-01-v1.1.pdf, code is 6463, comment is 280, blank is 7.
+lib\KraftKontrol\docs\BoardVers_1_0\DataSheets\Power\1809251714_Texas-Instruments-TLV70033DDCR_C11337.pdf, it is a binary file.
+lib\KraftKontrol\docs\BoardVers_1_0\DataSheets\Power\1810242012_Microchip-Tech-MCP16301T-I-CHY_C57168.pdf, it is a binary file.
+lib\KraftKontrol\docs\BoardVers_1_0\DataSheets\Power\1811151524_SXN-Shun-Xiang-Nuo-Elec-SMNR4020-22UH_C135264.pdf, code is 161, comment is 0, blank is 22.
+lib\KraftKontrol\docs\BoardVers_1_0\DataSheets\Power\2004181502_BORN-1N4148WT_C511874.pdf, code is 3846, comment is 1536, blank is 36.
+lib\KraftKontrol\docs\BoardVers_1_0\teensy40_Bottom.png, it is a binary file.
+lib\KraftKontrol\docs\BoardVers_1_0\teensy40_Top.png, it is a binary file.
+lib\KraftKontrol\docs\KraftKontrol, code is 1, comment is 1, blank is 0.
+lib\KraftKontrol\include\boards\board_v_1_0.h, code is 20, comment is 8, blank is 10.
+lib\KraftKontrol\include\KraftKontrol.h, code is 42, comment is 0, blank is 27.
+lib\KraftKontrol\include\KraftKontrol\data_containers\control_data.h, code is 17, comment is 16, blank is 13.
+lib\KraftKontrol\include\KraftKontrol\data_containers\data_container_base.h, code is 10, comment is 4, blank is 11.
+lib\KraftKontrol\include\KraftKontrol\data_containers\dynamic_data.h, code is 34, comment is 17, blank is 19.
+lib\KraftKontrol\include\KraftKontrol\data_containers\kinematic_data.h, code is 30, comment is 15, blank is 25.
+lib\KraftKontrol\include\KraftKontrol\data_containers\navigation_data.h, code is 59, comment is 70, blank is 36.
+lib\KraftKontrol\include\KraftKontrol\data_containers\vehicle_data.h, code is 14, comment is 12, blank is 13.
+lib\KraftKontrol\include\KraftKontrol\dynamics\servo_dynamics.h, code is 72, comment is 63, blank is 43.
+lib\KraftKontrol\include\KraftKontrol\dynamics\tvc_dynamics.h, code is 73, comment is 71, blank is 59.
+lib\KraftKontrol\include\KraftKontrol\gui\gui.h, code is 18, comment is 12, blank is 22.
+lib\KraftKontrol\include\KraftKontrol\gui\menu_abstract.h, code is 60, comment is 48, blank is 44.
+lib\KraftKontrol\include\KraftKontrol\gui\menus\menu_list.h, code is 19, comment is 32, blank is 26.
+lib\KraftKontrol\include\KraftKontrol\gui\menus\menu_test.h, code is 13, comment is 20, blank is 19.
+lib\KraftKontrol\include\KraftKontrol\gui\menus\menu_value_list.h, code is 18, comment is 24, blank is 25.
+lib\KraftKontrol\include\KraftKontrol\hal\bus_device_hal_abstract.h, code is 27, comment is 62, blank is 25.
+lib\KraftKontrol\include\KraftKontrol\hal\gpio_hal_abstract.h, code is 24, comment is 37, blank is 19.
+lib\KraftKontrol\include\KraftKontrol\hal\pin_interrupt_hal_abstract.h, code is 71, comment is 61, blank is 43.
+lib\KraftKontrol\include\KraftKontrol\KraftPacket_KontrolPackets\kraftkontrol_command_messages.h, code is 177, comment is 5, blank is 127.
+lib\KraftKontrol\include\KraftKontrol\KraftPacket_KontrolPackets\kraftkontrol_data_messages.h, code is 192, comment is 141, blank is 156.
+lib\KraftKontrol\include\KraftKontrol\KraftPacket_KontrolPackets\kraftkontrol_messagetype_abstracts.h, code is 142, comment is 4, blank is 117.
+lib\KraftKontrol\include\KraftKontrol\KraftPacket_KontrolPackets\kraftkontrol_telemetry_messages.h, code is 58, comment is 0, blank is 51.
+lib\KraftKontrol\include\KraftKontrol\modules\actuator_modules\actuator_abstract.h, code is 28, comment is 22, blank is 30.
+lib\KraftKontrol\include\KraftKontrol\modules\communication_modules\kraft_kommunication.h, code is 114, comment is 72, blank is 95.
+lib\KraftKontrol\include\KraftKontrol\modules\communication_modules\kraft_link.h, code is 14, comment is 17, blank is 17.
+lib\KraftKontrol\include\KraftKontrol\modules\communication_modules\kraft_message.h, code is 170, comment is 160, blank is 112.
+lib\KraftKontrol\include\KraftKontrol\modules\communication_modules\kraft_message_subscriber.h, code is 24, comment is 11, blank is 27.
+lib\KraftKontrol\include\KraftKontrol\modules\control_modules\control_interface.h, code is 21, comment is 22, blank is 24.
+lib\KraftKontrol\include\KraftKontrol\modules\control_modules\powered_hover_controller.h, code is 70, comment is 110, blank is 36.
+lib\KraftKontrol\include\KraftKontrol\modules\data_manager_modules\data_storage_manager.h, code is 30, comment is 88, blank is 33.
+lib\KraftKontrol\include\KraftKontrol\modules\datalink_modules\sx1280_lora_driver.h, code is 46, comment is 35, blank is 39.
+lib\KraftKontrol\include\KraftKontrol\modules\dynamics_modules\dynamics_interface.h, code is 31, comment is 81, blank is 31.
+lib\KraftKontrol\include\KraftKontrol\modules\eeprom_hal_modules_DEPRECATED\eeprom_hal_interface.h, code is 22, comment is 35, blank is 30.
+lib\KraftKontrol\include\KraftKontrol\modules\eeprom_hal_modules_DEPRECATED\eeprom_hal_teensy.h, code is 21, comment is 0, blank is 25.
+lib\KraftKontrol\include\KraftKontrol\modules\guidance_modules\guidance_flybywire.h, code is 40, comment is 92, blank is 36.
+lib\KraftKontrol\include\KraftKontrol\modules\guidance_modules\guidance_interface.h, code is 14, comment is 9, blank is 20.
+lib\KraftKontrol\include\KraftKontrol\modules\guidance_modules\guidance_path.h, code is 20, comment is 36, blank is 25.
+lib\KraftKontrol\include\KraftKontrol\modules\hid_modules\display_modules\display_abstract.h, code is 39, comment is 117, blank is 44.
+lib\KraftKontrol\include\KraftKontrol\modules\hid_modules\display_modules\st7735_driver.h, code is 26, comment is 29, blank is 30.
+lib\KraftKontrol\include\KraftKontrol\modules\hid_modules\input_modules\analog_button.h, code is 24, comment is 21, blank is 27.
+lib\KraftKontrol\include\KraftKontrol\modules\hid_modules\input_modules\button_abstract.h, code is 34, comment is 35, blank is 29.
+lib\KraftKontrol\include\KraftKontrol\modules\hid_modules\input_modules\gpio_button.h, code is 21, comment is 17, blank is 25.
+lib\KraftKontrol\include\KraftKontrol\modules\hid_modules\input_modules\joystick.h, code is 39, comment is 19, blank is 33.
+lib\KraftKontrol\include\KraftKontrol\modules\module_abstract.h, code is 27, comment is 26, blank is 30.
+lib\KraftKontrol\include\KraftKontrol\modules\navigation_modules\navigation_complementary.h, code is 88, comment is 50, blank is 47.
+lib\KraftKontrol\include\KraftKontrol\modules\navigation_modules\navigation_interface.h, code is 21, comment is 29, blank is 24.
+lib\KraftKontrol\include\KraftKontrol\modules\networking_modules\kraft_konnect_network.h, code is 31, comment is 26, blank is 33.
+lib\KraftKontrol\include\KraftKontrol\modules\prediction_models\system_model_abstract.h, code is 37, comment is 33, blank is 31.
+lib\KraftKontrol\include\KraftKontrol\modules\sensor_modules\accelerometer_modules\accelerometer_interface.h, code is 12, comment is 4, blank is 18.
+lib\KraftKontrol\include\KraftKontrol\modules\sensor_modules\adc_modules\adc_abstract.h, code is 26, comment is 37, blank is 32.
+lib\KraftKontrol\include\KraftKontrol\modules\sensor_modules\adc_modules\ads1115_driver.h, code is 26, comment is 19, blank is 32.
+lib\KraftKontrol\include\KraftKontrol\modules\sensor_modules\barometer_modules\barometer_interface.h, code is 12, comment is 4, blank is 19.
+lib\KraftKontrol\include\KraftKontrol\modules\sensor_modules\barometer_modules\bme280_driver.h, code is 90, comment is 90, blank is 71.
+lib\KraftKontrol\include\KraftKontrol\modules\sensor_modules\gnss_modules\gnss_interface.h, code is 21, comment is 4, blank is 26.
+lib\KraftKontrol\include\KraftKontrol\modules\sensor_modules\gnss_modules\ublox_serial_gnss.h, code is 51, comment is 41, blank is 42.
+lib\KraftKontrol\include\KraftKontrol\modules\sensor_modules\gyroscope_modules\gyroscope_interface.h, code is 13, comment is 10, blank is 18.
+lib\KraftKontrol\include\KraftKontrol\modules\sensor_modules\imu_modules\bno080_driver.h, code is 45, comment is 0, blank is 39.
+lib\KraftKontrol\include\KraftKontrol\modules\sensor_modules\imu_modules\mpu9250_driver.h, code is 43, comment is 30, blank is 42.
+lib\KraftKontrol\include\KraftKontrol\modules\sensor_modules\magnetometer_modules\hmc5883_driver.h, code is 61, comment is 43, blank is 49.
+lib\KraftKontrol\include\KraftKontrol\modules\sensor_modules\magnetometer_modules\magnetometer_interface.h, code is 21, comment is 18, blank is 27.
+lib\KraftKontrol\include\KraftKontrol\outputs\rgb_led.h, code is 3, comment is 27, blank is 5.
+lib\KraftKontrol\include\KraftKontrol\outputs\servo_ppm.h, code is 38, comment is 14, blank is 32.
+lib\KraftKontrol\include\KraftKontrol\platforms\arduino_platform\arduino_gpio_hal.h, code is 23, comment is 48, blank is 29.
+lib\KraftKontrol\include\KraftKontrol\platforms\arduino_platform\arduino_i2c_busdevice_hal.h, code is 37, comment is 35, blank is 36.
+lib\KraftKontrol\include\KraftKontrol\platforms\arduino_platform\arduino_pin_interrupt_hal copy.h, code is 45, comment is 28, blank is 25.
+lib\KraftKontrol\include\KraftKontrol\platforms\arduino_platform\arduino_pin_interrupt_hal.h, code is 44, comment is 28, blank is 24.
+lib\KraftKontrol\include\KraftKontrol\platforms\arduino_platform\arduino_spi_busdevice_hal.h, code is 70, comment is 56, blank is 48.
+lib\KraftKontrol\include\KraftKontrol\platforms\arduino_platform\arduino_systemtime.h, code is 6, comment is 0, blank is 8.
+lib\KraftKontrol\include\KraftKontrol\platforms\platform_hal.h, code is 16, comment is 6, blank is 12.
+lib\KraftKontrol\include\KraftKontrol\platforms\rodos_platform\rodos_gpio_hal.h, code is 23, comment is 48, blank is 29.
+lib\KraftKontrol\include\KraftKontrol\platforms\rodos_platform\rodos_i2c_hal.h, code is 36, comment is 21, blank is 33.
+lib\KraftKontrol\include\KraftKontrol\platforms\rodos_platform\rodos_pin_interrupt_hal.h, code is 43, comment is 28, blank is 24.
+lib\KraftKontrol\include\KraftKontrol\platforms\rodos_platform\rodos_spi_hal.h, code is 56, comment is 21, blank is 37.
+lib\KraftKontrol\include\KraftKontrol\platforms\rodos_platform\rodos_systemtime.h, code is 6, comment is 0, blank is 8.
+lib\KraftKontrol\include\KraftKontrol\utils\buffer.h, code is 260, comment is 162, blank is 235.
+lib\KraftKontrol\include\KraftKontrol\utils\chain_buffer.h, code is 136, comment is 113, blank is 73.
+lib\KraftKontrol\include\KraftKontrol\utils\constrainers.h, code is 3, comment is 21, blank is 7.
+lib\KraftKontrol\include\KraftKontrol\utils\high_pass_filter.h, code is 48, comment is 24, blank is 36.
+lib\KraftKontrol\include\KraftKontrol\utils\list.h, code is 127, comment is 87, blank is 116.
+lib\KraftKontrol\include\KraftKontrol\utils\low_pass_filter.h, code is 55, comment is 37, blank is 45.
+lib\KraftKontrol\include\KraftKontrol\utils\sensor_timestamp.h, code is 18, comment is 11, blank is 15.
+lib\KraftKontrol\include\KraftKontrol\utils\Simple-Schedule\interval_control.h, code is 57, comment is 100, blank is 45.
+lib\KraftKontrol\include\KraftKontrol\utils\Simple-Schedule\simple_scheduler.h, code is 88, comment is 113, blank is 74.
+lib\KraftKontrol\include\KraftKontrol\utils\Simple-Schedule\task_autorun_class.h, code is 113, comment is 122, blank is 70.
+lib\KraftKontrol\include\KraftKontrol\utils\system_time.h, code is 18, comment is 0, blank is 13.
+lib\KraftKontrol\include\KraftKontrol\utils\topic.h, code is 68, comment is 47, blank is 64.
+lib\KraftKontrol\include\KraftKontrol\utils\topic_routers.h, code is 26, comment is 14, blank is 24.
+lib\KraftKontrol\include\KraftKontrol\utils\topic_subscribers.h, code is 137, comment is 110, blank is 84.
+lib\KraftKontrol\include\KraftKontrol\utils\value_error.h, code is 93, comment is 20, blank is 36.
+lib\KraftKontrol\include\KraftKontrol\vehicle\vehicle_general.h, code is 41, comment is 44, blank is 35.
+lib\KraftKontrol\include\KraftKontrol\vehicle\vehicle_interface.h, code is 19, comment is 27, blank is 19.
+lib\KraftKontrol\include\README, code is 13, comment is 1, blank is 5.
+lib\KraftKontrol\LICENSE, code is 219, comment is 3, blank is 47.
+lib\KraftKontrol\platformio.ini, code is 9, comment is 10, blank is 2.
+lib\KraftKontrol\README.md, code is 30, comment is 0, blank is 1.
+lib\KraftKontrol\src\gui\gui.cpp, code is 21, comment is 5, blank is 24.
+lib\KraftKontrol\src\gui\menu_abstract.cpp, code is 8, comment is 0, blank is 11.
+lib\KraftKontrol\src\gui\menus\menu_list.cpp, code is 48, comment is 5, blank is 38.
+lib\KraftKontrol\src\gui\menus\menu_test.cpp, code is 24, comment is 3, blank is 23.
+lib\KraftKontrol\src\lib\ADS1X15-master\.arduino-ci.yml, code is 7, comment is 0, blank is 0.
+lib\KraftKontrol\src\lib\ADS1X15-master\.github\workflows\arduino_test_runner.yml, code is 10, comment is 0, blank is 3.
+lib\KraftKontrol\src\lib\ADS1X15-master\.github\workflows\jsoncheck.yml, code is 15, comment is 0, blank is 3.
+lib\KraftKontrol\src\lib\ADS1X15-master\ADS1X15.cpp, code is 383, comment is 129, blank is 81.
+lib\KraftKontrol\src\lib\ADS1X15-master\ADS1X15.h, code is 118, comment is 73, blank is 34.
+lib\KraftKontrol\src\lib\ADS1X15-master\examples\ADS_continuous\ADS_continuous.ino, code is 18, comment is 24, blank is 9.
+lib\KraftKontrol\src\lib\ADS1X15-master\examples\ADS_continuous_4_channel\ADS_continuous_4_channel.ino, code is 51, comment is 33, blank is 14.
+lib\KraftKontrol\src\lib\ADS1X15-master\examples\ADS_continuous_8_channel\ADS_continuous_8_channel.ino, code is 74, comment is 38, blank is 20.
+lib\KraftKontrol\src\lib\ADS1X15-master\examples\ADS_differential\ADS_differential.ino, code is 28, comment is 26, blank is 10.
+lib\KraftKontrol\src\lib\ADS1X15-master\examples\ADS_minimum\ADS_minimum.ino, code is 17, comment is 22, blank is 8.
+lib\KraftKontrol\src\lib\ADS1X15-master\examples\ADS_performance\ADS_performance.ino, code is 55, comment is 21, blank is 17.
+lib\KraftKontrol\src\lib\ADS1X15-master\examples\ADS_read\ADS_read.ino, code is 25, comment is 16, blank is 11.
+lib\KraftKontrol\src\lib\ADS1X15-master\examples\ADS_read_async\ADS_read_async.ino, code is 27, comment is 18, blank is 7.
+lib\KraftKontrol\src\lib\ADS1X15-master\examples\ADS_read_async_rdy\ADS_read_async_rdy.ino, code is 32, comment is 26, blank is 9.
+lib\KraftKontrol\src\lib\ADS1X15-master\examples\ADS_read_comparator_1\ADS_read_comparator_1.ino, code is 35, comment is 35, blank is 20.
+lib\KraftKontrol\src\lib\ADS1X15-master\examples\ADS_read_RDY\ADS_read_RDY.ino, code is 29, comment is 26, blank is 13.
+lib\KraftKontrol\src\lib\ADS1X15-master\keywords.txt, code is 51, comment is 0, blank is 11.
+lib\KraftKontrol\src\lib\ADS1X15-master\library.json, code is 21, comment is 0, blank is 0.
+lib\KraftKontrol\src\lib\ADS1X15-master\library.properties, code is 11, comment is 1, blank is 0.
+lib\KraftKontrol\src\lib\ADS1X15-master\LICENSE, code is 17, comment is 0, blank is 4.
+lib\KraftKontrol\src\lib\ADS1X15-master\README.md, code is 197, comment is 6, blank is 72.
+lib\KraftKontrol\src\lib\BasicLinearAlgebra\BasicLinearAlgebra.h, code is 460, comment is 56, blank is 133.
+lib\KraftKontrol\src\lib\BasicLinearAlgebra\examples\CustomMatrix\CustomMatrix.ino, code is 28, comment is 25, blank is 17.
+lib\KraftKontrol\src\lib\BasicLinearAlgebra\examples\HowToUse\HowToUse.ino, code is 39, comment is 47, blank is 32.
+lib\KraftKontrol\src\lib\BasicLinearAlgebra\examples\References\References.ino, code is 21, comment is 30, blank is 21.
+lib\KraftKontrol\src\lib\BasicLinearAlgebra\examples\Tensor\Tensor.ino, code is 29, comment is 27, blank is 19.
+lib\KraftKontrol\src\lib\BasicLinearAlgebra\keywords.txt, code is 29, comment is 0, blank is 7.
+lib\KraftKontrol\src\lib\BasicLinearAlgebra\library.properties, code is 9, comment is 1, blank is 0.
+lib\KraftKontrol\src\lib\BasicLinearAlgebra\LICENSE, code is 17, comment is 0, blank is 4.
+lib\KraftKontrol\src\lib\BasicLinearAlgebra\MemoryDelegate.hpp, code is 177, comment is 17, blank is 66.
+lib\KraftKontrol\src\lib\BasicLinearAlgebra\README.md, code is 26, comment is 2, blank is 5.
+lib\KraftKontrol\src\lib\Math-Helper\LICENSE, code is 17, comment is 0, blank is 4.
+lib\KraftKontrol\src\lib\Math-Helper\README.md, code is 3, comment is 0, blank is 0.
+lib\KraftKontrol\src\lib\Math-Helper\src\3d_math.h, code is 5, comment is 0, blank is 6.
+lib\KraftKontrol\src\lib\Math-Helper\src\objects\quaternion_math.cpp, code is 5, comment is 0, blank is 2.
+lib\KraftKontrol\src\lib\Math-Helper\src\objects\quaternion_math.h, code is 149, comment is 77, blank is 67.
+lib\KraftKontrol\src\lib\Math-Helper\src\objects\vector_math.cpp, code is 1, comment is 9, blank is 3.
+lib\KraftKontrol\src\lib\Math-Helper\src\objects\vector_math.h, code is 149, comment is 159, blank is 65.
+lib\KraftKontrol\src\lib\MPU9250_Lib\CHANGELOG.md, code is 10, comment is 1, blank is 4.
+lib\KraftKontrol\src\lib\MPU9250_Lib\docs\AK8963C.pdf, code is 547, comment is 1030, blank is 26.
+lib\KraftKontrol\src\lib\MPU9250_Lib\docs\AN-MPU-9250A-03 MPU-9250 Accel Gyro and Compass Self-Test Implementation v1 0_062813.pdf, code is 754, comment is 681, blank is 1.
+lib\KraftKontrol\src\lib\MPU9250_Lib\docs\Application Note - Programming Sequence for DMP Hardware Functions v12.pdf, code is 935, comment is 501, blank is 24.
+lib\KraftKontrol\src\lib\MPU9250_Lib\docs\Embedded-Masters-MPU-9250-Breakout.pdf, code is 603, comment is 608, blank is 2.
+lib\KraftKontrol\src\lib\MPU9250_Lib\docs\MEMS Motion Handling and Assembly Guide.pdf, code is 986, comment is 364, blank is 50.
+lib\KraftKontrol\src\lib\MPU9250_Lib\docs\MPU HW Offset Registers 1.2.pdf, code is 173, comment is 627, blank is 2.
+lib\KraftKontrol\src\lib\MPU9250_Lib\docs\MPU-9250-AXIS.png, it is a binary file.
+lib\KraftKontrol\src\lib\MPU9250_Lib\docs\MPU-9250-Datasheet.pdf, code is 873, comment is 245, blank is 32.
+lib\KraftKontrol\src\lib\MPU9250_Lib\docs\MPU-9250-Register-Map.pdf, code is 650, comment is 423, blank is 25.
+lib\KraftKontrol\src\lib\MPU9250_Lib\docs\MPU-9255-Datasheet.pdf, code is 622, comment is 302, blank is 14.
+lib\KraftKontrol\src\lib\MPU9250_Lib\docs\MPU-9255-Register-Map.pdf, code is 839, comment is 258, blank is 3.
+lib\KraftKontrol\src\lib\MPU9250_Lib\docs\PCB Design Guidelines for InvenSense MotionTracking.pdf, code is 1274, comment is 4, blank is 32.
+lib\KraftKontrol\src\lib\MPU9250_Lib\examples\Basic_I2C\Basic_I2C.ino, code is 35, comment is 29, blank is 4.
+lib\KraftKontrol\src\lib\MPU9250_Lib\examples\Basic_SPI\Basic_SPI.ino, code is 35, comment is 29, blank is 4.
+lib\KraftKontrol\src\lib\MPU9250_Lib\keywords.txt, code is 23, comment is 0, blank is 0.
+lib\KraftKontrol\src\lib\MPU9250_Lib\library.properties, code is 10, comment is 1, blank is 0.
+lib\KraftKontrol\src\lib\MPU9250_Lib\LICENSE.md, code is 5, comment is 0, blank is 5.
+lib\KraftKontrol\src\lib\MPU9250_Lib\README.md, code is 197, comment is 17, blank is 68.
+lib\KraftKontrol\src\lib\MPU9250_Lib\src\MPU9250.cpp, code is 514, comment is 82, blank is 7.
+lib\KraftKontrol\src\lib\MPU9250_Lib\src\MPU9250.h, code is 127, comment is 32, blank is 5.
+lib\KraftKontrol\src\lib\README, code is 37, comment is 2, blank is 9.
+lib\KraftKontrol\src\lib\SparkFun_BME280\.piopm, code is 1, comment is 0, blank is 0.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\Example10_DewPoint\Example10_DewPoint.ino, code is 23, comment is 22, blank is 10.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\Example11_BurstRead\Example11_BurstRead.ino, code is 33, comment is 26, blank is 14.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\Example1_BasicReadings\Example1_BasicReadings.ino, code is 27, comment is 24, blank is 11.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\Example2_I2CAddress\Example2_I2CAddress.ino, code is 31, comment is 28, blank is 16.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\Example3_CSVOutput\Example3_CSVOutput.ino, code is 44, comment is 20, blank is 10.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\Example4_Settings\Example4_Settings.ino, code is 30, comment is 20, blank is 15.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\Example5_ReadAllRegisters\Example5_ReadAllRegisters.ino, code is 99, comment is 24, blank is 27.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\Example6_LowPower\Example6_LowPower.ino, code is 32, comment is 20, blank is 17.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\Example8_LocalPressure\Example8_LocalPressure.ino, code is 25, comment is 23, blank is 13.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\Example9_SoftwareI2C\Example9_SoftwareI2C.ino, code is 22, comment is 26, blank is 11.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\More_Advanced\I2C_and_SPI_Multisensor\I2C_and_SPI_Multisensor.ino, code is 68, comment is 64, blank is 22.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\More_Advanced\LCD_DeltaAltitude\CircularBuffer.cpp, code is 62, comment is 29, blank is 13.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\More_Advanced\LCD_DeltaAltitude\CircularBuffer.h, code is 19, comment is 10, blank is 6.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\More_Advanced\LCD_DeltaAltitude\LCD_DeltaAltitude.ino, code is 56, comment is 99, blank is 29.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\More_Advanced\LCD_PressureTemperature\LCD_PressureTemperature.ino, code is 105, comment is 91, blank is 38.
+lib\KraftKontrol\src\lib\SparkFun_BME280\examples\SPI\Example1_BasicReadings\Example1_BasicReadings.ino, code is 26, comment is 26, blank is 10.
+lib\KraftKontrol\src\lib\SparkFun_BME280\keywords.txt, code is 83, comment is 0, blank is 7.
+lib\KraftKontrol\src\lib\SparkFun_BME280\library.properties, code is 9, comment is 1, blank is 0.
+lib\KraftKontrol\src\lib\SparkFun_BME280\LICENSE.md, code is 39, comment is 3, blank is 18.
+lib\KraftKontrol\src\lib\SparkFun_BME280\README.md, code is 51, comment is 18, blank is 23.
+lib\KraftKontrol\src\lib\SparkFun_BME280\src\SparkFunBME280.cpp, code is 502, comment is 263, blank is 131.
+lib\KraftKontrol\src\lib\SparkFun_BME280\src\SparkFunBME280.h, code is 172, comment is 100, blank is 40.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\.gitattributes, code is 15, comment is 0, blank is 2.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\.gitignore, code is 37, comment is 0, blank is 10.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\CONTRIBUTING.md, code is 7, comment is 3, blank is 4.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example1-RotationVector\Example1-RotationVector.ino, code is 41, comment is 35, blank is 12.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example10-PrintPacket\Example10-PrintPacket.ino, code is 22, comment is 25, blank is 9.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example11-AdvancedConfig\Example11-AdvancedConfig.ino, code is 37, comment is 27, blank is 11.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example12-LinearAccelerometer\Example12-LinearAccelerometer.ino, code is 33, comment is 22, blank is 11.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example13-TimeStamp\Example13-TimeStamp.ino, code is 40, comment is 25, blank is 11.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example14-TwoSensors\Example14-TwoSensors.ino, code is 66, comment is 35, blank is 15.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example15-RawReadings\Example15-RawReadings.ino, code is 54, comment is 23, blank is 15.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example16-GyroIntegratedRotationVector\Example16-GyroIntegratedRotationVector.ino, code is 46, comment is 39, blank is 13.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example17-EulerAngles\Example17-EulerAngles.ino, code is 35, comment is 46, blank is 12.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example18-AccessMultiple\Example18-AccessMultiple.ino, code is 70, comment is 50, blank is 18.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example19-Interrupt\Example19-Interrupt.ino, code is 86, comment is 47, blank is 18.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example2-Accelerometer\Example2-Accelerometer.ino, code is 31, comment is 22, blank is 11.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example20-Sleep\Example20-Sleep.ino, code is 61, comment is 50, blank is 19.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example21-ResetCheck\Example21-ResetCheck.ino, code is 54, comment is 21, blank is 19.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example3-Gyro\Example3-Gyro.ino, code is 31, comment is 25, blank is 11.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example4-Magnetometer\Example4-Magnetometer.ino, code is 41, comment is 26, blank is 12.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example5-StepCounter\Example5-StepCounter.ino, code is 25, comment is 25, blank is 11.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example6-MetaData\Example6-MetaData.ino, code is 47, comment is 80, blank is 17.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example7-StabilityClassifier\Example7-StabilityClassifier.ino, code is 29, comment is 27, blank is 12.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example8-ActivityClassifier\Example8-ActivityClassifier.ino, code is 48, comment is 44, blank is 15.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\Example9-Calibrate\Example9-Calibrate.ino, code is 87, comment is 40, blank is 22.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\SPI\Example1-RotationVector\Example1-RotationVector.ino, code is 52, comment is 51, blank is 17.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\SPI\Example12-LinearAccelerometer\Example12-LinearAccelerometer.ino, code is 35, comment is 37, blank is 10.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\SPI\Example17-EulerAngles\Example17-EulerAngles.ino, code is 39, comment is 60, blank is 15.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\SPI\Example18-AccessMultiple\Example18-AccessMultiple.ino, code is 76, comment is 76, blank is 17.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\examples\SPI\Example3-AccelAndRotationVector\Example3-AccelAndRotationVector.ino, code is 53, comment is 47, blank is 16.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\ISSUE_TEMPLATE.md, code is 14, comment is 0, blank is 4.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\keywords.txt, code is 119, comment is 0, blank is 26.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\library.properties, code is 9, comment is 2, blank is 0.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\LICENSE.md, code is 39, comment is 3, blank is 16.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\README.md, code is 6, comment is 2, blank is 4.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\src\SparkFun_BNO080_Arduino_Library.cpp, code is 1118, comment is 484, blank is 230.
+lib\KraftKontrol\src\lib\SparkFun_BNO080\src\SparkFun_BNO080_Arduino_Library.h, code is 217, comment is 83, blank is 46.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\.gitattributes, code is 2, comment is 0, blank is 0.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\.gitignore, code is 45, comment is 0, blank is 13.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\CONTRIBUTING.md, code is 8, comment is 3, blank is 5.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\ISSUE_TEMPLATE.md, code is 14, comment is 0, blank is 4.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\keywords.txt, code is 581, comment is 0, blank is 85.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\library.properties, code is 9, comment is 1, blank is 0.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\LICENSE.md, code is 39, comment is 3, blank is 16.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\README.md, code is 76, comment is 15, blank is 25.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\src\SparkFun_u-blox_GNSS_Arduino_Library.cpp, code is 7773, comment is 3013, blank is 1371.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\src\SparkFun_u-blox_GNSS_Arduino_Library.h, code is 961, comment is 871, blank is 187.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\src\u-blox_config_keys.h, code is 674, comment is 776, blank is 45.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\src\u-blox_structs.h, code is 1567, comment is 502, blank is 183.
+lib\KraftKontrol\src\lib\SparkFun_u-blox_GNSS\Theory.md, code is 20, comment is 0, blank is 7.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\ReadMe.md, code is 137, comment is 0, blank is 127.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\103_LoRa_Transmitter_Detailed_Setup\103_LoRa_Transmitter_Detailed_Setup.ino, code is 116, comment is 63, blank is 31.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\103_LoRa_Transmitter_Detailed_Setup\Settings.h, code is 18, comment is 26, blank is 11.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\104_LoRa_Receiver_Detailed_Setup\104_LoRa_Receiver_Detailed_Setup.ino, code is 163, comment is 71, blank is 46.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\104_LoRa_Receiver_Detailed_Setup\Settings.h, code is 18, comment is 31, blank is 13.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\14_LoRa_Structure_TX\14_LoRa_Structure_TX.ino, code is 86, comment is 44, blank is 22.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\14_LoRa_Structure_TX\Settings.h, code is 18, comment is 25, blank is 9.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\15_LoRa_Structure_RX\15_LoRa_Structure_RX.ino, code is 127, comment is 47, blank is 33.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\15_LoRa_Structure_RX\Settings.h, code is 18, comment is 25, blank is 8.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\1_LED_Blink\1_LED_Blink.ino, code is 42, comment is 25, blank is 13.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\2_Register_Test\2_Register_Test.ino, code is 238, comment is 90, blank is 72.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\3_LoRa_Transmitter\3_LoRa_Transmitter.ino, code is 117, comment is 63, blank is 31.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\3_LoRa_Transmitter\Settings.h, code is 17, comment is 24, blank is 9.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\4_LoRa_Receiver\4_LoRa_Receiver.ino, code is 164, comment is 70, blank is 46.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\4_LoRa_Receiver\Settings.h, code is 19, comment is 26, blank is 9.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\52_FLRC_Transmitter\52_FLRC_Transmitter.ino, code is 117, comment is 62, blank is 30.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\52_FLRC_Transmitter\Settings.h, code is 19, comment is 26, blank is 9.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\53_FLRC_Receiver\53_FLRC_Receiver.ino, code is 158, comment is 67, blank is 47.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\53_FLRC_Receiver\Settings.h, code is 20, comment is 27, blank is 10.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\54_Ranging_Master\54_Ranging_Master.ino, code is 162, comment is 14, blank is 42.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\54_Ranging_Master\Settings.h, code is 21, comment is 29, blank is 13.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\55_Ranging_Slave\55_Ranging_Slave.ino, code is 98, comment is 28, blank is 28.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\55_Ranging_Slave\Settings.h, code is 15, comment is 23, blank is 10.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\56_Ranging_Calibration_Checker\56_Ranging_Calibration_Checker.ino, code is 147, comment is 21, blank is 41.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\56_Ranging_Calibration_Checker\Settings.h, code is 25, comment is 33, blank is 10.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\Pictures\Calibration_Values.jpg, it is a binary file.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\Pictures\IMG_2531_Reduced.jpg, it is a binary file.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\Pictures\SX128X_Ranging_Calibration_Values.jpg, it is a binary file.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\Pictures\SX128XLT_Ranging_100m.jpg, it is a binary file.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\ReadMe.md, code is 64, comment is 6, blank is 49.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\ReadMe.md, code is 50, comment is 7, blank is 35.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\21_On_Off_Transmitter\21_On_Off_Transmitter.ino, code is 203, comment is 58, blank is 75.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\21_On_Off_Transmitter\Settings.h, code is 21, comment is 31, blank is 14.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\22_On_Off_Receiver\22_On_Off_Receiver.ino, code is 205, comment is 50, blank is 65.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\22_On_Off_Receiver\Settings.h, code is 22, comment is 32, blank is 13.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\35_Remote_Control_Servo_Transmitter\35_Remote_Control_Servo_Transmitter.ino, code is 111, comment is 55, blank is 40.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\35_Remote_Control_Servo_Transmitter\Settings.h, code is 21, comment is 35, blank is 14.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\36_Remote_Control_Servo_Receiver\36_Remote_Control_Servo_Receiver.ino, code is 158, comment is 71, blank is 52.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\36_Remote_Control_Servo_Receiver\Settings.h, code is 20, comment is 34, blank is 12.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Sensor\17_Sensor_Transmitter\17_Sensor_Transmitter.ino, code is 192, comment is 106, blank is 63.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Sensor\17_Sensor_Transmitter\Settings.h, code is 24, comment is 31, blank is 9.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Sensor\18_Sensor_Receiver\18_Sensor_Receiver.ino, code is 250, comment is 76, blank is 64.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Sensor\18_Sensor_Receiver\Settings.h, code is 23, comment is 30, blank is 11.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\23_GPS_Tracker_Transmitter\23_GPS_Tracker_Transmitter.ino, code is 291, comment is 93, blank is 77.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\23_GPS_Tracker_Transmitter\Settings.h, code is 30, comment is 45, blank is 22.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\24_GPS_Tracker_Receiver\24_GPS_Tracker_Receiver.ino, code is 245, comment is 47, blank is 58.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\24_GPS_Tracker_Receiver\Settings.h, code is 14, comment is 30, blank is 14.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\25_GPS_Tracker_Receiver_With_Display_and_GPS\25_GPS_Tracker_Receiver_With_Display_and_GPS.ino, code is 458, comment is 125, blank is 106.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\25_GPS_Tracker_Receiver_With_Display_and_GPS\Settings.h, code is 25, comment is 45, blank is 18.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\38_lora_Relay\38_lora_Relay.ino, code is 113, comment is 31, blank is 37.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\38_lora_Relay\Settings.h, code is 20, comment is 32, blank is 14.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\keywords.txt, code is 185, comment is 0, blank is 6.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\library.properties, code is 9, comment is 1, blank is 0.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\ReadMe.md, code is 3, comment is 0, blank is 2.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\src\LICENSE.txt, code is 23, comment is 0, blank is 2.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\src\SX128XLT.cpp, code is 1975, comment is 255, blank is 673.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\src\SX128XLT.h, code is 137, comment is 48, blank is 26.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\src\SX128XLT_Definitions.h, code is 270, comment is 85, blank is 77.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\Updates.md, code is 10, comment is 0, blank is 2.
+lib\KraftKontrol\src\lib\SX12XX-LoRa-master\What is LoRa.md, code is 34, comment is 0, blank is 28.
+lib\KraftKontrol\src\modules\actuator_modules\actuator_abstract.cpp, code is 5, comment is 0, blank is 7.
+lib\KraftKontrol\src\modules\control_modules\powered_hover_controller.cpp, code is 112, comment is 49, blank is 47.
+lib\KraftKontrol\src\modules\data_manager_modules\data_storage_manager.cpp, code is 179, comment is 48, blank is 139.
+lib\KraftKontrol\src\modules\datalink_modules\sx1280_lora_driver.cpp, code is 90, comment is 9, blank is 80.
+lib\KraftKontrol\src\modules\eeprom_hal_modules_DEPRECATED\eeprom_hal_interface.cpp, code is 0, comment is 109, blank is 0.
+lib\KraftKontrol\src\modules\eeprom_hal_modules_DEPRECATED\eeprom_hal_teensy.cpp, code is 2, comment is 53, blank is 3.
+lib\KraftKontrol\src\modules\guidance_modules\guidance_flybywire.cpp, code is 17, comment is 3, blank is 15.
+lib\KraftKontrol\src\modules\guidance_modules\guidance_path.cpp, code is 3, comment is 0, blank is 8.
+lib\KraftKontrol\src\modules\hid_modules\display_modules\display_abstract.cpp, code is 14, comment is 1, blank is 13.
+lib\KraftKontrol\src\modules\hid_modules\display_modules\st7735_driver.cpp, code is 38, comment is 2, blank is 25.
+lib\KraftKontrol\src\modules\hid_modules\input_modules\analog_button.cpp, code is 23, comment is 0, blank is 26.
+lib\KraftKontrol\src\modules\hid_modules\input_modules\button_abstract.cpp, code is 44, comment is 1, blank is 20.
+lib\KraftKontrol\src\modules\hid_modules\input_modules\gpio_button.cpp, code is 30, comment is 0, blank is 25.
+lib\KraftKontrol\src\modules\hid_modules\joystick_modules\joystick.cpp, code is 113, comment is 6, blank is 57.
+lib\KraftKontrol\src\modules\module_abstract.cpp, code is 9, comment is 8, blank is 14.
+lib\KraftKontrol\src\modules\navigation_modules\navigation_complementary.cpp, code is 207, comment is 278, blank is 154.
+lib\KraftKontrol\src\modules\sensor_modules\adc_modules\adc_abstract.cpp, code is 22, comment is 0, blank is 15.
+lib\KraftKontrol\src\modules\sensor_modules\adc_modules\ads1115_driver.cpp, code is 44, comment is 3, blank is 44.
+lib\KraftKontrol\src\modules\sensor_modules\barometer_modules\bme280_driver.cpp, code is 80, comment is 11, blank is 50.
+lib\KraftKontrol\src\modules\sensor_modules\gnss_modules\ublox_serial_gnss.cpp, code is 97, comment is 17, blank is 72.
+lib\KraftKontrol\src\modules\sensor_modules\imu_modules\bno080_driver.cpp, code is 100, comment is 57, blank is 84.
+lib\KraftKontrol\src\modules\sensor_modules\imu_modules\mpu9250_driver.cpp, code is 80, comment is 14, blank is 52.
+lib\KraftKontrol\src\modules\sensor_modules\magnetometer_modules\hmc5883_driver.cpp, code is 101, comment is 34, blank is 84.
+lib\KraftKontrol\src\outputs\rgb_led.cpp, code is 1, comment is 75, blank is 1.
+lib\KraftKontrol\src\outputs\servo_ppm.cpp, code is 96, comment is 64, blank is 59.
+lib\KraftKontrol\src\platforms\arduino_platform\arduino_gpio_hal.cpp, code is 83, comment is 1, blank is 40.
+lib\KraftKontrol\src\platforms\arduino_platform\arduino_systemtime.cpp, code is 11, comment is 0, blank is 8.
+lib\KraftKontrol\src\utils\KraftKommunikation\kraft_kommunication.cpp, code is 126, comment is 61, blank is 116.
+lib\KraftKontrol\src\utils\Simple-Schedule\simple_scheduler.cpp, code is 140, comment is 12, blank is 59.
+lib\KraftKontrol\src\utils\Simple-Schedule\task_autorun_class.cpp, code is 72, comment is 14, blank is 50.
+lib\KraftKontrol\src\utils\value_error.cpp, code is 5, comment is 0, blank is 3.
+lib\KraftKontrol\src\vehicle\vehicle_general.cpp, code is 1, comment is 0, blank is 3.
+lib\KraftKontrol\test\README, code is 8, comment is 1, blank is 3.
+lib\README, code is 37, comment is 2, blank is 9.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\12_ATmel_Sleep_with_Switch_Wakeup\12_ATmel_Sleep_with_Switch_Wakeup.ino, code is 62, comment is 36, blank is 29.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\26_GPS_Echo\26_GPS_Echo.ino, code is 17, comment is 26, blank is 7.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\26A_GPS_Echo_Simple\26A_GPS_Echo_Simple.ino, code is 17, comment is 27, blank is 4.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\26B_GPS_Echo_Hardware_Serial\26B_GPS_Echo_Hardware_Serial.ino, code is 14, comment is 25, blank is 4.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\26C_GPS_Echo_UBLOXI2C\26C_GPS_Echo_UBLOXI2C.ino, code is 23, comment is 14, blank is 8.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\28_GPS_Checker\28_GPS_Checker.ino, code is 178, comment is 67, blank is 48.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\29_GPS_Checker_With_Display\29_GPS_Checker_With_Display.ino, code is 223, comment is 76, blank is 60.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\30_I2C_Scanner\30_I2C_Scanner.ino, code is 49, comment is 9, blank is 12.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\31_SSD1306_SH1106_OLED_Checker\31_SSD1306_SH1106_OLED_Checker.ino, code is 80, comment is 39, blank is 21.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\32_GPS_Checker_Time\32_GPS_Checker_Time.ino, code is 99, comment is 27, blank is 36.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\34_ATmel_Sleep_with_Watchdog_Wakeup\34_ATmel_Sleep_with_Watchdog_Wakeup.ino, code is 66, comment is 33, blank is 21.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\37_Servo_Sweep_Tester\37_Servo_Sweep_Tester.ino, code is 42, comment is 22, blank is 20.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\43_SD_Card_Test\43_SD_Card_Test.ino, code is 172, comment is 53, blank is 50.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\45_Battery_Voltage_Read_Test\45_Battery_Voltage_Read_Test.ino, code is 68, comment is 36, blank is 21.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\46_I2C_FRAM_Memory_Test\46_I2C_FRAM_Memory_Test.ino, code is 97, comment is 27, blank is 34.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\46_I2C_FRAM_Memory_Test\I2C_Scanner.h, code is 37, comment is 33, blank is 14.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\48_DS18B20_Test\48_DS18B20_Test.ino, code is 45, comment is 25, blank is 22.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\57_NRF24L01_Is_It_There\57_NRF24L01_Is_It_There.ino, code is 60, comment is 29, blank is 17.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\61_Bluetooth_Test\61_Bluetooth_Test.ino, code is 19, comment is 23, blank is 10.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\63_QuectelGPS_Firmware_Checker\63_QuectelGPS_Firmware_Checker.ino, code is 27, comment is 29, blank is 12.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\72_GPS_Speedo\72_GPS_Speedo.ino, code is 67, comment is 22, blank is 24.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\72A_GPS_Speedo_With_Display\72A_GPS_Speedo_With_Display.ino, code is 96, comment is 29, blank is 31.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\77_ILI9341_Display_Checker\77_ILI9341_Display_Checker.ino, code is 81, comment is 25, blank is 34.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\79_Serial_Terminal\79_Serial_Terminal.ino, code is 24, comment is 21, blank is 14.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\81_BME280_Test\81_BME280_Test.ino, code is 74, comment is 29, blank is 29.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\88_ATMEGA328P_TEST\88_ATMEGA328P_TEST.ino, code is 20, comment is 4, blank is 4.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\89_ArduinoUniqueID\89_ArduinoUniqueID.ino, code is 18, comment is 6, blank is 3.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\30_I2C_Scanner\30_I2C_Scanner.ino, code is 49, comment is 9, blank is 12.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\31_SSD1306_SH1106_OLED_Checker_ESP32\31_SSD1306_SH1106_OLED_Checker_ESP32.ino, code is 55, comment is 23, blank is 15.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\43_SD_Card_Test_ESP32\43_SD_Card_Test_ESP32.ino, code is 172, comment is 60, blank is 48.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\44_SD_Card_Test_With_FS_ESP32\44_SD_Card_Test_With_FS_ESP32.ino, code is 66, comment is 27, blank is 21.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\44_SD_Card_Test_With_FS_ESP32\ESP32_LoRa_Micro_Node.h, code is 4, comment is 15, blank is 6.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\44_SD_Card_Test_With_FS_ESP32\testfile.txt, code is 321, comment is 0, blank is 77.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\45_Battery_Voltage_Read_Test_ESP32\45_Battery_Voltage_Read_Test_ESP32.ino, code is 67, comment is 29, blank is 25.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\47_DeepSleep_Timed_Wakeup_ESP32\47_DeepSleep_Timed_Wakeup_ESP32.ino, code is 54, comment is 27, blank is 17.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\50_LightSleep_Timed_Wakeup_ESP32\50_LightSleep_Timed_Wakeup_ESP32.ino, code is 54, comment is 29, blank is 18.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\51_DeepSleep_Switch_Wakeup_ESP32\51_DeepSleep_Switch_Wakeup_ESP32.ino, code is 50, comment is 27, blank is 18.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\64_WiFi_Scanner_Display_ESP32\64_WiFi_Scanner_Display_ESP32.ino, code is 87, comment is 31, blank is 21.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\64_WiFi_Scanner_Display_ESP32\ESP32_LoRa_Micro_Node.h, code is 17, comment is 28, blank is 7.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\ESP32\81_BME280_Test_ESP32\81_BME280_Test_ESP32.ino, code is 77, comment is 33, blank is 30.
+lib\SX12XX-LoRa-master\examples\Hardware_Checks\STM32\31_SSD1306_OLED_Checker_STM32\31_SSD1306_OLED_Checker_STM32.ino, code is 55, comment is 23, blank is 15.
+lib\SX12XX-LoRa-master\examples\ReadMe.md, code is 137, comment is 0, blank is 127.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\103_LoRa_Transmitter_Detailed_Setup\103_LoRa_Transmitter_Detailed_Setup.ino, code is 123, comment is 66, blank is 30.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\103_LoRa_Transmitter_Detailed_Setup\Settings.h, code is 19, comment is 34, blank is 12.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\104_LoRa_Receiver_Detailed_Setup\104_LoRa_Receiver_Detailed_Setup.ino, code is 170, comment is 74, blank is 46.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\104_LoRa_Receiver_Detailed_Setup\Settings.h, code is 21, comment is 34, blank is 15.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\14_LoRa_Structure_TX\14_LoRa_Structure_TX.ino, code is 86, comment is 44, blank is 22.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\14_LoRa_Structure_TX\Settings.h, code is 17, comment is 30, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\15_LoRa_Structure_RX\15_LoRa_Structure_RX.ino, code is 127, comment is 47, blank is 33.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\15_LoRa_Structure_RX\Settings.h, code is 19, comment is 32, blank is 12.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\1_LED_Blink\1_LED_Blink.ino, code is 42, comment is 25, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\2_Register_Test\2_Register_Test.ino, code is 242, comment is 112, blank is 77.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\3_LoRa_Transmitter\3_LoRa_Transmitter.ino, code is 73, comment is 49, blank is 26.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\4_LoRa_Receiver\4_LoRa_Receiver.ino, code is 110, comment is 56, blank is 31.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\58_FM_Tone\58_FM_Tone.ino, code is 59, comment is 25, blank is 20.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Basics\58_FM_Tone\Settings.h, code is 14, comment is 26, blank is 10.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\10_LoRa_Link_Test_Transmitter\10_LoRa_Link_Test_Transmitter.ino, code is 179, comment is 55, blank is 44.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\10_LoRa_Link_Test_Transmitter\Settings.h, code is 23, comment is 38, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\11_LoRa_Packet_Logger_Receiver\11_LoRa_Packet_Logger_Receiver.ino, code is 158, comment is 34, blank is 42.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\11_LoRa_Packet_Logger_Receiver\Settings.h, code is 18, comment is 31, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\16_LoRa_RX_Frequency_Error_Check\16_LoRa_RX_Frequency_Error_Check.ino, code is 129, comment is 34, blank is 39.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\16_LoRa_RX_Frequency_Error_Check\Settings.h, code is 20, comment is 33, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\20_LoRa_Link_Test_Receiver\20_LoRa_Link_Test_Receiver.ino, code is 228, comment is 62, blank is 63.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\20_LoRa_Link_Test_Receiver\Settings.h, code is 16, comment is 27, blank is 15.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\33_LoRa_RSSI_Checker_With_Display\33_LoRa_RSSI_Checker_With_Display.ino, code is 199, comment is 65, blank is 52.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\33_LoRa_RSSI_Checker_With_Display\Settings.h, code is 21, comment is 34, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\42_LoRa_Data_Throughput_Test_Transmitter\42_LoRa_Data_Throughput_Test_Transmitter.ino, code is 195, comment is 68, blank is 47.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\42_LoRa_Data_Throughput_Test_Transmitter\Settings.h, code is 16, comment is 30, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\60_LoRa_Packet_Logger_Receiver_SD\60_LoRa_Packet_Logger_Receiver_SD.ino, code is 176, comment is 44, blank is 50.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\60_LoRa_Packet_Logger_Receiver_SD\SD_Logger_Library.h, code is 257, comment is 19, blank is 72.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Diagnostic_and_Test\60_LoRa_Packet_Logger_Receiver_SD\Settings.h, code is 18, comment is 30, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\ESP32\Basics\103_LoRa_Transmitter_Detailed_Setup_ESP32\103_LoRa_Transmitter_Detailed_Setup_ESP32.ino, code is 123, comment is 66, blank is 31.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\ESP32\Basics\103_LoRa_Transmitter_Detailed_Setup_ESP32\Settings.h, code is 20, comment is 33, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\ESP32\Basics\104_LoRa_Receiver_Detailed_Setup_ESP32\104_LoRa_Receiver_Detailed_Setup_ESP32.ino, code is 170, comment is 74, blank is 46.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\ESP32\Basics\104_LoRa_Receiver_Detailed_Setup_ESP32\Settings.h, code is 21, comment is 34, blank is 18.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\ESP32\Basics\3_LoRa_Transmitter\3_LoRa_Transmitter.ino, code is 72, comment is 51, blank is 28.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\ESP32\Pictures\ESP32_Bare_Bones_Schematic.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\ESP32\Pictures\ESP32_Micro_Node.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\ESP32\Pictures\ESP32_Shield.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\ESP32\ReadMe.md, code is 61, comment is 5, blank is 49.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\LowMemory\8_LoRa_LowMemory_TX\8_LoRa_LowMemory_TX.ino, code is 92, comment is 46, blank is 27.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\LowMemory\8_LoRa_LowMemory_TX\Settings.h, code is 17, comment is 30, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\LowMemory\9_LoRa_LowMemory_RX\9_LoRa_LowMemory_RX.ino, code is 128, comment is 47, blank is 37.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\LowMemory\9_LoRa_LowMemory_RX\Settings.h, code is 19, comment is 32, blank is 12.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\ReadMe.md, code is 21, comment is 0, blank is 23.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\RemoteControl\21_On_Off_Transmitter\21_On_Off_Transmitter.ino, code is 203, comment is 58, blank is 75.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\RemoteControl\21_On_Off_Transmitter\Settings.h, code is 23, comment is 33, blank is 15.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\RemoteControl\22_On_Off_Receiver\22_On_Off_Receiver.ino, code is 205, comment is 50, blank is 65.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\RemoteControl\22_On_Off_Receiver\Settings.h, code is 24, comment is 33, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\RemoteControl\35_Remote_Control_Servo_Transmitter\35_Remote_Control_Servo_Transmitter.ino, code is 118, comment is 63, blank is 41.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\RemoteControl\35_Remote_Control_Servo_Transmitter\Settings.h, code is 23, comment is 38, blank is 15.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\RemoteControl\36_Remote_Control_Servo_Receiver\36_Remote_Control_Servo_Receiver.ino, code is 161, comment is 71, blank is 52.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\RemoteControl\36_Remote_Control_Servo_Receiver\Settings.h, code is 22, comment is 35, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Sensor\17_Sensor_Transmitter\17_Sensor_Transmitter.ino, code is 192, comment is 106, blank is 63.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Sensor\17_Sensor_Transmitter\Settings.h, code is 23, comment is 35, blank is 12.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Sensor\18_Sensor_Receiver\18_Sensor_Receiver.ino, code is 250, comment is 76, blank is 64.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Sensor\18_Sensor_Receiver\Settings.h, code is 22, comment is 36, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Silly\59_Play_Star_Wars_Tune\59_Play_Star_Wars_Tune.ino, code is 123, comment is 29, blank is 36.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Silly\59_Play_Star_Wars_Tune\pitches.h, code is 89, comment is 2, blank is 3.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Silly\59_Play_Star_Wars_Tune\Settings.h, code is 14, comment is 26, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Sleep\5_LoRa_TX_Sleep_Timed_Wakeup_Atmel\5_LoRa_TX_Sleep_Timed_Wakeup_Atmel.ino, code is 175, comment is 34, blank is 45.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Sleep\5_LoRa_TX_Sleep_Timed_Wakeup_Atmel\Settings.h, code is 19, comment is 32, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Sleep\62_LoRa_Wake_on_RX_Atmel\62_LoRa_Wake_on_RX_Atmel.ino, code is 154, comment is 38, blank is 46.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Sleep\62_LoRa_Wake_on_RX_Atmel\Settings.h, code is 18, comment is 30, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Sleep\6_LoRa_RX_and_Sleep_Atmel\6_LoRa_RX_and_Sleep_Atmel.ino, code is 166, comment is 51, blank is 55.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Sleep\6_LoRa_RX_and_Sleep_Atmel\Settings.h, code is 17, comment is 30, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\STM32\Basics\1_LED_Blink\1_LED_Blink.ino, code is 42, comment is 25, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\STM32\Basics\2_Register_Test\2_Register_Test.ino, code is 241, comment is 110, blank is 78.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\STM32\Basics\3_LoRa_Transmitter\3_LoRa_Transmitter.ino, code is 73, comment is 49, blank is 26.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\STM32\Basics\4_LoRa_Receiver\4_LoRa_Receiver.ino, code is 110, comment is 56, blank is 31.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\23_GPS_Tracker_Transmitter\23_GPS_Tracker_Transmitter.ino, code is 291, comment is 93, blank is 77.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\23_GPS_Tracker_Transmitter\Settings.h, code is 30, comment is 45, blank is 23.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\24_GPS_Tracker_Receiver\24_GPS_Tracker_Receiver.ino, code is 245, comment is 47, blank is 58.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\24_GPS_Tracker_Receiver\Settings.h, code is 14, comment is 25, blank is 12.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\25_GPS_Tracker_Receiver_With_Display_and_GPS\25_GPS_Tracker_Receiver_With_Display_and_GPS.ino, code is 458, comment is 125, blank is 106.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\25_GPS_Tracker_Receiver_With_Display_and_GPS\Settings.h, code is 26, comment is 44, blank is 23.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\38_lora_Relay\38_lora_Relay.ino, code is 113, comment is 31, blank is 37.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\38_lora_Relay\Settings.h, code is 24, comment is 38, blank is 15.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\67_Balloon_Tracker_Transmitter\67_Balloon_Tracker_Transmitter.ino, code is 519, comment is 181, blank is 151.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\67_Balloon_Tracker_Transmitter\Settings.h, code is 53, comment is 95, blank is 40.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\68_Balloon_Tracker_Receiver\68_Balloon_Tracker_Receiver.ino, code is 771, comment is 165, blank is 200.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\68_Balloon_Tracker_Receiver\Settings.h, code is 39, comment is 69, blank is 28.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\71_FSKRTTY_Transmitter_Test\71_FSKRTTY_Transmitter_Test.ino, code is 116, comment is 58, blank is 38.
+lib\SX12XX-LoRa-master\examples\SX126x_examples\Tracker\71_FSKRTTY_Transmitter_Test\Settings.h, code is 20, comment is 32, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\103_Lora_Transmitter_Detailed_Setup\103_Lora_Transmitter_Detailed_Setup.ino, code is 118, comment is 73, blank is 30.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\103_Lora_Transmitter_Detailed_Setup\Settings.h, code is 15, comment is 28, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\104_Lora_Receiver_Detailed_Setup\104_Lora_Receiver_Detailed_Setup.ino, code is 166, comment is 82, blank is 46.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\104_Lora_Receiver_Detailed_Setup\Settings.h, code is 17, comment is 30, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\14_LoRa_Structure_TX\14_LoRa_Structure_TX.ino, code is 86, comment is 44, blank is 22.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\14_LoRa_Structure_TX\Settings.h, code is 15, comment is 28, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\15_LoRa_Structure_RX\15_LoRa_Structure_RX.ino, code is 127, comment is 47, blank is 33.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\15_LoRa_Structure_RX\Settings.h, code is 15, comment is 28, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\1_LED_Blink\1_LED_Blink.ino, code is 44, comment is 25, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\2_Register_Test\2_Register_Test.ino, code is 145, comment is 100, blank is 47.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\3_LoRa_Transmitter\3_LoRa_Transmitter.ino, code is 71, comment is 47, blank is 26.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\4_LoRa_Receiver\4_LoRa_Receiver.ino, code is 108, comment is 54, blank is 31.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\58_FM_Tone\58_FM_Tone.ino, code is 58, comment is 25, blank is 19.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\58_FM_Tone\Settings.h, code is 12, comment is 23, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\73_LoRa_Receiver_AFC\73_LoRa_Receiver_AFC.ino, code is 138, comment is 52, blank is 35.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\73_LoRa_Receiver_AFC\Settings.h, code is 14, comment is 27, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\80_Direct_DIO2_Tone\80_Direct_DIO2_Tone.ino, code is 68, comment is 32, blank is 21.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Basics\80_Direct_DIO2_Tone\Settings.h, code is 11, comment is 22, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\10_LoRa_Link_Test_Transmitter\10_LoRa_Link_Test_Transmitter.ino, code is 179, comment is 55, blank is 44.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\10_LoRa_Link_Test_Transmitter\Settings.h, code is 19, comment is 32, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\11_LoRa_Packet_Logger_Receiver\11_LoRa_Packet_Logger_Receiver.ino, code is 158, comment is 34, blank is 42.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\11_LoRa_Packet_Logger_Receiver\Settings.h, code is 16, comment is 29, blank is 10.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\13_Frequency_and_Power_Check_TX\13_Frequency_and_Power_Check_TX.ino, code is 96, comment is 23, blank is 27.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\13_Frequency_and_Power_Check_TX\Settings.h, code is 16, comment is 29, blank is 12.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\16_LoRa_RX_Frequency_Error_Check\16_LoRa_RX_Frequency_Error_Check.ino, code is 129, comment is 27, blank is 39.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\16_LoRa_RX_Frequency_Error_Check\Settings.h, code is 16, comment is 29, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\20_LoRa_Link_Test_Receiver\20_LoRa_Link_Test_Receiver.ino, code is 213, comment is 61, blank is 59.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\20_LoRa_Link_Test_Receiver\Settings.h, code is 17, comment is 30, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\33_LoRa_RSSI_Checker_With_Display\33_LoRa_RSSI_Checker_With_Display.ino, code is 200, comment is 66, blank is 51.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\33_LoRa_RSSI_Checker_With_Display\Settings.h, code is 17, comment is 30, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\42_LoRa_Data_Throughput_Test_Transmitter\42_LoRa_Data_Throughput_Test_Transmitter.ino, code is 195, comment is 68, blank is 47.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\42_LoRa_Data_Throughput_Test_Transmitter\Settings.h, code is 15, comment is 29, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\43_LoRa_Data_Throughput_Acknowledge_Receiver\43_LoRa_Data_Throughput_Acknowledge_Receiver.ino, code is 123, comment is 41, blank is 36.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\43_LoRa_Data_Throughput_Acknowledge_Receiver\Settings.h, code is 12, comment is 25, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\60_LoRa_Packet_Logger_Receiver_SD\60_LoRa_Packet_Logger_Receiver_SD.ino, code is 176, comment is 44, blank is 50.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\60_LoRa_Packet_Logger_Receiver_SD\SD_Logger_Library.h, code is 313, comment is 19, blank is 80.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\60_LoRa_Packet_Logger_Receiver_SD\Settings.h, code is 18, comment is 30, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\66_FSK_Carrier_Generator\66_FSK_Carrier_Generator.ino, code is 58, comment is 28, blank is 21.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Diagnostic_and_Test\66_FSK_Carrier_Generator\Settings.h, code is 8, comment is 19, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Basics\1_LED_Blink_ESP32\1_LED_Blink_ESP32.ino, code is 37, comment is 21, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Basics\2_Register_Test_ESP32\2_Register_Test_ESP32.ino, code is 182, comment is 98, blank is 53.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Basics\3_LoRa_Transmitter_ESP32\3_LoRa_Transmitter_ESP32.ino, code is 123, comment is 80, blank is 31.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Basics\3_LoRa_Transmitter_ESP32\Settings.h, code is 19, comment is 32, blank is 12.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Basics\4_LoRa_Receiver_ESP32\4_LoRa_Receiver_ESP32.ino, code is 170, comment is 87, blank is 47.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Basics\4_LoRa_Receiver_ESP32\Settings.h, code is 22, comment is 35, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Diagnostic_and_Test\42_LoRa_Data_Throughput_Transmitter_Test_ESP32\42_LoRa_Data_Throughput_Transmitter_Test_ESP32.ino, code is 193, comment is 64, blank is 48.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Diagnostic_and_Test\42_LoRa_Data_Throughput_Transmitter_Test_ESP32\Settings.h, code is 19, comment is 30, blank is 16.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Pictures\ESP32_Bare_Bones_Schematic.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Pictures\ESP32_Micro_Node.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Pictures\ESP32_Shield.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\ReadMe.md, code is 61, comment is 5, blank is 49.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Sensor\17_Sensor_Transmitter_ESP32\17_Sensor_Transmitter_ESP32.ino, code is 193, comment is 100, blank is 62.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Sensor\17_Sensor_Transmitter_ESP32\Settings.h, code is 25, comment is 38, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Sensor\18_Sensor_Receiver_ESP32\18_Sensor_Receiver_ESP32.ino, code is 250, comment is 78, blank is 65.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Sensor\18_Sensor_Receiver_ESP32\Settings.h, code is 21, comment is 36, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Sleep\5_LoRa_TX_Sleep_Timed_Wakeup_ESP32\5_LoRa_TX_Sleep_Timed_Wakeup_ESP32.ino, code is 186, comment is 47, blank is 50.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Sleep\5_LoRa_TX_Sleep_Timed_Wakeup_ESP32\Settings.h, code is 17, comment is 30, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Tracker\23_Simple_GPS_Tracker_Transmitter_ESP32\23_Simple_GPS_Tracker_Transmitter_ESP32.ino, code is 288, comment is 98, blank is 77.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Tracker\23_Simple_GPS_Tracker_Transmitter_ESP32\Settings.h, code is 34, comment is 50, blank is 21.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Tracker\25_GPS_Tracker_Receiver_With_Display_and_GPS_ESP32\25_GPS_Tracker_Receiver_With_Display_and_GPS_ESP32.ino, code is 458, comment is 125, blank is 106.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Tracker\25_GPS_Tracker_Receiver_With_Display_and_GPS_ESP32\Settings.h, code is 24, comment is 42, blank is 18.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Tracker\71_FSKRTTY_Transmitter_Test_ESP32\71_FSKRTTY_Transmitter_Test_ESP32.ino, code is 114, comment is 58, blank is 38.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Tracker\71_FSKRTTY_Transmitter_Test_ESP32\Settings.h, code is 19, comment is 30, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Tracker\75_Balloon_Tracker_Transmitter_SDLogger_ESP32\75_Balloon_Tracker_Transmitter_SDLogger_ESP32.ino, code is 638, comment is 193, blank is 184.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\ESP32\Tracker\75_Balloon_Tracker_Transmitter_SDLogger_ESP32\Settings.h, code is 60, comment is 96, blank is 40.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Implicit\40_LoRa_Transmitter_ImplicitPacket\40_LoRa_Transmitter_ImplicitPacket.ino, code is 122, comment is 77, blank is 32.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Implicit\40_LoRa_Transmitter_ImplicitPacket\Settings.h, code is 16, comment is 29, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Implicit\41_LoRa_Receiver_ImplicitPacket\41_LoRa_Receiver_ImplicitPacket.ino, code is 172, comment is 81, blank is 47.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Implicit\41_LoRa_Receiver_ImplicitPacket\Settings.h, code is 18, comment is 31, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\LowMemory\8_LoRa_LowMemory_TX\8_LoRa_LowMemory_TX.ino, code is 50, comment is 44, blank is 16.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\LowMemory\8_LoRa_LowMemory_TX\Settings.h, code is 12, comment is 22, blank is 8.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\LowMemory\9_LoRa_LowMemory_RX\9_LoRa_LowMemory_RX.ino, code is 102, comment is 51, blank is 29.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\LowMemory\9_LoRa_LowMemory_RX\Settings.h, code is 12, comment is 22, blank is 6.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\RemoteControl\21_On_Off_Transmitter\21_On_Off_Transmitter.ino, code is 202, comment is 57, blank is 75.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\RemoteControl\21_On_Off_Transmitter\Settings.h, code is 19, comment is 29, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\RemoteControl\22_On_Off_Receiver\22_On_Off_Receiver.ino, code is 205, comment is 50, blank is 65.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\RemoteControl\22_On_Off_Receiver\Settings.h, code is 19, comment is 29, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\RemoteControl\35_Remote_Control_Servo_Transmitter\35_Remote_Control_Servo_Transmitter.ino, code is 137, comment is 78, blank is 43.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\RemoteControl\35_Remote_Control_Servo_Transmitter\Settings.h, code is 19, comment is 33, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\RemoteControl\36_Remote_Control_Servo_Receiver\36_Remote_Control_Servo_Receiver.ino, code is 174, comment is 86, blank is 52.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\RemoteControl\36_Remote_Control_Servo_Receiver\Settings.h, code is 18, comment is 32, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\RemoteControl\86_Buffer_Transmit_Controller\86_Buffer_Transmit_Controller.ino, code is 71, comment is 47, blank is 30.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\RemoteControl\87_Buffer_Receive_Controller\87_Buffer_Receive_Controller.ino, code is 119, comment is 51, blank is 35.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sensor\17_Sensor_Transmitter\17_Sensor_Transmitter.ino, code is 191, comment is 125, blank is 62.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sensor\17_Sensor_Transmitter\Settings.h, code is 24, comment is 38, blank is 17.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sensor\18_Sensor_Receiver\18_Sensor_Receiver.ino, code is 246, comment is 82, blank is 68.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sensor\18_Sensor_Receiver\Settings.h, code is 16, comment is 30, blank is 15.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sensor\39_LoRa_SX127x_Temperature_Read\39_LoRa_SX127x_Temperature_Read.ino, code is 63, comment is 29, blank is 21.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Silly\59_Play_Star_Wars_Tune\59_Play_Star_Wars_Tune.ino, code is 122, comment is 29, blank is 36.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Silly\59_Play_Star_Wars_Tune\pitches.h, code is 89, comment is 2, blank is 3.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Silly\59_Play_Star_Wars_Tune\Settings.h, code is 12, comment is 23, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sleep\5_LoRa_TX_Sleep_Timed_Wakeup_Atmel\5_LoRa_TX_Sleep_Timed_Wakeup_Atmel.ino, code is 175, comment is 34, blank is 45.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sleep\5_LoRa_TX_Sleep_Timed_Wakeup_Atmel\Settings.h, code is 17, comment is 30, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sleep\62_LoRa_Wake_on_RX_Atmel\62_LoRa_Wake_on_RX_Atmel.ino, code is 154, comment is 38, blank is 46.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sleep\62_LoRa_Wake_on_RX_Atmel\Settings.h, code is 17, comment is 30, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sleep\6_LoRa_RX_and_Sleep_Atmel\6_LoRa_RX_and_Sleep_Atmel.ino, code is 166, comment is 50, blank is 55.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sleep\6_LoRa_RX_and_Sleep_Atmel\Settings.h, code is 17, comment is 30, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sleep\7_LoRa_TX_Sleep_Switch_Wakeup_Atmel\7_LoRa_TX_Sleep_Switch_Wakeup_Atmel.ino, code is 182, comment is 42, blank is 54.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sleep\7_LoRa_TX_Sleep_Switch_Wakeup_Atmel\Settings.h, code is 17, comment is 30, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sleep\Atmel Watchdog Sleep Time.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Sleep\Bare_Bones_Arduino_ATMega328.pdf, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\STM32\Basics\1_LED_Blink_STM32\1_LED_Blink_STM32.ino, code is 42, comment is 25, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\STM32\Basics\2_Register_Test_STM32\2_Register_Test_STM32.ino, code is 182, comment is 98, blank is 53.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\STM32\Basics\3_LoRa_Transmitter_STM32\3_LoRa_Transmitter_STM32.ino, code is 118, comment is 72, blank is 30.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\STM32\Basics\3_LoRa_Transmitter_STM32\Settings.h, code is 15, comment is 28, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\STM32\Basics\4_LoRa_Receiver_STM32\4_LoRa_Receiver_STM32.ino, code is 165, comment is 79, blank is 46.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\STM32\Basics\4_LoRa_Receiver_STM32\Settings.h, code is 17, comment is 30, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\STM32\Pictures\Arduino_IDE_for_STM32.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\STM32\Pictures\STM32_and_Shield.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\STM32\ReadMe.md, code is 18, comment is 1, blank is 19.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\23_GPS_Tracker_Transmitter\23_GPS_Tracker_Transmitter.ino, code is 304, comment is 94, blank is 76.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\23_GPS_Tracker_Transmitter\Settings.h, code is 27, comment is 43, blank is 22.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\24_GPS_Tracker_Receiver\24_GPS_Tracker_Receiver.ino, code is 245, comment is 47, blank is 59.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\24_GPS_Tracker_Receiver\Settings.h, code is 12, comment is 23, blank is 12.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\25_GPS_Tracker_Receiver_With_Display_and_GPS\25_GPS_Tracker_Receiver_With_Display_and_GPS.ino, code is 468, comment is 124, blank is 107.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\25_GPS_Tracker_Receiver_With_Display_and_GPS\Settings.h, code is 22, comment is 41, blank is 18.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\38_lora_Relay\38_lora_Relay.ino, code is 113, comment is 31, blank is 37.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\38_lora_Relay\Settings.h, code is 22, comment is 36, blank is 15.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\67_Balloon_Tracker_Transmitter\67_Balloon_Tracker_Transmitter.ino, code is 574, comment is 183, blank is 159.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\67_Balloon_Tracker_Transmitter\Settings.h, code is 53, comment is 97, blank is 40.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\68_Balloon_Tracker_Receiver\68_Balloon_Tracker_Receiver.ino, code is 786, comment is 164, blank is 198.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\68_Balloon_Tracker_Receiver\AFSKRTTY2_DL-Fldigi_Settings.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\68_Balloon_Tracker_Receiver\Settings.h, code is 43, comment is 74, blank is 29.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\69_Balloon_Tracker_Transmitter_GenericGPS\69_Balloon_Tracker_Transmitter_GenericGPS.ino, code is 551, comment is 174, blank is 161.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\69_Balloon_Tracker_Transmitter_GenericGPS\Settings.h, code is 52, comment is 93, blank is 38.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\70_AFSKRTTY_Upload_Test\70_AFSKRTTY_Upload_Test.ino, code is 42, comment is 44, blank is 24.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\70_AFSKRTTY_Upload_Test\AFSKRTTY2_DL-Fldigi_Settings.jpg.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\71_FSKRTTY_Transmitter_Test\71_FSKRTTY_Transmitter_Test.ino, code is 111, comment is 53, blank is 37.
+lib\SX12XX-LoRa-master\examples\SX127x_examples\Tracker\71_FSKRTTY_Transmitter_Test\Settings.h, code is 19, comment is 31, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\103_LoRa_Transmitter_Detailed_Setup\103_LoRa_Transmitter_Detailed_Setup.ino, code is 116, comment is 63, blank is 31.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\103_LoRa_Transmitter_Detailed_Setup\Settings.h, code is 18, comment is 26, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\104_LoRa_Receiver_Detailed_Setup\104_LoRa_Receiver_Detailed_Setup.ino, code is 163, comment is 71, blank is 46.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\104_LoRa_Receiver_Detailed_Setup\Settings.h, code is 18, comment is 31, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\14_LoRa_Structure_TX\14_LoRa_Structure_TX.ino, code is 86, comment is 44, blank is 22.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\14_LoRa_Structure_TX\Settings.h, code is 18, comment is 25, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\15_LoRa_Structure_RX\15_LoRa_Structure_RX.ino, code is 127, comment is 47, blank is 33.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\15_LoRa_Structure_RX\Settings.h, code is 18, comment is 25, blank is 8.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\1_LED_Blink\1_LED_Blink.ino, code is 42, comment is 25, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\2_Register_Test\2_Register_Test.ino, code is 238, comment is 90, blank is 72.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\3_LoRa_Transmitter\3_LoRa_Transmitter.ino, code is 117, comment is 63, blank is 31.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\3_LoRa_Transmitter\Settings.h, code is 17, comment is 24, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\4_LoRa_Receiver\4_LoRa_Receiver.ino, code is 164, comment is 70, blank is 46.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\4_LoRa_Receiver\Settings.h, code is 19, comment is 26, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\52_FLRC_Transmitter\52_FLRC_Transmitter.ino, code is 117, comment is 62, blank is 30.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\52_FLRC_Transmitter\Settings.h, code is 19, comment is 26, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\53_FLRC_Receiver\53_FLRC_Receiver.ino, code is 158, comment is 67, blank is 47.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Basics\53_FLRC_Receiver\Settings.h, code is 20, comment is 27, blank is 10.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\10_LoRa_Link_Test_Transmitter\10_LoRa_Link_Test_Transmitter.ino, code is 179, comment is 55, blank is 44.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\10_LoRa_Link_Test_Transmitter\Settings.h, code is 21, comment is 34, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\11_LoRa_Packet_Logger_Receiver\11_LoRa_Packet_Logger_Receiver.ino, code is 158, comment is 34, blank is 42.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\11_LoRa_Packet_Logger_Receiver\Settings.h, code is 18, comment is 26, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\16_LoRa_RX_Frequency_Error_Check\16_LoRa_RX_Frequency_Error_Check.ino, code is 129, comment is 27, blank is 39.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\16_LoRa_RX_Frequency_Error_Check\Settings.h, code is 18, comment is 26, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\20_LoRa_Link_Test_Receiver\20_LoRa_Link_Test_Receiver.ino, code is 228, comment is 62, blank is 63.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\20_LoRa_Link_Test_Receiver\Settings.h, code is 19, comment is 32, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\33_LoRa_RSSI_Checker_With_Display\33_LoRa_RSSI_Checker_With_Display.ino, code is 199, comment is 65, blank is 52.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\33_LoRa_RSSI_Checker_With_Display\Settings.h, code is 19, comment is 26, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\42_LoRa_Data_Throughput_Test_Transmitter\42_LoRa_Data_Throughput_Test_Transmitter.ino, code is 195, comment is 68, blank is 47.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\42_LoRa_Data_Throughput_Test_Transmitter\Settings.h, code is 15, comment is 29, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\42_LoRa_Data_Throughput_Test_Transmitter_FLRC\42_LoRa_Data_Throughput_Test_Transmitter_FLRC.ino, code is 203, comment is 73, blank is 47.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Diagnostic_and_Test\42_LoRa_Data_Throughput_Test_Transmitter_FLRC\Settings.h, code is 16, comment is 30, blank is 12.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\ESP32\Basics\103_LoRa_Transmitter_Detailed_Setup_ESP32\103_LoRa_Transmitter_Detailed_Setup_ESP32.ino, code is 116, comment is 63, blank is 32.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\ESP32\Basics\103_LoRa_Transmitter_Detailed_Setup_ESP32\Settings.h, code is 22, comment is 35, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\ESP32\Basics\104_LoRa_Receiver_Detailed_Setup_ESP32\104_LoRa_Receiver_Detailed_Setup_ESP32.ino, code is 163, comment is 71, blank is 46.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\ESP32\Basics\104_LoRa_Receiver_Detailed_Setup_ESP32\Settings.h, code is 23, comment is 36, blank is 15.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\ESP32\Pictures\ESP32_Bare_Bones_Schematic.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\ESP32\Pictures\ESP32_Micro_Node.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\ESP32\ReadMe.md, code is 61, comment is 5, blank is 49.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\LowMemory\8_LoRa_LowMemory_TX\8_LoRa_LowMemory_TX.ino, code is 92, comment is 46, blank is 27.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\LowMemory\8_LoRa_LowMemory_TX\Settings.h, code is 18, comment is 25, blank is 8.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\LowMemory\9_LoRa_LowMemory_RX\9_LoRa_LowMemory_RX.ino, code is 128, comment is 47, blank is 37.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\LowMemory\9_LoRa_LowMemory_RX\Settings.h, code is 19, comment is 26, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Pictures\Calibration_Values.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Pictures\IMG_2531_Reduced.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Pictures\SX128X_Ranging_Calibration_Values.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Pictures\SX128XLT_Ranging_100m.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\54_Ranging_Master\54_Ranging_Master.ino, code is 162, comment is 14, blank is 42.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\54_Ranging_Master\Settings.h, code is 21, comment is 29, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\55_Ranging_Slave\55_Ranging_Slave.ino, code is 98, comment is 28, blank is 28.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\55_Ranging_Slave\Settings.h, code is 15, comment is 23, blank is 10.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\56_Ranging_Calibration_Checker\56_Ranging_Calibration_Checker.ino, code is 147, comment is 21, blank is 41.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\56_Ranging_Calibration_Checker\Settings.h, code is 25, comment is 33, blank is 10.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\Pictures\Calibration_Values.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\Pictures\IMG_2531_Reduced.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\Pictures\SX128X_Ranging_Calibration_Values.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\Pictures\SX128XLT_Ranging_100m.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Ranging\ReadMe.md, code is 64, comment is 6, blank is 49.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\ReadMe.md, code is 19, comment is 0, blank is 18.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\21_On_Off_Transmitter\21_On_Off_Transmitter.ino, code is 203, comment is 58, blank is 75.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\21_On_Off_Transmitter\Settings.h, code is 21, comment is 31, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\22_On_Off_Receiver\22_On_Off_Receiver.ino, code is 205, comment is 50, blank is 65.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\22_On_Off_Receiver\Settings.h, code is 22, comment is 32, blank is 13.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\35_Remote_Control_Servo_Transmitter\35_Remote_Control_Servo_Transmitter.ino, code is 111, comment is 55, blank is 40.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\35_Remote_Control_Servo_Transmitter\Settings.h, code is 21, comment is 35, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\36_Remote_Control_Servo_Receiver\36_Remote_Control_Servo_Receiver.ino, code is 158, comment is 71, blank is 52.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\RemoteControl\36_Remote_Control_Servo_Receiver\Settings.h, code is 20, comment is 34, blank is 12.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Sensor\17_Sensor_Transmitter\17_Sensor_Transmitter.ino, code is 192, comment is 106, blank is 63.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Sensor\17_Sensor_Transmitter\Settings.h, code is 24, comment is 31, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Sensor\18_Sensor_Receiver\18_Sensor_Receiver.ino, code is 250, comment is 76, blank is 64.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Sensor\18_Sensor_Receiver\Settings.h, code is 23, comment is 30, blank is 11.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Sleep\5_LoRa_TX_Sleep_Timed_Wakeup_Atmel\5_LoRa_TX_Sleep_Timed_Wakeup_Atmel.ino, code is 175, comment is 34, blank is 45.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Sleep\5_LoRa_TX_Sleep_Timed_Wakeup_Atmel\Settings.h, code is 19, comment is 26, blank is 9.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\23_GPS_Tracker_Transmitter\23_GPS_Tracker_Transmitter.ino, code is 291, comment is 93, blank is 77.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\23_GPS_Tracker_Transmitter\Settings.h, code is 30, comment is 45, blank is 22.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\24_GPS_Tracker_Receiver\24_GPS_Tracker_Receiver.ino, code is 245, comment is 47, blank is 58.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\24_GPS_Tracker_Receiver\Settings.h, code is 14, comment is 30, blank is 14.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\25_GPS_Tracker_Receiver_With_Display_and_GPS\25_GPS_Tracker_Receiver_With_Display_and_GPS.ino, code is 458, comment is 125, blank is 106.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\25_GPS_Tracker_Receiver_With_Display_and_GPS\Settings.h, code is 25, comment is 45, blank is 18.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\38_lora_Relay\38_lora_Relay.ino, code is 113, comment is 31, blank is 37.
+lib\SX12XX-LoRa-master\examples\SX128x_examples\Tracker\38_lora_Relay\Settings.h, code is 20, comment is 32, blank is 14.
+lib\SX12XX-LoRa-master\keywords.txt, code is 185, comment is 0, blank is 6.
+lib\SX12XX-LoRa-master\library.properties, code is 9, comment is 1, blank is 0.
+lib\SX12XX-LoRa-master\pictures\Atmel Watchdog Sleep Time.jpg, it is a binary file.
+lib\SX12XX-LoRa-master\pictures\ESP32_Bare_Bones_circuit.pdf, it is a binary file.
+lib\SX12XX-LoRa-master\ReadMe.md, code is 3, comment is 0, blank is 2.
+lib\SX12XX-LoRa-master\src\AFSKRTTY.h, code is 40, comment is 33, blank is 11.
+lib\SX12XX-LoRa-master\src\AFSKRTTY2.h, code is 100, comment is 52, blank is 35.
+lib\SX12XX-LoRa-master\src\AtmelSleep.h, code is 59, comment is 34, blank is 26.
+lib\SX12XX-LoRa-master\src\EEPROM_Memory.h, code is 51, comment is 15, blank is 25.
+lib\SX12XX-LoRa-master\src\FRAM_FM24CL64.h, code is 317, comment is 50, blank is 104.
+lib\SX12XX-LoRa-master\src\FRAM_MB85RC16PNF.h, code is 301, comment is 66, blank is 105.
+lib\SX12XX-LoRa-master\src\LICENSE.txt, code is 23, comment is 0, blank is 2.
+lib\SX12XX-LoRa-master\src\ProgramLT_Definitions.h, code is 74, comment is 96, blank is 16.
+lib\SX12XX-LoRa-master\src\Quectel_HWSerialGPS.h, code is 328, comment is 68, blank is 106.
+lib\SX12XX-LoRa-master\src\QuectelSerialGPS.h, code is 418, comment is 90, blank is 134.
+lib\SX12XX-LoRa-master\src\SX126XLT.cpp, code is 2521, comment is 344, blank is 822.
+lib\SX12XX-LoRa-master\src\SX126XLT.h, code is 167, comment is 55, blank is 33.
+lib\SX12XX-LoRa-master\src\SX126XLT_Definitions.h, code is 222, comment is 71, blank is 54.
+lib\SX12XX-LoRa-master\src\SX127XLT.cpp, code is 3105, comment is 511, blank is 1021.
+lib\SX12XX-LoRa-master\src\SX127XLT.h, code is 177, comment is 57, blank is 48.
+lib\SX12XX-LoRa-master\src\SX127XLT_Definitions.h, code is 212, comment is 112, blank is 60.
+lib\SX12XX-LoRa-master\src\SX128XLT.cpp, code is 1976, comment is 256, blank is 673.
+lib\SX12XX-LoRa-master\src\SX128XLT.h, code is 137, comment is 48, blank is 27.
+lib\SX12XX-LoRa-master\src\SX128XLT_Definitions.h, code is 270, comment is 85, blank is 77.
+lib\SX12XX-LoRa-master\src\UBLOX_HWSerialGPS.h, code is 406, comment is 69, blank is 140.
+lib\SX12XX-LoRa-master\src\UBLOXI2CGPS.h, code is 340, comment is 139, blank is 117.
+lib\SX12XX-LoRa-master\src\UBLOXSerialGPS.h, code is 447, comment is 123, blank is 154.
+lib\SX12XX-LoRa-master\Updates.md, code is 10, comment is 0, blank is 2.
+lib\SX12XX-LoRa-master\What is LoRa.md, code is 34, comment is 0, blank is 28.
+LICENSE, code is 23, comment is 0, blank is 6.
+platformio.ini, code is 4, comment is 10, blank is 1.
+README.md, code is 2, comment is 0, blank is 0.
+src\hardware_info.h, code is 34, comment is 13, blank is 31.
+src\kraftpad_specifics\menu_navigation_data.cpp, code is 80, comment is 15, blank is 49.
+src\kraftpad_specifics\menu_navigation_data.h, code is 30, comment is 25, blank is 31.
+src\main.cpp, code is 54, comment is 148, blank is 87.
+src\mainOLD.txt, code is 278, comment is 50, blank is 251.
+test\README, code is 8, comment is 1, blank is 3.
+===============================================================================

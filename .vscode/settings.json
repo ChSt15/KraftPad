@@ -14,6 +14,9 @@
         "font32rle.c": "cpp",
         "font7srle.c": "cpp",
         "font72rle.c": "cpp",
-        "glcdfont.c": "cpp"
+        "glcdfont.c": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "unordered_map": "cpp"
     }
 }

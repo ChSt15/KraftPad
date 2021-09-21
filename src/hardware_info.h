@@ -43,8 +43,8 @@
 #define VBAT_CORRECTION_OFFSET 0.042
 
 //Analog stick
-#define JOYSTICK_Y_ADC_PIN 0
-#define JOYSTICK_X_ADC_PIN 1
+#define JOYSTICK_Y_ADC_PIN 1
+#define JOYSTICK_X_ADC_PIN 0
 #define JOYSTICK_BUTTON_PIN 36
 
 //Prog/Kill button

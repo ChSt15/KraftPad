@@ -2,30 +2,44 @@
 
 #include "KraftKontrol.h"
 
+#include "KraftKontrol/modules/communication_modules/kraft_kommunication.h"
+
 #include "KraftKontrol/modules/hid_modules/display_modules/st7735_driver.h"
+#include "KraftKontrol/modules/sensor_modules/imu_modules/bno080_driver.h"
+
+#include "KraftKontrol/gui/menus/menu_list.h"
+#include "KraftKontrol/gui/menus/menu_test.h"
+
+#include "kraftpad_specifics/menu_navigation_data.h"
+
 
 #include "hardware_info.h"
 
 
-//SX1280Driver radio = SX1280Driver(SX1280_RFBUSY_PIN, SX1280_TXEN_PIN, SX1280_RXEN_PIN, SX1280_DIO1_PIN, SX1280_NRESET_PIN, SX1280_NSS_PIN);
-//KraftKommunication commsPort(&radio, eKraftPacketNodeID_t::eKraftPacketNodeID_controller);
+SX1280Driver radio = SX1280Driver(SX1280_RFBUSY_PIN, SX1280_TXEN_PIN, SX1280_RXEN_PIN, SX1280_DIO1_PIN, SX1280_NRESET_PIN, SX1280_NSS_PIN);
+KraftKommunication commsPort(radio, eKraftMessageNodeID_t::eKraftMessageNodeID_controller);
 //KraftKonnectNetwork network(&commsPort);
 
-BME280Driver baro(&Wire, 0x76);
+//UbloxSerialGNSS gnss(Serial1, M8N_RX_PIN, M8N_TX_PIN);
+//BME280Driver baro(&Wire, 0x76);
+//BNO080Driver imu(IMU_INT_PIN, Wire, &baro/*, &gnss*/);
+
 
 ST7735Driver display(SPI, LCD_LED_PIN, LCD_CS_PIN, LCD_DC_PIN, LCD_RST_PIN);
 
 ADS1115Driver adc(Wire, 50);
+Joystick joystick = Joystick(adc[JOYSTICK_X_ADC_PIN], adc[JOYSTICK_Y_ADC_PIN], JOYSTICK_BUTTON_PIN);
 
 
-//KinematicData kinematics;
+//Menu_List mainMenu("Main Menu", joystick);
+//Menu_NavigationData navMenu("NavigationData", imu.getNavigationDataTopic(), joystick);
 
-//Vector<> vehiclePosSet = Vector<>(0,0,2);
+Gui gui = Gui(display, mainMenu);
 
-//String commsMessage;
 
-//WorldPosition vehicleWorldPosition;
-//uint8_t vehicleNumSats = 0;
+
+
+
 
 
 
@@ -33,9 +47,31 @@ ADS1115Driver adc(Wire, 50);
 class Observer: public Task_Abstract {
 public:
 
-    Observer() : Task_Abstract(20, eTaskPriority_t::eTaskPriority_Middle) {}
+    Observer() : Task_Abstract("Observer", 20, eTaskPriority_t::eTaskPriority_Realtime) {}
+
+    Simple_Subscriber<NavigationData> sensorSubr;
+
+    void init() {
+
+        //sensorSubr.subscribe(imu.getGyroTopic());
+        //sensorSubr.setTaskToResume(*this);
+
+    }
 
     void thread() {
+
+        //Serial.println(String("Time: ") + (double)NOW()/SECONDS);
+
+        /*if (sensorSubr.isDataNew()) {
+
+            const SensorTimestamp<Vector<>>& vector = sensorSubr.getItem();
+
+            Serial.println(String("Sensor: ") + vector.sensorData.toString() + ", GyroRate: " + imu.gyroRate() + ", AccelRate: " + imu.accelRate() + ", MagRate: " + imu.magRate());
+
+
+        }*/
+
+        //Serial.println(String("Joystick: ") + joystick.getJoystickData().posX + ", " + joystick.getJoystickData().posY);
 
         //NavigationData navData = navigationmodule.getNavigationData();
 
@@ -164,6 +200,7 @@ public:
         adc.flushVoltage(2);
         adc.flushVoltage(3);*/
 
+        //stopTaskThreading();
 
     }
 
@@ -182,18 +219,18 @@ private:
 
 
 
-class ImAlive: public Task_Abstract {
+class TaskMonitor: public Task_Abstract {
 public:
 
-    ImAlive() : Task_Abstract(1, eTaskPriority_t::eTaskPriority_Realtime) {}
+    TaskMonitor() : Task_Abstract("Task Monitor", 1, eTaskPriority_t::eTaskPriority_Realtime) {}
 
     void thread() {
 
         Serial.println(String("Num tasks: ") + Task_Abstract::getTaskList().getNumItems());
         Serial.println("Task usages: ");
-        Serial.println(String("Scheduler: ") + String(Task_Abstract::getSchedulerSystemUsage()*100, 2));
+        Serial.println(String("CPU Usage: ") + String(Task_Abstract::getSchedulerSystemUsage()*100.0, 2));
         for (uint32_t i = 0; i < Task_Abstract::getTaskList().getNumItems(); i++) {
-            Serial.println(String("- Task ") + (i+1) + ": Usage: " + String(Task_Abstract::getTaskList()[i]->getTaskSystemUsage()*100, 2) + ", rate: " + Task_Abstract::getTaskList()[i]->getLoopRate());
+            Serial.println(String() + "    - Usage: " + String(Task_Abstract::getTaskList()[i]->getTaskSystemUsage()*100, 2) + ", rate: " + Task_Abstract::getTaskList()[i]->getLoopRate() + "\t, Name: " + Task_Abstract::getTaskList()[i]->getTaskName());
         }
 
     }
@@ -215,7 +252,7 @@ public:
 
 
 
-ImAlive imAlive;
+TaskMonitor taskMonitor;
 Observer observer;
 
 
@@ -227,11 +264,20 @@ void setup() {
     pinMode(VEXT_SWITCH_PIN, OUTPUT);
     digitalWrite(VEXT_SWITCH_PIN, LOW);
 
+    setCpuFrequencyMhz(240);
+
     Wire.begin(26, 27, 400000);
 
     //while(millis() < 10000) 
 
     //digitalWrite(LCD_LED_PIN, LOW);
+
+    /*adc[JOYSTICK_X_ADC_PIN].setScaling(-1.0f/3.3f*2.0f);
+    adc[JOYSTICK_X_ADC_PIN].setOffset(1.0f);
+    adc[JOYSTICK_Y_ADC_PIN].setScaling(-1.0f/3.3f*2.0f);
+    adc[JOYSTICK_Y_ADC_PIN].setOffset(1.0f);*/
+
+    //mainMenu.addMenuToList(navMenu);
 
     Task_Abstract::schedulerInitTasks();
 
