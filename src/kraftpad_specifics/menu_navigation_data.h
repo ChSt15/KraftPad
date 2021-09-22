@@ -71,7 +71,7 @@ protected:
     Menu_Abstract* menuDisplayUpdate(Display_Abstract& display, Task_Abstract& gui) override;
 
 
-    void resetMenu() override;
+    void exit() override;
 
 
 private:

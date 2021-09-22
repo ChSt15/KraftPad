@@ -14,7 +14,7 @@
 #include "KraftKontrol/gui/menus/menu_test.h"
 #include "KraftKontrol/gui/menus/menu_vector.h"
 
-#include "kraftpad_specifics/menu_navigation_data.h"
+#include "kraftpad_specifics/kraftpad_mainmenu.h"
 
 
 #include "hardware_info.h"
@@ -22,7 +22,6 @@
 
 SX1280Driver radio = SX1280Driver(SX1280_RFBUSY_PIN, SX1280_TXEN_PIN, SX1280_RXEN_PIN, SX1280_DIO1_PIN, SX1280_NRESET_PIN, SX1280_NSS_PIN);
 KraftKommunication commsPort(radio, eKraftMessageNodeID_t::eKraftMessageNodeID_controller);
-//KraftKonnectNetwork network(&commsPort);
 
 //UbloxSerialGNSS gnss(Serial1, M8N_RX_PIN, M8N_TX_PIN);
 //BME280Driver baro(&Wire, 0x76);
@@ -39,37 +38,10 @@ Joystick joystick = Joystick(adc[JOYSTICK_X_ADC_PIN], adc[JOYSTICK_Y_ADC_PIN], J
 //Menu_NavigationData navMenu("NavigationData", imu.getNavigationDataTopic(), joystick);
 
 
-
-class TestVectorClass: public Topic<Vector<>>, public Task_Abstract {
-public:
-
-    TestVectorClass(): Task_Abstract("TestVectorClass", 100, eTaskPriority_t::eTaskPriority_Realtime) {}
-
-    TelemetryMessageAngularVelocity vector_;
-
-    KraftMessage_Subscriber subr_ = KraftMessage_Subscriber(vector_);
-
-    void init() {
-        subr_.subscribe(commsPort.getReceivedMessageTopic());
-    }
-
-    void thread() {
-
-        publish(vector_.getVector());
-
-    }
-
-} vectorTest;
+Menu_KraftpadMain mainMenu(commsPort, joystick);
 
 
-
-Menu_Vector menuVectorTest(vectorTest, "TestVector", joystick);
-
-Gui gui = Gui(display, menuVectorTest);
-
-
-
-
+Gui gui = Gui(display, mainMenu);
 
 
 
@@ -284,7 +256,7 @@ public:
 
 
 TaskMonitor taskMonitor;
-Observer observer;
+//Observer observer;
 
 
 
@@ -303,10 +275,10 @@ void setup() {
 
     //digitalWrite(LCD_LED_PIN, LOW);
 
-    /*adc[JOYSTICK_X_ADC_PIN].setScaling(-1.0f/3.3f*2.0f);
+    adc[JOYSTICK_X_ADC_PIN].setScaling(-1.0f/3.3f*2.0f);
     adc[JOYSTICK_X_ADC_PIN].setOffset(1.0f);
     adc[JOYSTICK_Y_ADC_PIN].setScaling(-1.0f/3.3f*2.0f);
-    adc[JOYSTICK_Y_ADC_PIN].setOffset(1.0f);*/
+    adc[JOYSTICK_Y_ADC_PIN].setOffset(1.0f);
 
     //mainMenu.addMenuToList(navMenu);
 

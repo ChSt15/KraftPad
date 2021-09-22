@@ -139,5 +139,5 @@ void Menu_NavigationData::drawGraph(Display_Abstract& display, Buffer<Vector<>, 
 }
 
 
-void Menu_NavigationData::resetMenu() {}
+void Menu_NavigationData::exit() {}
 
